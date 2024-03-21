@@ -13,13 +13,7 @@ const items = labels.map((label, index) => ({
 
 const Navbar = () => {
     return (
-        <Header
-            style={{
-                display: 'flex',
-                alignItems: 'center',
-                background: '#ffffff',
-            }}
-        >
+        <Header>
             <div style={{fontWeight: 800}}>Logo</div>
             <Menu
                 mode="horizontal"
