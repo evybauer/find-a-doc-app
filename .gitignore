@@ -1,0 +1,15 @@
+# Vite specific
+node_modules/
+dist/
+.cache/
+
+# Editor files
+.vscode/
+
+# Miscellaneous
+.env
+.DS_Store
+*.log
+.pnpm
+pnpm-debug.log*
+pnpm-lock.yaml
