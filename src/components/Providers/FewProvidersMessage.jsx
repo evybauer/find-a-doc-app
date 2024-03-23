@@ -1,9 +1,17 @@
 import { Button, Typography } from 'antd'
 import { Divider } from 'antd'
+import { useNavigate } from 'react-router-dom'
 
 const { Text, Title } = Typography
 
 const FewProvidersMessage = ({ setSearchValues }) => {
+  const navigate = useNavigate()
+
+  const handleClear = () => {
+    setSearchValues(null)
+    navigate('/')
+  }
+
   return (
     <div className='my-8'>
       <Divider position='horizontal' className='m-0' />
@@ -15,7 +23,7 @@ const FewProvidersMessage = ({ setSearchValues }) => {
           Try adjusting your search filters to see available providers
         </Text>
       </div>
-      <Button type='primary' onClick={() => setSearchValues(null)}>
+      <Button type='primary' onClick={handleClear}>
         Clear filters
       </Button>
     </div>
