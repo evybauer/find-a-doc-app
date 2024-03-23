@@ -57,24 +57,16 @@ const capitalizeFirstLetterOfEachWord = (str) => {
     return str.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ')
 }
 
-const toCamelCase = (str) => {
-    let words = str.toLowerCase().replace(/['",]/g, "").split(' ')
-    for (let i = 1; i < words.length; i++) {
-        words[i] = words[i].charAt(0).toUpperCase() + words[i].substring(1)
-    }
-    return words.join('')
-}
-
 const initialOptions = {
     options: [
         {
             label: <span>I'm paying for myself</span>,
-            value: toCamelCase("I'm paying for myself"),
+            value: "I'm paying for myself",
             searchValue: "I'm paying for myself",
         },
         {
             label: <span>I'll choose my insurance later</span>,
-            value: toCamelCase("I'll choose my insurance later"),
+            value: "I'll choose my insurance later",
             searchValue: "I'll choose my insurance later",
         }
     ]
@@ -88,7 +80,7 @@ const insuranceSearchArray = [
             title: category,
             options: insuranceSearchList[category].map(insurance => ({
                 label: <span>{capitalizeFirstLetterOfEachWord(insurance)}</span>,
-                value: toCamelCase(insurance),
+                value: insurance,
                 searchValue: insurance,
             })),
         }
