@@ -43,7 +43,7 @@ const ProviderCard = ({ isModalVisible, provider }) => {
         </div>
         <Text>
           <FontAwesomeIcon icon={faLocationDot} className='mr-2' />
-          {`${provider.distance} mi - ${provider.address}`}
+          {`${provider.distance} mi - ${provider.address.streetAddress}, ${provider.address.city} ${provider.address.state} ${provider.address.postalCode}`}
         </Text>
         <a className='underline underline-offset-1 text-sky-600'>
           <FontAwesomeIcon icon={faShieldHeart} className='mr-2' />

@@ -2,9 +2,9 @@ import { useNavigate } from 'react-router-dom'
 import SearchInput from './SearchInput'
 import { Button, Form } from 'antd'
 
-import { insuranceSearchArray } from '../SyntheticData/insuranceSearchList'
-import { locationSearchArray } from '../SyntheticData/locationSearchList'
-import { medicalConditionsArray } from '../SyntheticData/medicalConditionsList'
+import { insuranceSearchArray } from '../../data/insuranceSearchList'
+import { locationSearchArray } from '../../data/locationSearchList'
+import { medicalConditionsArray } from '../../data/medicalConditionsList'
 import {
   faAddressCard,
   faLocationDot,
