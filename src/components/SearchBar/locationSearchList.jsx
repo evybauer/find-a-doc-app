@@ -57,16 +57,8 @@ const capitalizeFirstLetterOfEachWord = (str) => {
     .join(" ")
 }
 
-const toCamelCase = (str) => {
-  let words = str.toLowerCase().replace(/['",]/g, "").split(" ")
-  for (let i = 1; i < words.length; i++) {
-    words[i] = words[i].charAt(0).toUpperCase() + words[i].substring(1)
-  }
-  return words.join("")
-}
-
 export const locationSearchArray = locationSearchList.predictions.map((location) => ({
-  value: toCamelCase(location.description),
+  value: location.description,
   label: capitalizeFirstLetterOfEachWord(location.description),
   searchValue: location.description,
 }))
