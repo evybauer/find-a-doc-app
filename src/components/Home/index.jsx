@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
 import { Typography } from 'antd'
-import SearchBar from '../../components/SearchBar'
+import SearchBar from '../SearchBar'
 import { SearchContext } from '../../providers/SearchProvider'
 
 const { Title } = Typography
 
-const Dashboard = () => {
+const Home = () => {
   const { searchValues, setSearchValues } = useContext(SearchContext)
 
   return (
@@ -28,4 +28,4 @@ const Dashboard = () => {
   )
 }
 
-export default Dashboard
+export default Home

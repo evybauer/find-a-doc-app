@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { SearchProvider } from './providers/SearchProvider'
 import Layout from '../src/components/Layout'
 
-const Dashboard = lazy(() => import('./Routes/Dashboard'))
+const Home = lazy(() => import('./Routes/Home'))
 const Providers = lazy(() => import('./Routes/Providers'))
 
 const App = () => (
@@ -13,7 +13,7 @@ const App = () => (
         <Suspense fallback={null}>
           <Routes>
             <Route path='/providers' element={<Providers />} />
-            <Route path='/' element={<Dashboard />} />
+            <Route path='/' element={<Home />} />
           </Routes>
         </Suspense>
       </Layout>
