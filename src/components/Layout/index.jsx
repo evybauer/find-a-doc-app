@@ -1,37 +1,44 @@
-import React from 'react'
+import { useState } from 'react'
 import { Layout as AntDLayout } from 'antd'
-import  Navbar  from './Navbar'
+import Navbar from './Navbar'
 import Footer from './Footer'
-import { Typography } from 'antd'
-import SearchBar from '../SearchBar'
+import Providers from '../Providers'
+import { providersList } from '../SyntheticData/providersList'
+import Dashboard from './Dashboard'
 
 const { Content } = AntDLayout
-const { Title } = Typography
 
 const Layout = () => {
+  const [searchValues, setSearchValues] = useState('')
 
-    return (
-        <AntDLayout>
-            <Navbar />
-            <Content
-                style={{
-                    padding: '48px',
-                    minHeight: '100vh',
-                }}
-            >
-                <>
-                    <div>
-                        <Title style={{fontSize: 60, fontWeight: 100, margin: 0}}>Book local "DOCTORS"</Title>
-                        <Title style={{fontSize: 60, fontWeight: 100, margin: 0}}>who take your insurance</Title>
-                    </div>
-                    <div>
-                        <SearchBar />
-                    </div>
-                </>
-            </Content>
-            <Footer />
-        </AntDLayout>
-    )
+  return (
+    <AntDLayout>
+      <Navbar searchValues={searchValues} setSearchValues={setSearchValues} />
+      <Content
+        style={{
+          padding: '32px',
+          minHeight: '100vh',
+        }}
+      >
+        <>
+          {!searchValues && (
+            <Dashboard
+              searchValues={searchValues}
+              setSearchValues={setSearchValues}
+            />
+          )}
+          {searchValues && (
+            <Providers
+              providers={providersList}
+              searchValues={searchValues}
+              setSearchValues={setSearchValues}
+            />
+          )}
+        </>
+      </Content>
+      <Footer />
+    </AntDLayout>
+  )
 }
 
 export default Layout
