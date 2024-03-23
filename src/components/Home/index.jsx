@@ -1,9 +1,13 @@
+import React, { useContext } from 'react'
 import { Typography } from 'antd'
 import SearchBar from '../SearchBar'
+import { SearchContext } from '../../providers/SearchProvider'
 
 const { Title } = Typography
 
-const Dashboard = ({ searchValues, setSearchValues }) => {
+const Home = () => {
+  const { searchValues, setSearchValues } = useContext(SearchContext)
+
   return (
     <>
       <div className='mb-16'>
@@ -24,4 +28,4 @@ const Dashboard = ({ searchValues, setSearchValues }) => {
   )
 }
 
-export default Dashboard
+export default Home

@@ -1,19 +1,22 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { Divider, Pagination } from 'antd'
 import ProviderCard from './ProviderCard'
 import ScheduleFilters from './ScheduleFilters'
 import ProvidersHeader from './ProvidersHeader'
 import FewProvidersMessage from './FewProvidersMessage'
 import AvailableSpots from './AvailableSpots'
+import { providersList } from '../SyntheticData'
+import { SearchContext } from '../../providers/SearchProvider'
 
-const Providers = ({ providers, searchValues, setSearchValues }) => {
+const Providers = () => {
+  const { searchValues, setSearchValues } = useContext(SearchContext)
   const [isModalVisible, setIsModalVisible] = useState(false)
   const [selectedProvider, setSelectedProvider] = useState(null)
 
   const itemsPerPage = 10
   const [currentPage, setCurrentPage] = useState(1)
 
-  const filteredProviders = providers.filter((provider) => {
+  const filteredProviders = providersList.filter((provider) => {
     const matchesCondition = searchValues.condition
       ? provider.examsAvailable.includes(searchValues.condition)
       : true
@@ -46,7 +49,7 @@ const Providers = ({ providers, searchValues, setSearchValues }) => {
 
           <ScheduleFilters />
 
-          <ProvidersHeader providers={providers} />
+          <ProvidersHeader providers={providersList} />
 
           {providersToShow.map((provider, index) => (
             <div
@@ -75,7 +78,7 @@ const Providers = ({ providers, searchValues, setSearchValues }) => {
             <Pagination
               current={currentPage}
               onChange={setCurrentPage}
-              total={providers.length}
+              total={providersList.length}
               pageSize={itemsPerPage}
             />
           )}

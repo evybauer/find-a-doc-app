@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import SearchInput from './SearchInput'
 import { Button, Form } from 'antd'
 
@@ -32,10 +33,12 @@ const searchConfigs = [
 ]
 
 const SearchBar = ({ searchValues, setSearchValues }) => {
+  let navigate = useNavigate()
   const [form] = Form.useForm()
 
   const onFinish = (values) => {
     setSearchValues(values)
+    navigate('/providers')
   }
 
   return (

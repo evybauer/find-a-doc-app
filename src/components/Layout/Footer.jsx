@@ -2,7 +2,7 @@ import { Layout } from 'antd'
 
 const { Footer } = Layout
 
-const DashboardFooter = () => {
+const MainFooter = () => {
   return (
     <Footer
       style={{
@@ -14,4 +14,4 @@ const DashboardFooter = () => {
   )
 }
 
-export default DashboardFooter
+export default MainFooter
