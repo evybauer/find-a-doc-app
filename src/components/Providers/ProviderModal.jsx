@@ -2,7 +2,7 @@ import { Modal, Typography, Select } from 'antd'
 import ProviderCard from './ProviderCard'
 import AvailableTimes from './AvailableTimes'
 import SearchInput from '../SearchBar/SearchInput'
-import { insuranceSearchArray } from '../SyntheticData/insuranceSearchList'
+import { insuranceSearchArray } from '../../data/insuranceSearchList'
 
 const { Title, Text } = Typography
 

@@ -7,7 +7,7 @@ import {
   timeOfDay,
   visitReason,
   visitType,
-} from '../SyntheticData/filters'
+} from '../../data/filters'
 const { Option } = Select
 
 const SelectComponent = ({ options }) => (

@@ -5,7 +5,7 @@ import ScheduleFilters from './ScheduleFilters'
 import ProvidersHeader from './ProvidersHeader'
 import FewProvidersMessage from './FewProvidersMessage'
 import AvailableSpots from './AvailableSpots'
-import { providersList } from '../SyntheticData'
+import { providersList } from '../../data'
 import { SearchContext } from '../../providers/SearchProvider'
 
 const Providers = () => {
