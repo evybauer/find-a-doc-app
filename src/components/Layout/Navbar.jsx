@@ -28,7 +28,7 @@ const Navbar = () => {
       <div className='flex items-center justify-between gap-8'>
         <div className='h-full w-32 mt-6 mr-4'>
           <Image
-            src='/src/assets/images/logo.png'
+            src='/src/assets/logo/logo.png'
             preview={false}
             className='h-12 object-contain'
           />
