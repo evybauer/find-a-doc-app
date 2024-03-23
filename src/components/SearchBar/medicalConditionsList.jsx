@@ -59,22 +59,13 @@ const medicalConditionsList = [
 
 const sortedMedicalConditionsList = medicalConditionsList.sort()
 
-const toCamelCase = (str) => {
-    let words = str.toLowerCase().replace(/['",]/g, "").split(" ")
-    words[0] = words[0].toLowerCase()
-    for (let i = 1; i < words.length; i++) {
-        words[i] = words[i].charAt(0).toUpperCase() + words[i].substring(1)
-    }
-    return words.join("")
-}
-
 const capitalizeFirstLetterOfEachWord = (str) => {
     return str.split(' ').map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ')
 }
 
 
 export const medicalConditionsArray = sortedMedicalConditionsList.map((condition) => ({
-    value: toCamelCase(condition),
+    value: condition,
     label: capitalizeFirstLetterOfEachWord(condition),
     searchValue: condition,
 }))
