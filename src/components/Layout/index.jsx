@@ -1,15 +1,13 @@
-import { useState } from 'react'
+import { useContext } from 'react'
 import { Layout as AntDLayout } from 'antd'
 import Navbar from './Navbar'
 import Footer from './Footer'
-import Providers from '../Providers'
-import { providersList } from '../SyntheticData/providersList'
-import Dashboard from './Dashboard'
+import { SearchContext } from '../../providers/SearchProvider'
 
 const { Content } = AntDLayout
 
-const Layout = () => {
-  const [searchValues, setSearchValues] = useState('')
+const Layout = ({ children }) => {
+  const { searchValues, setSearchValues } = useContext(SearchContext)
 
   return (
     <AntDLayout>
@@ -20,21 +18,7 @@ const Layout = () => {
           minHeight: '100vh',
         }}
       >
-        <>
-          {!searchValues && (
-            <Dashboard
-              searchValues={searchValues}
-              setSearchValues={setSearchValues}
-            />
-          )}
-          {searchValues && (
-            <Providers
-              providers={providersList}
-              searchValues={searchValues}
-              setSearchValues={setSearchValues}
-            />
-          )}
-        </>
+        {children}
       </Content>
       <Footer />
     </AntDLayout>
