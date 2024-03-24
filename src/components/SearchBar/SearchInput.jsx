@@ -1,7 +1,7 @@
 import { Select } from 'antd'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const SearchInput = ({ placeholder, icon, options, onChange }) => {
+const SearchInput = ({ placeholder, icon, options, onChange, searchValue }) => {
   const handleChange = (value) => {
     onChange(value)
   }
@@ -19,9 +19,10 @@ const SearchInput = ({ placeholder, icon, options, onChange }) => {
     <div style={{ display: 'flex', alignItems: 'center' }}>
       <FontAwesomeIcon icon={icon} className='text-base text-slate-700' />
       <Select
+        value={searchValue}
         showSearch
         allowClear
-        placeholder={placeholder}
+        placeholder={searchValue || placeholder}
         optionFilterProp='items'
         onChange={handleChange}
         onSearch={onSearch}
