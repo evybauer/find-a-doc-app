@@ -6,7 +6,7 @@ const { Text } = Typography
 
 const ProviderNotAvailableMessage = () => {
   return (
-    <div className='justify-center lg:max-w-[520px]'>
+    <div className='justify-center mt-4'>
       <div className='bg-gray-100 p-8 border rounded-xl'>
         <Text className='text-base text-gray-700'>
           At this time, the provider has no availability on Zocdoc at this
