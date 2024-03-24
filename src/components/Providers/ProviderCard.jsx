@@ -34,7 +34,7 @@ const ProviderCard = ({ isModalVisible, provider }) => {
             <FontAwesomeIcon icon={faStar} className='mr-2 text-red-500' />
             {`${provider.rating} (${provider.reviews})`}
           </Text>
-          {provider.loyalPatients > 1 && (
+          {provider.loyalPatients > 20 && (
             <Tag color='red'>
               <FontAwesomeIcon icon={faHeart} className='mr-2' />
               LOYAL PATIENTS
