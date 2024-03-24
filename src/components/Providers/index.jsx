@@ -21,8 +21,9 @@ const Providers = () => {
     condition ? provider.examsAvailable.includes(condition) : true
   const matchesLocation = (provider, location) =>
     location ? provider.address.city === location : true
-  const matchesInsurance = (provider, insurance) =>
-    insurance ? provider.insurance === insurance : true
+const matchesInsurance = (provider, insurance) => {
+    return insurance ? provider.insurance.includes(insurance) : true;
+}
   const matchesLanguageSpoken = (provider, languageSpoken) =>
     languageSpoken
       ? provider.languageSpoken
@@ -93,7 +94,7 @@ const Providers = () => {
           filteredOptions={filteredOptions}
           setFilteredOptions={setFilteredOptions}
         />
-        <ProvidersHeader providers={providersList} />
+        <ProvidersHeader providers={filteredProviders} />
 
         {providersToShow.map((provider, index) => (
           <div key={index} className='grid grid-cols-1 lg:grid-cols-3 my-8'>
