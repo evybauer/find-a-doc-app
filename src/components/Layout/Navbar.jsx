@@ -56,10 +56,14 @@ const Navbar = () => {
           justifyContent: 'end',
           border: 'none',
         }}
-        className='bg-gray-800'
+        className='bg-gray-800 custom-menu'
       >
         {items.map((item) => (
-          <Menu.Item key={item.key} style={{ color: 'white' }}>
+          <Menu.Item
+            key={item.key}
+            style={{ color: 'white' }}
+            className='custom-menu'
+          >
             {item.label}
           </Menu.Item>
         ))}
