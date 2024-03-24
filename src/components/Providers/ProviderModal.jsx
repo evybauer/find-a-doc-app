@@ -2,7 +2,8 @@ import { Modal, Typography, Select } from 'antd'
 import ProviderCard from './ProviderCard'
 import AvailableTimes from './AvailableTimes'
 import SearchInput from '../SearchBar/SearchInput'
-import { insurance } from '../../data/insuranceSearchList'
+import { SearchContext } from '../../providers/SearchProvider'
+import { useContext } from 'react'
 
 const { Title, Text } = Typography
 
@@ -12,6 +13,16 @@ const ProviderModal = ({
   handleCancel,
   provider,
 }) => {
+  const {searchValues} = useContext(SearchContext)
+
+
+let providerInsuranceList = provider.insurance;
+if (typeof providerInsuranceList === 'string') {
+    providerInsuranceList = [providerInsuranceList];
+}
+
+providerInsuranceList = providerInsuranceList.map(insurance => ({ value: insurance, label: insurance }));
+
   return (
     <Modal
       width={600}
@@ -51,8 +62,8 @@ const ProviderModal = ({
         ))}
       </Select>
 
-      <SearchInput placeholder='Add insurance' options={insurance} />
-
+        <SearchInput placeholder={searchValues.insurance || 'Add insurance'} options={providerInsuranceList} searchValue={searchValues.insurance} />
+        
       <Title
         level={4}
         style={{ fontWeight: 400, marginBottom: 0 }}
