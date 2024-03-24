@@ -1,19 +1,18 @@
 import { useContext } from 'react'
 import { useLocation } from 'react-router-dom'
 
-import { Layout, Image, Menu, Button, Typography } from 'antd'
+import { Layout, Image, Menu, Button } from 'antd'
 import { Divider } from 'antd'
 import SearchBar from '../SearchBar'
 import { SearchContext } from '../../providers/SearchProvider'
 import { Link } from 'react-router-dom'
 
 const { Header } = Layout
-const { Text } = Typography
 
 const labels = ['Browse', 'Help', 'List your practice on Avalon.AI']
 
 const Navbar = () => {
-  const { searchValues, setSearchValues } = useContext(SearchContext)
+  const { searchValues } = useContext(SearchContext)
   const { pathname } = useLocation()
   const isProvidersRoute = pathname === '/providers'
 
@@ -41,7 +40,6 @@ const Navbar = () => {
             <div className='hidden lg:flex'>
               <SearchBar
                 searchValues={searchValues}
-                setSearchValues={setSearchValues}
               />
             </div>
           </div>
