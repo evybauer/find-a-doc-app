@@ -1,3 +1,9 @@
+const insuranceCompanies1 = ['Blue Cross Blue Shield (BCBS)', 'Aetna'];
+const insuranceCompanies2 = ['UnitedHealthcare', 'Cigna', 'Empire Blue Cross Blue Shield (Health)'];
+const insuranceCompanies3 = ['EmblemHealth (formerly known as GHI)', 'HealthFirst (NY)', 'AARP', 'ACE'];
+const insuranceCompanies4 = ['AIG', 'APWU', 'ATRIO Health Plans', 'AVMA Life', 'Absolute Total Care'];
+const insuranceCompanies5 = ['Access Medicare (NY)', 'Accountable Health Plan of Ohio', 'Advanced Health', 'AdvantageMD', 'Advantica', 'Advent Health'];
+
 export const providersList = [
   {
     photo: '/assets/images/doctor1.jpg',
@@ -8,6 +14,7 @@ export const providersList = [
     reviews: 312,
     loyalPatients: 87,
     distance: 1.2,
+    insurance: insuranceCompanies1,
     address: {
       streetAddress: '120 East 56th Street',
       city: 'New York',
@@ -212,6 +219,7 @@ export const providersList = [
     reviews: 476,
     loyalPatients: 14,
     distance: 0.8,
+    insurance: insuranceCompanies2,
     address: {
       streetAddress: '175 Remsen Street',
       city: 'Brooklyn',
@@ -429,6 +437,7 @@ export const providersList = [
     reviews: 368,
     loyalPatients: 14,
     distance: 1.5,
+    insurance: insuranceCompanies3,
     address: {
       streetAddress: '1185 Avenue of the Americas',
       city: 'New York',
@@ -651,6 +660,7 @@ export const providersList = [
     reviews: 282,
     loyalPatients: 18,
     distance: 2.1,
+    insurance: insuranceCompanies4,
     address: {
       streetAddress: '127 John Street',
       city: 'New York',
@@ -682,6 +692,7 @@ export const providersList = [
     reviews: 394,
     loyalPatients: 126,
     distance: 1.3,
+    insurance: insuranceCompanies5,
     address: {
       streetAddress: '115 Broadway',
       city: 'New York',
@@ -899,6 +910,7 @@ export const providersList = [
     reviews: 512,
     loyalPatients: 16,
     distance: 0.9,
+    insurance: insuranceCompanies1,
     address: {
       streetAddress: '418 Lafayette Street',
       city: 'New York',
@@ -1116,6 +1128,7 @@ export const providersList = [
     reviews: 278,
     loyalPatients: 84,
     distance: 2.3,
+    insurance: insuranceCompanies2,
     address: {
       streetAddress: '550 Prospect Place',
       city: 'Brooklyn',
@@ -1333,6 +1346,7 @@ export const providersList = [
     reviews: 416,
     loyalPatients: 13,
     distance: 1.1,
+    insurance: insuranceCompanies3,
     address: {
       streetAddress: '222 Broadway',
       city: 'New York',
@@ -1557,6 +1571,7 @@ export const providersList = [
     reviews: 362,
     loyalPatients: 112,
     distance: 0.9,
+    insurance: insuranceCompanies4,
     address: {
       streetAddress: '99 Park Avenue',
       city: 'New York',
@@ -1774,6 +1789,7 @@ export const providersList = [
     reviews: 296,
     loyalPatients: 94,
     distance: 1.6,
+    insurance: insuranceCompanies5,
     address: {
       streetAddress: '150 East 58th Street',
       city: 'New York',
@@ -1997,6 +2013,7 @@ export const providersList = [
     reviews: 332,
     loyalPatients: 104,
     distance: 2.2,
+    insurance: insuranceCompanies5,
     address: {
       streetAddress: '77 Park Avenue',
       city: 'New York',
@@ -2215,6 +2232,7 @@ export const providersList = [
     reviews: 402,
     loyalPatients: 132,
     distance: 1.4,
+    insurance: insuranceCompanies1,
     address: {
       streetAddress: '320 Park Avenue',
       city: 'New York',
@@ -2432,6 +2450,7 @@ export const providersList = [
     reviews: 312,
     loyalPatients: 98,
     distance: 1.8,
+    insurance: insuranceCompanies2,
     address: {
       streetAddress: '456 Madison Avenue',
       city: 'New York',
@@ -2649,6 +2668,7 @@ export const providersList = [
     reviews: 376,
     loyalPatients: 122,
     distance: 0.6,
+    insurance: insuranceCompanies3,
     address: {
       streetAddress: '789 Park Avenue',
       city: 'New York',
@@ -2866,6 +2886,7 @@ export const providersList = [
     reviews: 298,
     loyalPatients: 92,
     distance: 1.2,
+    insurance: insuranceCompanies4,
     address: {
       streetAddress: '123 Lexington Avenue',
       city: 'New York',
@@ -3083,6 +3104,7 @@ export const providersList = [
     reviews: 422,
     loyalPatients: 136,
     distance: 0.9,
+    insurance: insuranceCompanies5,
     address: {
       streetAddress: '456 7th Avenue',
       city: 'New York',
@@ -3300,6 +3322,7 @@ export const providersList = [
     reviews: 266,
     loyalPatients: 78,
     distance: 1.7,
+    insurance: insuranceCompanies3,
     address: {
       streetAddress: '789 3rd Avenue',
       city: 'New York',
@@ -3517,6 +3540,7 @@ export const providersList = [
     reviews: 312,
     loyalPatients: 102,
     distance: 2.4,
+    insurance: insuranceCompanies5,
     address: {
       streetAddress: '456 Park Avenue',
       city: 'New York',
@@ -3734,6 +3758,7 @@ export const providersList = [
     reviews: 275,
     loyalPatients: 89,
     distance: 3.1,
+    insurance: insuranceCompanies1,
     address: {
       streetAddress: '789 Main Street',
       city: 'Boston',
@@ -3958,6 +3983,7 @@ export const providersList = [
     reviews: 418,
     loyalPatients: 13,
     distance: 1.8,
+    insurance: insuranceCompanies2,
     address: {
       streetAddress: '321 Oak Street',
       city: 'Los Angeles',
@@ -4180,6 +4206,7 @@ export const providersList = [
     reviews: 296,
     loyalPatients: 10,
     distance: 2.7,
+    insurance: insuranceCompanies4,
     address: {
       streetAddress: '567 Maple Avenue',
       city: 'Chicago',
@@ -4397,6 +4424,7 @@ export const providersList = [
     reviews: 367,
     loyalPatients: 119,
     distance: 1.5,
+    insurance: insuranceCompanies3,
     address: {
       streetAddress: '789 Pine Street',
       city: 'San Francisco',
@@ -4620,6 +4648,7 @@ export const providersList = [
     reviews: 294,
     loyalPatients: 18,
     distance: 2.2,
+    insurance: insuranceCompanies5,
     address: {
       streetAddress: '456 Cedar Avenue',
       city: 'Miami',
@@ -4843,6 +4872,7 @@ export const providersList = [
     reviews: 427,
     loyalPatients: 14,
     distance: 1.1,
+    insurance: insuranceCompanies3,
     address: {
       streetAddress: '789 Elm Street',
       city: 'Houston',
@@ -5060,6 +5090,7 @@ export const providersList = [
     reviews: 379,
     loyalPatients: 12,
     distance: 1.7,
+    insurance: insuranceCompanies1,
     address: {
       streetAddress: '789 Oak Street',
       city: 'Seattle',
@@ -5277,6 +5308,7 @@ export const providersList = [
     reviews: 412,
     loyalPatients: 138,
     distance: 2.3,
+    insurance: insuranceCompanies2,
     address: {
       streetAddress: '456 Maple Avenue',
       city: 'Denver',
@@ -5494,6 +5526,7 @@ export const providersList = [
     reviews: 351,
     loyalPatients: 11,
     distance: 1.9,
+    insurance: insuranceCompanies4,
     address: {
       streetAddress: '789 Elm Street',
       city: 'Atlanta',
@@ -5711,6 +5744,7 @@ export const providersList = [
     reviews: 394,
     loyalPatients: 13,
     distance: 2.5,
+    insurance: insuranceCompanies3,
     address: {
       streetAddress: '456 Pine Street',
       city: 'San Diego',
@@ -5928,6 +5962,7 @@ export const providersList = [
     reviews: 428,
     loyalPatients: 142,
     distance: 1.2,
+    insurance: insuranceCompanies5,
     address: {
       streetAddress: '789 Cedar Avenue',
       city: 'Phoenix',
@@ -6145,6 +6180,7 @@ export const providersList = [
     reviews: 367,
     loyalPatients: 122,
     distance: 2.1,
+    insurance: insuranceCompanies1,
     address: {
       streetAddress: '456 Walnut Avenue',
       city: 'Dallas',
@@ -6362,6 +6398,7 @@ export const providersList = [
     reviews: 324,
     loyalPatients: 108,
     distance: 2.8,
+    insurance: insuranceCompanies1,
     address: {
       streetAddress: '456 Maple Avenue',
       city: 'Austin',
@@ -6579,6 +6616,7 @@ export const providersList = [
     reviews: 416,
     loyalPatients: 139,
     distance: 1.4,
+    insurance: insuranceCompanies2,
     address: {
       streetAddress: '789 Elm Street',
       city: 'Jacksonville',
@@ -6796,6 +6834,7 @@ export const providersList = [
     reviews: 379,
     loyalPatients: 126,
     distance: 2.2,
+    insurance: insuranceCompanies4,
     address: {
       streetAddress: '456 Pine Street',
       city: 'Indianapolis',
@@ -7013,6 +7052,7 @@ export const providersList = [
     reviews: 341,
     loyalPatients: 114,
     distance: 1.9,
+    insurance: insuranceCompanies3,
     address: {
       streetAddress: '789 Cedar Avenue',
       city: 'Columbus',
@@ -7230,6 +7270,7 @@ export const providersList = [
     reviews: 432,
     loyalPatients: 144,
     distance: 1.1,
+    insurance: insuranceCompanies2,
     address: {
       streetAddress: '456 Walnut Avenue',
       city: 'Charlotte',
@@ -7447,6 +7488,7 @@ export const providersList = [
     reviews: 388,
     loyalPatients: 129,
     distance: 2.6,
+    insurance: insuranceCompanies1,
     address: {
       streetAddress: '789 Elm Street',
       city: 'Detroit',
@@ -7664,6 +7706,7 @@ export const providersList = [
     reviews: 402,
     loyalPatients: 134,
     distance: 2.1,
+    insurance: insuranceCompanies5,
     address: {
       streetAddress: '789 Oak Street',
       city: 'Baltimore',
@@ -7886,6 +7929,7 @@ export const providersList = [
     reviews: 431,
     loyalPatients: 144,
     distance: 1.4,
+    insurance: insuranceCompanies4,
     address: {
       streetAddress: '456 Maple Avenue',
       city: 'Portland',
@@ -8103,6 +8147,7 @@ export const providersList = [
     reviews: 376,
     loyalPatients: 125,
     distance: 2.6,
+    insurance: insuranceCompanies3,
     address: {
       streetAddress: '789 Elm Street',
       city: 'Las Vegas',
@@ -8320,6 +8365,7 @@ export const providersList = [
     reviews: 409,
     loyalPatients: 136,
     distance: 1.9,
+    insurance: insuranceCompanies2,
     address: {
       streetAddress: '456 Pine Street',
       city: 'Oklahoma City',
@@ -8537,6 +8583,7 @@ export const providersList = [
     reviews: 438,
     loyalPatients: 146,
     distance: 1.2,
+    insurance: insuranceCompanies1,
     address: {
       streetAddress: '789 Cedar Avenue',
       city: 'Miami',
@@ -8754,6 +8801,7 @@ export const providersList = [
     reviews: 421,
     loyalPatients: 140,
     distance: 2.4,
+    insurance: insuranceCompanies1,
     address: {
       streetAddress: '456 Walnut Avenue',
       city: 'Kansas City',
@@ -8971,6 +9019,7 @@ export const providersList = [
     reviews: 442,
     loyalPatients: 17,
     distance: 1.6,
+    insurance: insuranceCompanies2,
     address: {
       streetAddress: '456 Cedar Avenue',
       city: 'Seattle',
@@ -9194,6 +9243,7 @@ export const providersList = [
     reviews: 398,
     loyalPatients: 133,
     distance: 2.1,
+    insurance: insuranceCompanies3,
     address: {
       streetAddress: '789 Oak Street',
       city: 'Chicago',
@@ -9411,6 +9461,7 @@ export const providersList = [
     reviews: 371,
     loyalPatients: 124,
     distance: 2.5,
+    insurance: insuranceCompanies1,
     address: {
       streetAddress: '456 Maple Avenue',
       city: 'Boston',
@@ -9628,6 +9679,7 @@ export const providersList = [
     reviews: 406,
     loyalPatients: 135,
     distance: 1.7,
+    insurance: insuranceCompanies2,
     address: {
       streetAddress: '789 Cedar Avenue',
       city: 'Los Angeles',
@@ -9845,6 +9897,7 @@ export const providersList = [
     reviews: 445,
     loyalPatients: 148,
     distance: 1.3,
+    insurance: insuranceCompanies3,
     address: {
       streetAddress: '456 Walnut Avenue',
       city: 'Houston',
@@ -10062,6 +10115,7 @@ export const providersList = [
     reviews: 411,
     loyalPatients: 13,
     distance: 2.2,
+    insurance: insuranceCompanies5,
     address: {
       streetAddress: '789 Elm Street',
       city: 'Philadelphia',
