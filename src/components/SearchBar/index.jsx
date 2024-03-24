@@ -64,9 +64,13 @@ const SearchBar = () => {
               icon={config.icon}
               options={config.options}
               searchValue={searchValues[config.name]}
-              onChange={(value) =>
+              onChange={(value) => {
                 form.setFieldsValue({ [config.name]: value })
-              }
+                setSearchValues((prevValues) => ({
+                  ...prevValues,
+                  [config.name]: value || undefined,
+                }))
+              }}
             />
           </Form.Item>
           {index < searchConfigs.length - 1 && (
