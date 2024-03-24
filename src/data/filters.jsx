@@ -70,7 +70,7 @@ export const timeOfDay = [
     },
     {
       value: 'nonBinary',
-      label: 'Non-binary',
+      label: 'Non-Binary',
     },
   ]
   
@@ -78,6 +78,10 @@ export const timeOfDay = [
     {
       value: 'spanish',
       label: 'Spanish',
+    },
+    {
+      value: 'english',
+      label: 'English',
     },
     {
       value: 'french',
@@ -210,7 +214,7 @@ export const timeOfDay = [
     { value: 'Oncologist', label: 'Oncologist' },
     { value: 'Ophthalmologist', label: 'Ophthalmologist' },
     { value: 'OrthopedicSurgeon', label: 'Orthopedic Surgeon' },
-    { value: 'Otolaryngologist(ENT)', label: 'Otolaryngologist (ENT)' },
+    { value: 'OtolaryngologistENT', label: 'Otolaryngologist (ENT)' },
     { value: 'Pediatrician', label: 'Pediatrician' },
     { value: 'PlasticSurgeon', label: 'Plastic Surgeon' },
     { value: 'Podiatrist', label: 'Podiatrist' },
@@ -222,59 +226,59 @@ export const timeOfDay = [
   ]
   
   export const visitReason = [
-    { value: 'acquiredhypothyroidism', label: 'Acquired Hypothyroidism' },
-    { value: 'alldiabetes', label: 'All Diabetes' },
-    { value: "alzheimer'sdisease", label: "Alzheimer's Disease" },
+    { value: 'acquiredHypothyroidism', label: 'Acquired Hypothyroidism' },
+    { value: 'allDiabetes', label: 'All Diabetes' },
+    { value: "alzheimersDisease", label: "Alzheimer's Disease" },
     { value: 'anemia', label: 'Anemia' },
     { value: 'anxiety', label: 'Anxiety' },
     { value: 'asthma', label: 'Asthma' },
-    { value: 'bariatricsurgery', label: 'Bariatric Surgery' },
-    { value: 'breastcancer', label: 'Breast Cancer' },
+    { value: 'bariatricSurgery', label: 'Bariatric Surgery' },
+    { value: 'breastCancer', label: 'Breast Cancer' },
     { value: 'bronchiectasis', label: 'Bronchiectasis' },
     { value: 'bronchitis', label: 'Bronchitis' },
     {
-      value: 'chronicobstructivepulmonarydisease',
+      value: 'chronicObstructivePulmonaryDisease',
       label: 'Chronic Obstructive Pulmonary Disease'
     },
-    { value: 'colorectralcancer', label: 'Colorectral Cancer' },
-    { value: 'covid-19', label: 'COVID-19' },
+    { value: 'colorectralCancer', label: 'Colorectral Cancer' },
+    { value: 'covid19', label: 'COVID-19' },
     { value: 'depression', label: 'Depression' },
-    { value: 'diabetestype1', label: 'Diabetes Type 1' },
-    { value: 'diabetestype2', label: 'Diabetes Type 2' },
-    { value: 'diagnosticimaging', label: 'Diagnostic Imaging' },
+    { value: 'diabetesType1', label: 'Diabetes Type 1' },
+    { value: 'diabetesType2', label: 'Diabetes Type 2' },
+    { value: 'diagnosticImaging', label: 'Diagnostic Imaging' },
     {
-      value: 'ear,nose,andthroatconditions',
+      value: 'earNoseAndThroatConditions',
       label: 'Ear, Nose, and Throat Conditions'
     },
     { value: 'emphysema', label: 'Emphysema' },
-    { value: 'endometrialcancer', label: 'Endometrial Cancer' },
+    { value: 'endometrialCancer', label: 'Endometrial Cancer' },
     {
-      value: 'footandankleconditions',
+      value: 'footAndAnkleConditions',
       label: 'Foot and Ankle Conditions'
     },
-    { value: 'genetictesting', label: 'Genetic Testing' },
-    { value: 'hearttransplant', label: 'Heart Transplant' },
+    { value: 'geneticTesting', label: 'Genetic Testing' },
+    { value: 'heartTransplant', label: 'Heart Transplant' },
     { value: 'hepatitis', label: 'Hepatitis' },
     { value: 'hernia', label: 'Hernia' },
     { value: 'leukemia', label: 'Leukemia' },
     { value: 'lungcancer', label: 'Lung Cancer' },
     { value: 'lymphoma', label: 'Lymphoma' },
-    { value: 'metastaticbraintumor', label: 'Metastatic Brain Tumor' },
-    { value: 'migraineheadaches', label: 'Migraine Headaches' },
-    { value: 'multiplesclerosis', label: 'Multiple Sclerosis' },
-    { value: 'opioiddependency', label: 'Opioid Dependency' },
+    { value: 'metastaticBrainTumor', label: 'Metastatic Brain Tumor' },
+    { value: 'migraineHeadaches', label: 'Migraine Headaches' },
+    { value: 'multipleSclerosis', label: 'Multiple Sclerosis' },
+    { value: 'opioidDependency', label: 'Opioid Dependency' },
     { value: 'osteoporosis', label: 'Osteoporosis' },
-    { value: 'ovariancancer', label: 'Ovarian Cancer' },
-    { value: "parkinson'sdisease", label: "Parkinson's Disease" },
-    { value: 'pediatriccare', label: 'Pediatric Care' },
-    { value: 'physicaltherapy', label: 'Physical therapy' },
-    { value: 'prostatecancer', label: 'Prostate Cancer' },
+    { value: 'ovarianCancer', label: 'Ovarian Cancer' },
+    { value: "parkinsonsDisease", label: "Parkinson's Disease" },
+    { value: 'pediatricCare', label: 'Pediatric Care' },
+    { value: 'physicalTherapy', label: 'Physical therapy' },
+    { value: 'prostateCancer', label: 'Prostate Cancer' },
     { value: 'resuscitation', label: 'Resuscitation' },
-    { value: 'seniledementia', label: 'Senile Dementia' },
-    { value: 'skincancer', label: 'Skin Cancer' },
-    { value: 'trigeminalneuralgia', label: 'Trigeminal Neuralgia' },
+    { value: 'senileDementia', label: 'Senile Dementia' },
+    { value: 'skinCancer', label: 'Skin Cancer' },
+    { value: 'trigeminalNeuralgia', label: 'Trigeminal Neuralgia' },
     {
-      value: 'ventricularassistdevice(vad)',
+      value: 'ventricularAssistDevice(vad)',
       label: 'Ventricular Assist Device (VAD)'
     }
   ]  

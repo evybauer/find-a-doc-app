@@ -198,7 +198,7 @@ export const providersList = [
       "schedulePreference": [
         "Morning"
       ],
-      "gender": "Female",
+      "gender": "female",
       "visitType": {
         "value": "inPerson",
         "label": "In-person visits only"
@@ -423,7 +423,7 @@ export const providersList = [
         "Morning",
         "Early Morning"
       ],
-      "gender": "Male",
+      "gender": "male",
       "visitType": {
         "value": "inPerson",
         "label": "In-person visits only"
@@ -650,7 +650,7 @@ export const providersList = [
         "Evening",
         "Early Morning"
       ],
-      "gender": "Female",
+      "gender": "female",
       "visitType": {
         "value": "video",
         "label": "Video visits only"
@@ -689,7 +689,7 @@ export const providersList = [
         "Evening",
         "Afternoon"
       ],
-      "gender": "Male",
+      "gender": "male",
       "visitType": {
         "value": "inPersonAndVideo",
         "label": "In-person and video visits"
@@ -913,7 +913,7 @@ export const providersList = [
         "Morning",
         "Afternoon"
       ],
-      "gender": "Female",
+      "gender": "female",
       "visitType": {
         "value": "video",
         "label": "Video visits only"
@@ -1138,7 +1138,7 @@ export const providersList = [
         "Morning",
         "Early Morning"
       ],
-      "gender": "Male",
+      "gender": "male",
       "visitType": {
         "value": "inPerson",
         "label": "In-person visits only"
@@ -1361,7 +1361,7 @@ export const providersList = [
         "Early Morning",
         "Evening"
       ],
-      "gender": "Female",
+      "gender": "female",
       "visitType": {
         "value": "video",
         "label": "Video visits only"
@@ -1589,7 +1589,7 @@ export const providersList = [
         "Evening",
         "Early Morning"
       ],
-      "gender": "Male",
+      "gender": "male",
       "visitType": {
         "value": "video",
         "label": "Video visits only"
@@ -1811,7 +1811,7 @@ export const providersList = [
       "schedulePreference": [
         "Early Morning"
       ],
-      "gender": "Female",
+      "gender": "female",
       "visitType": {
         "value": "inPerson",
         "label": "In-person visits only"
@@ -2039,7 +2039,7 @@ export const providersList = [
         "Evening",
         "Morning"
       ],
-      "gender": "Male",
+      "gender": "male",
       "visitType": {
         "value": "inPersonAndVideo",
         "label": "In-person and video visits"
@@ -2265,7 +2265,7 @@ export const providersList = [
         "Evening",
         "Afternoon"
       ],
-      "gender": "Female",
+      "gender": "female",
       "visitType": {
         "value": "inPersonAndVideo",
         "label": "In-person and video visits"
@@ -2490,7 +2490,7 @@ export const providersList = [
         "Afternoon",
         "Morning"
       ],
-      "gender": "Male",
+      "gender": "male",
       "visitType": {
         "value": "video",
         "label": "Video visits only"
@@ -2715,7 +2715,7 @@ export const providersList = [
         "Evening",
         "Early Morning"
       ],
-      "gender": "Male",
+      "gender": "male",
       "visitType": {
         "value": "inPerson",
         "label": "In-person visits only"
@@ -2937,7 +2937,7 @@ export const providersList = [
         "Morning",
         "Afternoon"
       ],
-      "gender": "Female",
+      "gender": "female",
       "visitType": {
         "value": "inPerson",
         "label": "In-person visits only"
@@ -3158,7 +3158,7 @@ export const providersList = [
       "schedulePreference": [
         "Evening"
       ],
-      "gender": "Male",
+      "gender": "male",
       "visitType": {
         "value": "video",
         "label": "Video visits only"
@@ -3381,7 +3381,7 @@ export const providersList = [
         "Afternoon",
         "Evening"
       ],
-      "gender": "Female",
+      "gender": "female",
       "visitType": {
         "value": "inPerson",
         "label": "In-person visits only"
@@ -3605,7 +3605,7 @@ export const providersList = [
         "Early Morning",
         "Evening"
       ],
-      "gender": "Male",
+      "gender": "male",
       "visitType": {
         "value": "inPerson",
         "label": "In-person visits only"
@@ -3827,7 +3827,7 @@ export const providersList = [
         "Morning",
         "Early Morning"
       ],
-      "gender": "Female",
+      "gender": "female",
       "visitType": {
         "value": "inPerson",
         "label": "In-person visits only"
@@ -4054,7 +4054,7 @@ export const providersList = [
         "Evening",
         "Early Morning"
       ],
-      "gender": "Male",
+      "gender": "male",
       "visitType": {
         "value": "video",
         "label": "Video visits only"
@@ -4066,7 +4066,7 @@ export const providersList = [
     },
     {
       "photo": "/src/assets/images/doctor25.jpg",
-      "name": "Dr. Emily Wilson",
+      "name": "Dr. John Wilson",
       "specialty": "Endocrinologist",
       "sponsored": true,
       "rating": 4.9,
@@ -4279,7 +4279,7 @@ export const providersList = [
       "schedulePreference": [
         "Early Morning"
       ],
-      "gender": "Female",
+      "gender": "male",
       "visitType": {
         "value": "inPerson",
         "label": "In-person visits only"
@@ -4505,7 +4505,7 @@ export const providersList = [
         "Early Morning",
         "Evening"
       ],
-      "gender": "Male",
+      "gender": "male",
       "visitType": {
         "value": "inPerson",
         "label": "In-person visits only"
@@ -4730,7 +4730,7 @@ export const providersList = [
       "schedulePreference": [
         "Evening"
       ],
-      "gender": "Female",
+      "gender": "female",
       "visitType": {
         "value": "video",
         "label": "Video visits only"
@@ -4958,7 +4958,7 @@ export const providersList = [
         "Morning",
         "Afternoon"
       ],
-      "gender": "Male",
+      "gender": "male",
       "visitType": {
         "value": "inPerson",
         "label": "In-person visits only"
@@ -5182,7 +5182,7 @@ export const providersList = [
         "Afternoon",
         "Morning"
       ],
-      "gender": "Female",
+      "gender": "female",
       "visitType": {
         "value": "inPerson",
         "label": "In-person visits only"
@@ -5407,7 +5407,7 @@ export const providersList = [
         "Evening",
         "Morning"
       ],
-      "gender": "Female",
+      "gender": "female",
       "visitType": {
         "value": "inPersonAndVideo",
         "label": "In-person and video visits"
@@ -5631,7 +5631,7 @@ export const providersList = [
         "Evening",
         "Early Morning"
       ],
-      "gender": "Male",
+      "gender": "male",
       "visitType": {
         "value": "video",
         "label": "Video visits only"
@@ -5856,7 +5856,7 @@ export const providersList = [
         "Morning",
         "Early Morning"
       ],
-      "gender": "Female",
+      "gender": "female",
       "visitType": {
         "value": "inPerson",
         "label": "In-person visits only"
@@ -6078,7 +6078,7 @@ export const providersList = [
         "Evening",
         "Afternoon"
       ],
-      "gender": "Male",
+      "gender": "male",
       "visitType": {
         "value": "inPersonAndVideo",
         "label": "In-person and video visits"
@@ -6300,7 +6300,7 @@ export const providersList = [
         "Morning",
         "Evening"
       ],
-      "gender": "Female",
+      "gender": "female",
       "visitType": {
         "value": "inPerson",
         "label": "In-person visits only"
@@ -6524,7 +6524,7 @@ export const providersList = [
         "Morning",
         "Early Morning"
       ],
-      "gender": "Male",
+      "gender": "male",
       "visitType": {
         "value": "inPersonAndVideo",
         "label": "In-person and video visits"
@@ -6749,7 +6749,7 @@ export const providersList = [
         "Morning",
         "Afternoon"
       ],
-      "gender": "Male",
+      "gender": "male",
       "visitType": {
         "value": "inPersonAndVideo",
         "label": "In-person and video visits"
@@ -6971,7 +6971,7 @@ export const providersList = [
         "Morning",
         "Afternoon"
       ],
-      "gender": "Female",
+      "gender": "female",
       "visitType": {
         "value": "inPerson",
         "label": "In-person visits only"
@@ -7192,7 +7192,7 @@ export const providersList = [
       "schedulePreference": [
         "Afternoon"
       ],
-      "gender": "Male",
+      "gender": "male",
       "visitType": {
         "value": "inPersonAndVideo",
         "label": "In-person and video visits"
@@ -7417,7 +7417,7 @@ export const providersList = [
         "Early Morning",
         "Evening"
       ],
-      "gender": "Female",
+      "gender": "female",
       "visitType": {
         "value": "inPerson",
         "label": "In-person visits only"
@@ -7640,7 +7640,7 @@ export const providersList = [
         "Evening",
         "Morning"
       ],
-      "gender": "Male",
+      "gender": "male",
       "visitType": {
         "value": "inPerson",
         "label": "In-person visits only"
@@ -7864,7 +7864,7 @@ export const providersList = [
         "Morning",
         "Afternoon"
       ],
-      "gender": "Non-binary",
+      "gender": "nonBinary",
       "visitType": {
         "value": "inPerson",
         "label": "In-person visits only"
@@ -8089,7 +8089,7 @@ export const providersList = [
         "Morning",
         "Early Morning"
       ],
-      "gender": "Female",
+      "gender": "female",
       "visitType": {
         "value": "video",
         "label": "Video visits only"
@@ -8311,7 +8311,7 @@ export const providersList = [
       "schedulePreference": [
         "Afternoon"
       ],
-      "gender": "Male",
+      "gender": "male",
       "visitType": {
         "value": "inPersonAndVideo",
         "label": "In-person and video visits"
@@ -8341,7 +8341,7 @@ export const providersList = [
       "highlyRecommended": false,
       "excellentWaitTime": false,
       "examsAvailable": [
-        "Skin Cancer"
+        "Skin Cancer", "Asthma"
       ],
       "availability": [
         {
@@ -8533,13 +8533,14 @@ export const providersList = [
       "schedulePreference": [
         "Early Morning"
       ],
-      "gender": "Female",
+      "gender": "female",
       "visitType": {
         "value": "video",
         "label": "Video visits only"
       },
       "languageSpoken": [
-        "English"
+        "English",
+        "Spanish"
       ]
     },
     {
@@ -8756,7 +8757,7 @@ export const providersList = [
         "Evening",
         "Afternoon"
       ],
-      "gender": "Non-binary",
+      "gender": "nonBinary",
       "visitType": {
         "value": "inPerson",
         "label": "In-person visits only"
@@ -8979,7 +8980,7 @@ export const providersList = [
         "Morning",
         "Evening"
       ],
-      "gender": "Female",
+      "gender": "female",
       "visitType": {
         "value": "video",
         "label": "Video visits only"
@@ -9200,7 +9201,7 @@ export const providersList = [
       "schedulePreference": [
         "Afternoon"
       ],
-      "gender": "Male",
+      "gender": "male",
       "visitType": {
         "value": "video",
         "label": "Video visits only"
@@ -9427,7 +9428,7 @@ export const providersList = [
         "Morning",
         "Early Morning"
       ],
-      "gender": "Male",
+      "gender": "male",
       "visitType": {
         "value": "inPerson",
         "label": "In-person visits only"
@@ -9650,7 +9651,7 @@ export const providersList = [
         "Morning",
         "Afternoon"
       ],
-      "gender": "Female",
+      "gender": "female",
       "visitType": {
         "value": "inPersonAndVideo",
         "label": "In-person and video visits"
@@ -9872,7 +9873,7 @@ export const providersList = [
         "Early Morning",
         "Evening"
       ],
-      "gender": "Male",
+      "gender": "male",
       "visitType": {
         "value": "inPerson",
         "label": "In-person visits only"
@@ -10096,7 +10097,7 @@ export const providersList = [
         "Early Morning",
         "Morning"
       ],
-      "gender": "Female",
+      "gender": "female",
       "visitType": {
         "value": "inPersonAndVideo",
         "label": "In-person and video visits"
@@ -10320,7 +10321,7 @@ export const providersList = [
         "Afternoon",
         "Morning"
       ],
-      "gender": "Male",
+      "gender": "male",
       "visitType": {
         "value": "inPersonAndVideo",
         "label": "In-person and video visits"
@@ -10543,7 +10544,7 @@ export const providersList = [
         "Afternoon",
         "Evening"
       ],
-      "gender": "Female",
+      "gender": "female",
       "visitType": {
         "value": "inPerson",
         "label": "In-person visits only"
