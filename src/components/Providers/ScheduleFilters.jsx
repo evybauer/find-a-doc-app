@@ -1,4 +1,4 @@
-import { Select } from 'antd'
+import { Button, Select } from 'antd'
 import {
   distance,
   gender,
@@ -10,23 +10,36 @@ import {
 } from '../../data/filters'
 const { Option } = Select
 
-const SelectComponent = ({ options }) => (
-  <Select
-    suffixIcon={null}
-    className='mr-3 my-1 text-black border border-black rounded-lg'
-    placeholder={options[0].label}
-    getPopupContainer={(node) => node.parentNode}
-    dropdownStyle={{ minWidth: 200 }}
-  >
-    {options.map((item, index) => (
-      <Option key={index} value={item.value}>
-        {item.label}
-      </Option>
-    ))}
-  </Select>
-)
+const SelectComponent = ({ options, filterName, setFilteredOptions }) => {
+  const placeholder = filterName
+    .replace(/([A-Z])/g, ' $1')
+    .replace(/\b\w/g, (char) => char.toUpperCase())
 
-const filters = [
+  return (
+    <Select
+      allowClear={true}
+      placeholder={placeholder}
+      suffixIcon={null}
+      className='mr-3 my-1 text-black border border-black rounded-lg h-12 w-28 custom-select-search-bar'
+      getPopupContainer={(node) => node.parentNode}
+      dropdownStyle={{ minWidth: 200 }}
+      onChange={(value) => {
+        setFilteredOptions((prevState) => ({
+          ...prevState,
+          [filterName]: value,
+        }))
+      }}
+    >
+      {options.map((item, index) => (
+        <Option key={index} value={item.value}>
+          {item.label}
+        </Option>
+      ))}
+    </Select>
+  )
+}
+
+const filters = {
   distance,
   timeOfDay,
   visitReason,
@@ -34,20 +47,26 @@ const filters = [
   gender,
   visitType,
   languageSpoken,
-]
+}
 
-const ScheduleFilters = () => {
+const ScheduleFilters = ({ filteredOptions, setFilteredOptions }) => {
   return (
     <div className='flex items-center'>
       <div className='py-8 custom-select-placeholder'>
-        {filters.map((filter, index) => (
+        {Object.entries(filters).map(([filterName, filterOptions], index) => (
           <SelectComponent
             key={index}
-            options={filter}
+            options={filterOptions}
+            filteredOptions={filteredOptions}
+            setFilteredOptions={setFilteredOptions}
             popupMatchSelectWidth={false}
+            filterName={filterName}
           />
         ))}
       </div>
+      <Button type='primary' onClick={() => setFilteredOptions({})}>
+        Clear Filters
+      </Button>
     </div>
   )
 }
