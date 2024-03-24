@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import SearchInput from './SearchInput'
 import { Button, Form } from 'antd'
 import { SearchContext } from '../../providers/SearchProvider'
@@ -38,6 +38,7 @@ const SearchBar = () => {
   let navigate = useNavigate()
   const [form] = Form.useForm()
   const { searchValues, setSearchValues } = useContext(SearchContext)
+  const location = useLocation()
 
   const onFinish = (values) => {
     setSearchValues(values)
@@ -78,9 +79,11 @@ const SearchBar = () => {
           )}
         </div>
       ))}
-      <Button type='primary' htmlType='submit' className='search-bar-button'>
-        Find Doctors
-      </Button>
+      {location.pathname === '/' && (
+        <Button type='primary' htmlType='submit' className='search-bar-button'>
+          Find Doctors
+        </Button>
+      )}
     </Form>
   )
 }
