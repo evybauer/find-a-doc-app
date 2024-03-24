@@ -43,7 +43,15 @@ const ProviderCard = ({ isModalVisible, provider }) => {
         </div>
         <Text>
           <FontAwesomeIcon icon={faLocationDot} className='mr-2' />
-          {`${provider.distance} mi - ${provider.address.streetAddress}, ${provider.address.city} ${provider.address.state} ${provider.address.postalCode}`}
+          {`${provider.distance} mi - ${provider.address.streetAddress}, ${provider.address.city} ${provider.address.state} ${provider.address.postalCode} `}
+          <a
+            href={`https://www.google.com/maps/search/?api=1&query=${provider.address.latitude},${provider.address.longitude}`}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='text-sky-600 hover:underline'
+          >
+            (Map)
+          </a>
         </Text>
         <a className='underline underline-offset-1 text-sky-600'>
           <FontAwesomeIcon icon={faShieldHeart} className='mr-2' />
