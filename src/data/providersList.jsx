@@ -208,7 +208,7 @@ export const providersList = [
     sponsored: false,
     rating: 4.9,
     reviews: 476,
-    loyalPatients: 142,
+    loyalPatients: 14,
     distance: 0.8,
     address: {
       streetAddress: '175 Remsen Street',
@@ -423,7 +423,7 @@ export const providersList = [
     sponsored: true,
     rating: 4.8,
     reviews: 368,
-    loyalPatients: 114,
+    loyalPatients: 14,
     distance: 1.5,
     address: {
       streetAddress: '1185 Avenue of the Americas',
@@ -643,7 +643,7 @@ export const providersList = [
     sponsored: false,
     rating: 4.6,
     reviews: 282,
-    loyalPatients: 92,
+    loyalPatients: 18,
     distance: 2.1,
     address: {
       streetAddress: '127 John Street',
@@ -887,7 +887,7 @@ export const providersList = [
     sponsored: false,
     rating: 4.9,
     reviews: 512,
-    loyalPatients: 162,
+    loyalPatients: 16,
     distance: 0.9,
     address: {
       streetAddress: '418 Lafayette Street',
@@ -1317,7 +1317,7 @@ export const providersList = [
     sponsored: true,
     rating: 4.9,
     reviews: 416,
-    loyalPatients: 138,
+    loyalPatients: 13,
     distance: 1.1,
     address: {
       streetAddress: '222 Broadway',
@@ -3918,7 +3918,7 @@ export const providersList = [
     sponsored: true,
     rating: 4.9,
     reviews: 418,
-    loyalPatients: 132,
+    loyalPatients: 13,
     distance: 1.8,
     address: {
       streetAddress: '321 Oak Street',
@@ -4138,7 +4138,7 @@ export const providersList = [
     sponsored: false,
     rating: 4.6,
     reviews: 296,
-    loyalPatients: 105,
+    loyalPatients: 10,
     distance: 2.7,
     address: {
       streetAddress: '567 Maple Avenue',
@@ -4574,7 +4574,7 @@ export const providersList = [
     sponsored: true,
     rating: 4.7,
     reviews: 294,
-    loyalPatients: 98,
+    loyalPatients: 18,
     distance: 2.2,
     address: {
       streetAddress: '456 Cedar Avenue',
@@ -4795,7 +4795,7 @@ export const providersList = [
     sponsored: false,
     rating: 4.9,
     reviews: 427,
-    loyalPatients: 141,
+    loyalPatients: 14,
     distance: 1.1,
     address: {
       streetAddress: '789 Elm Street',
@@ -5010,7 +5010,7 @@ export const providersList = [
     sponsored: false,
     rating: 4.8,
     reviews: 379,
-    loyalPatients: 124,
+    loyalPatients: 12,
     distance: 1.7,
     address: {
       streetAddress: '789 Oak Street',
@@ -5440,7 +5440,7 @@ export const providersList = [
     sponsored: false,
     rating: 4.7,
     reviews: 351,
-    loyalPatients: 117,
+    loyalPatients: 11,
     distance: 1.9,
     address: {
       streetAddress: '789 Elm Street',
@@ -5655,7 +5655,7 @@ export const providersList = [
     sponsored: false,
     rating: 4.8,
     reviews: 394,
-    loyalPatients: 131,
+    loyalPatients: 13,
     distance: 2.5,
     address: {
       streetAddress: '456 Pine Street',
@@ -8885,7 +8885,7 @@ export const providersList = [
     sponsored: true,
     rating: 4.9,
     reviews: 442,
-    loyalPatients: 147,
+    loyalPatients: 17,
     distance: 1.6,
     address: {
       streetAddress: '456 Cedar Avenue',
@@ -9966,7 +9966,7 @@ export const providersList = [
     sponsored: false,
     rating: 4.8,
     reviews: 411,
-    loyalPatients: 137,
+    loyalPatients: 13,
     distance: 2.2,
     address: {
       streetAddress: '789 Elm Street',
