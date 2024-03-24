@@ -37,7 +37,7 @@ const searchConfigs = [
 const SearchBar = () => {
   let navigate = useNavigate()
   const [form] = Form.useForm()
-  const { setSearchValues } = useContext(SearchContext)
+  const { searchValues, setSearchValues } = useContext(SearchContext)
 
   const onFinish = (values) => {
     setSearchValues(values)
@@ -63,6 +63,7 @@ const SearchBar = () => {
               placeholder={config.placeholder}
               icon={config.icon}
               options={config.options}
+              searchValue={searchValues[config.name]}
               onChange={(value) =>
                 form.setFieldsValue({ [config.name]: value })
               }
