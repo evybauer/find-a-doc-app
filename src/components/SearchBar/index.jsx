@@ -7,29 +7,21 @@ import { SearchContext } from '../../providers/SearchProvider'
 import { insurance } from '../../data/insuranceSearchList'
 import { location } from '../../data/locationSearchList'
 import { medicalConditions } from '../../data/medicalConditionsList'
-import {
-  faAddressCard,
-  faLocationDot,
-  faMagnifyingGlass,
-} from '@fortawesome/free-solid-svg-icons'
 
 const searchConfigs = [
   {
     name: 'condition',
     placeholder: 'Condition, procedure, doctor...',
-    icon: faMagnifyingGlass,
     options: medicalConditions,
   },
   {
     name: 'location',
     placeholder: 'City, state, or zip code',
-    icon: faLocationDot,
     options: location,
   },
   {
     name: 'insurance',
     placeholder: 'Add insurance',
-    icon: faAddressCard,
     options: insurance,
   },
 ]
@@ -62,7 +54,6 @@ const SearchBar = () => {
           >
             <SearchInput
               placeholder={config.placeholder}
-              icon={config.icon}
               options={config.options}
               searchValue={searchValues[config.name]}
               onChange={(value) => {
