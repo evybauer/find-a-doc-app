@@ -1,7 +1,14 @@
+import { useLocation } from 'react-router-dom'
 import { Select } from 'antd'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faAddressCard,
+  faLocationDot,
+  faMagnifyingGlass,
+} from '@fortawesome/free-solid-svg-icons'
 
-const SearchInput = ({ placeholder, icon, options, onChange, searchValue }) => {
+const SearchInput = ({ placeholder, options, onChange, searchValue }) => {
+  const location = useLocation()
   const handleChange = (value) => {
     onChange(value)
   }
@@ -15,9 +22,20 @@ const SearchInput = ({ placeholder, icon, options, onChange, searchValue }) => {
       ? option.searchValue.toLowerCase().includes(input.toLowerCase())
       : false
 
+  let icon
+  if (placeholder === 'Condition, procedure, doctor...') {
+    icon = faMagnifyingGlass
+  } else if (placeholder === 'City, state, or zip code') {
+    icon = faLocationDot
+  } else if (placeholder === 'Add insurance') {
+    icon = faAddressCard
+  }
+
   return (
     <div style={{ display: 'flex', alignItems: 'center' }}>
-      <FontAwesomeIcon icon={icon} className='text-base text-slate-700' />
+      {location.pathname !== '/providers' && (
+        <FontAwesomeIcon icon={icon} className='select-icon' />
+      )}
       <Select
         value={searchValue}
         showSearch
