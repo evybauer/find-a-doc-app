@@ -27,7 +27,7 @@ const locationSearchList = [
   { city: 'Seattle', state: 'WA' },
 ]
 
-export const locationSearchArray = locationSearchList.map((location) => ({
+export const location = locationSearchList.map((location) => ({
   value: location.city,
   label: location.city + ', ' + location.state,
   searchValue: location.city,
