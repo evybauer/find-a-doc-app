@@ -3,42 +3,55 @@ import {
   faChevronRight,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { DatePicker, Typography } from 'antd'
-import dayjs from 'dayjs'
+import { Button, DatePicker, Typography } from 'antd'
 
 const { RangePicker } = DatePicker
-const { Title, Text } = Typography
+const { Title } = Typography
 
-const startDate = dayjs()
-const endDate = dayjs().add(14, 'day')
+const ProvidersHeader = ({
+  providers,
+  startDate,
+  setStartDate,
+  endDate,
+  setEndDate,
+}) => {
+  const handleLeftClick = () => {
+    if (startDate.isSame('2024-03-22')) {
+      return
+    }
+    setStartDate((prevDate) => prevDate.subtract(14, 'day'))
+    setEndDate((prevDate) => prevDate.subtract(14, 'day'))
+  }
 
-const today = dayjs()
-const thirteenDaysFromToday = dayjs().add(13, 'day')
+  const handleRightClick = () => {
+    setStartDate((prevDate) => prevDate.add(14, 'day'))
+    setEndDate((prevDate) => prevDate.add(14, 'day'))
+  }
 
-const ProvidersHeader = ({ providers }) => {
   return (
-    <div className='flex justify-between items-center border-b-2 my-8'>
-      <Title level={2} style={{ fontWeight: 400 }}>
+    <div className='flex flex-col sm:flex-row justify-between md:items-center border-b-2 my-8'>
+      <Title level={2} className='text-left' style={{ fontWeight: 400 }}>
         {providers.length} providers
       </Title>
-      <div className='flex items-center'>
+      <div className='flex justify-between mt-0 md:items-center md:space-x-4 '>
+        <Button className='bg-none border-none' onClick={handleLeftClick}>
+          <FontAwesomeIcon
+            icon={faChevronLeft}
+            className={`text-base ${startDate.isSame('2024-03-22') ? 'text-gray-300' : 'text-gray-600'}`}
+          />
+        </Button>
         <RangePicker
-          defaultValue={[today, thirteenDaysFromToday]}
+          value={[startDate, endDate]}
           suffixIcon={null}
           allowClear={false}
           className='border-none shadow-none outline-none focus:ring-0 focus:ring-offset-0 focus:ring-offset-transparent focus:ring-transparent focus:border-none focus:border-none'
         />
-        {/* <Text className="text-base">{`${startDate.format('ddd, MMM D')} - ${endDate.format('ddd, MMM D')}`}</Text> */}
-        <div className='flex gap-4'>
-          <FontAwesomeIcon
-            icon={faChevronLeft}
-            className='text-base text-gray-600'
-          />
+        <Button className='bg-none border-none' onClick={handleRightClick}>
           <FontAwesomeIcon
             icon={faChevronRight}
             className='text-base text-gray-600'
           />
-        </div>
+        </Button>
       </div>
     </div>
   )
