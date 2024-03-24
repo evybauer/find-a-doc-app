@@ -5,6 +5,7 @@ import { Layout, Image, Menu, Button, Typography } from 'antd'
 import { Divider } from 'antd'
 import SearchBar from '../SearchBar'
 import { SearchContext } from '../../providers/SearchProvider'
+import { Link } from 'react-router-dom'
 
 const { Header } = Layout
 const { Text } = Typography
@@ -24,35 +25,24 @@ const Navbar = () => {
     }))
 
   return (
-    <Header className='flex items-center bg-white'>
+    <Header className='flex items-center py-12 bg-gray-800'>
       <div className='flex items-center justify-between gap-8'>
-        <div className='h-full w-32 mt-6 mr-4'>
-          <Image
-            src='/src/assets/logo/logo.png'
-            preview={false}
-            className='h-12 object-contain'
-          />
+        <div className='flex h-full w-14 mr-16'>
+          <Link to='/' className='flex items-center flex-shrink-0 w-32'>
+            <Image
+              src='/src/assets/logo/logo.png'
+              preview={false}
+              className='w-full object-contain'
+            />
+          </Link>
         </div>
         {isProvidersRoute && (
           <div>
-            <div className='hidden lg:w-full lg:flex'>
+            <div className='hidden lg:flex'>
               <SearchBar
                 searchValues={searchValues}
                 setSearchValues={setSearchValues}
               />
-            </div>
-            <div className='flex w-full lg:hidden border p-2 border-gray-800'>
-              <Text>
-                {searchValues?.condition
-                  ? searchValues.condition
-                  : 'Condition,'}
-              </Text>
-              <Text>
-                {searchValues?.location ? searchValues.location : 'Location,'}
-              </Text>
-              <Text>
-                {searchValues?.insurance ? searchValues.insurance : 'Insurance'}
-              </Text>
             </div>
           </div>
         )}
@@ -60,25 +50,41 @@ const Navbar = () => {
       <Menu
         mode='horizontal'
         defaultSelectedKeys={[]}
-        items={items}
         style={{
           flex: 1,
           minWidth: 0,
           justifyContent: 'end',
           border: 'none',
         }}
-      />
+        className='bg-gray-800 custom-menu'
+      >
+        {items.map((item) => (
+          <Menu.Item
+            key={item.key}
+            style={{ color: 'white' }}
+            className='custom-menu'
+          >
+            {item.label}
+          </Menu.Item>
+        ))}
+      </Menu>
       <Divider
         type='vertical'
         style={{
-          margin: '0 8px',
+          margin: '0 12px',
           height: 30,
+          backgroundColor: 'white',
         }}
       />
-      <Button style={{ marginRight: 8 }} className='bg-white text-gray-800'>
+      <Button
+        style={{ margin: '0 16px' }}
+        className='bg-gray-200 border-none text-gray-900 '
+      >
         Log in
       </Button>
-      <Button type='primary'>Sign up</Button>
+      <Button type='primary' className='border-none'>
+        Sign up
+      </Button>
     </Header>
   )
 }
