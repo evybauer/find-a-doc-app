@@ -1,8 +1,30 @@
-const insuranceCompanies1 = ['Blue Cross Blue Shield (BCBS)', 'Aetna'];
-const insuranceCompanies2 = ['UnitedHealthcare', 'Cigna', 'Empire Blue Cross Blue Shield (Health)'];
-const insuranceCompanies3 = ['EmblemHealth (formerly known as GHI)', 'HealthFirst (NY)', 'AARP', 'ACE'];
-const insuranceCompanies4 = ['AIG', 'APWU', 'ATRIO Health Plans', 'AVMA Life', 'Absolute Total Care'];
-const insuranceCompanies5 = ['Access Medicare (NY)', 'Accountable Health Plan of Ohio', 'Advanced Health', 'AdvantageMD', 'Advantica', 'Advent Health'];
+const insuranceCompanies1 = ['Blue Cross Blue Shield (BCBS)', 'Aetna']
+const insuranceCompanies2 = [
+  'UnitedHealthcare',
+  'Cigna',
+  'Empire Blue Cross Blue Shield (Health)',
+]
+const insuranceCompanies3 = [
+  'EmblemHealth (formerly known as GHI)',
+  'HealthFirst (NY)',
+  'AARP',
+  'ACE',
+]
+const insuranceCompanies4 = [
+  'AIG',
+  'APWU',
+  'ATRIO Health Plans',
+  'AVMA Life',
+  'Absolute Total Care',
+]
+const insuranceCompanies5 = [
+  'Access Medicare (NY)',
+  'Accountable Health Plan of Ohio',
+  'Advanced Health',
+  'AdvantageMD',
+  'Advantica',
+  'Advent Health',
+]
 
 export const providersList = [
   {

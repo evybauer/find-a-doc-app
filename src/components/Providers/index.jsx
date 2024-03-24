@@ -21,9 +21,9 @@ const Providers = () => {
     condition ? provider.examsAvailable.includes(condition) : true
   const matchesLocation = (provider, location) =>
     location ? provider.address.city === location : true
-const matchesInsurance = (provider, insurance) => {
-    return insurance ? provider.insurance.includes(insurance) : true;
-}
+  const matchesInsurance = (provider, insurance) => {
+    return insurance ? provider.insurance.includes(insurance) : true
+  }
   const matchesLanguageSpoken = (provider, languageSpoken) =>
     languageSpoken
       ? provider.languageSpoken

@@ -13,15 +13,17 @@ const ProviderModal = ({
   handleCancel,
   provider,
 }) => {
-  const {searchValues} = useContext(SearchContext)
+  const { searchValues } = useContext(SearchContext)
 
+  let providerInsuranceList = provider.insurance
+  if (typeof providerInsuranceList === 'string') {
+    providerInsuranceList = [providerInsuranceList]
+  }
 
-let providerInsuranceList = provider.insurance;
-if (typeof providerInsuranceList === 'string') {
-    providerInsuranceList = [providerInsuranceList];
-}
-
-providerInsuranceList = providerInsuranceList.map(insurance => ({ value: insurance, label: insurance }));
+  providerInsuranceList = providerInsuranceList.map((insurance) => ({
+    value: insurance,
+    label: insurance,
+  }))
 
   return (
     <Modal
@@ -62,8 +64,12 @@ providerInsuranceList = providerInsuranceList.map(insurance => ({ value: insuran
         ))}
       </Select>
 
-        <SearchInput placeholder={searchValues.insurance || 'Add insurance'} options={providerInsuranceList} searchValue={searchValues.insurance} />
-        
+      <SearchInput
+        placeholder={searchValues.insurance || 'Add insurance'}
+        options={providerInsuranceList}
+        searchValue={searchValues.insurance}
+      />
+
       <Title
         level={4}
         style={{ fontWeight: 400, marginBottom: 0 }}

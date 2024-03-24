@@ -38,9 +38,7 @@ const Navbar = () => {
         {isProvidersRoute && (
           <div>
             <div className='hidden lg:flex'>
-              <SearchBar
-                searchValues={searchValues}
-              />
+              <SearchBar searchValues={searchValues} />
             </div>
           </div>
         )}
