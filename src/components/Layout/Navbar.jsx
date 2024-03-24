@@ -30,7 +30,7 @@ const Navbar = () => {
         <div className='flex h-full w-14 mr-16'>
           <Link to='/' className='flex items-center flex-shrink-0 w-32'>
             <Image
-              src='/src/assets/logo/logo.png'
+              src='/assets/logo/logo.png'
               preview={false}
               className='w-full object-contain'
             />

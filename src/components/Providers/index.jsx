@@ -8,7 +8,6 @@ import AvailableSpots from './AvailableSpots'
 import { providersList } from '../../data'
 import { SearchContext } from '../../providers/SearchProvider'
 
-
 const Providers = () => {
   const { searchValues } = useContext(SearchContext)
   const [isModalVisible, setIsModalVisible] = useState(false)
