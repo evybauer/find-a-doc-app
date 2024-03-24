@@ -9,6 +9,18 @@ import { providersList } from '../../data'
 import { SearchContext } from '../../providers/SearchProvider'
 import dayjs from 'dayjs'
 
+const toCamelCase = (str) => {
+  return str
+    .split(' ')
+    .map((word, index) => {
+      if (index === 0) {
+        return word.toLowerCase()
+      }
+      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+    })
+    .join('')
+}
+
 const Providers = () => {
   const { searchValues } = useContext(SearchContext)
   const [isModalVisible, setIsModalVisible] = useState(false)
@@ -24,9 +36,8 @@ const Providers = () => {
     condition ? provider.examsAvailable.includes(condition) : true
   const matchesLocation = (provider, location) =>
     location ? provider.address.city === location : true
-  const matchesInsurance = (provider, insurance) => {
-    return insurance ? provider.insurance.includes(insurance) : true
-  }
+  const matchesInsurance = (provider, insurance) =>
+    insurance ? provider.insurance.includes(insurance) : true
   const matchesLanguageSpoken = (provider, languageSpoken) =>
     languageSpoken
       ? provider.languageSpoken
@@ -35,10 +46,11 @@ const Providers = () => {
       : true
   const matchesDistance = (provider, distance) =>
     distance ? provider.distance <= distance : true
+
   const matchesTimeOfDay = (provider, timeOfDay) =>
     timeOfDay
       ? provider.schedulePreference
-          .map((pref) => pref.toLowerCase())
+          .map((pref) => toCamelCase(pref))
           .includes(timeOfDay)
       : true
   const matchesSpecialty = (provider, specialty) =>
