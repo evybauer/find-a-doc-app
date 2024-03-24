@@ -65,7 +65,7 @@ const initialOptions = {
   ],
 }
 
-const insuranceSearchArray = [
+const insurance = [
   initialOptions,
   ...Object.keys(insuranceSearchList).map((category) => {
     return {
@@ -80,4 +80,4 @@ const insuranceSearchArray = [
   }),
 ]
 
-export { insuranceSearchArray }
+export { insurance }
