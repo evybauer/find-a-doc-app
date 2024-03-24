@@ -146,7 +146,9 @@ const Providers = () => {
           />
         )}
 
-        {filteredProviders.length <= itemsPerPage && <FewProvidersMessage />}
+        {filteredProviders.length <= itemsPerPage && (
+          <FewProvidersMessage setFilteredOptions={setFilteredOptions} />
+        )}
       </div>
     </>
   )
