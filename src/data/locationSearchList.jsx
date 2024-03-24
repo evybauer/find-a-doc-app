@@ -24,13 +24,11 @@ const locationSearchList = [
   { city: 'Portland', state: 'OR' },
   { city: 'San Diego', state: 'CA' },
   { city: 'San Francisco', state: 'CA' },
-  { city: 'Seattle', state: 'WA' }
+  { city: 'Seattle', state: 'WA' },
 ]
 
-export const locationSearchArray = locationSearchList.map(
-  (location) => ({
-    value: location.city,
-    label: location.city + ', ' + location.state,
-    searchValue: location.city,
-  }),
-)
+export const locationSearchArray = locationSearchList.map((location) => ({
+  value: location.city,
+  label: location.city + ', ' + location.state,
+  searchValue: location.city,
+}))

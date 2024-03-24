@@ -7,13 +7,13 @@ import { SearchContext } from '../../providers/SearchProvider'
 const { Text, Title } = Typography
 
 const FewProvidersMessage = () => {
-    const { setSearchValues } = useContext(SearchContext)
-    const navigate = useNavigate()
+  const { setSearchValues } = useContext(SearchContext)
+  const navigate = useNavigate()
 
-    const handleClear = () => {
-        setSearchValues(null)
-        navigate('/')
-    }
+  const handleClear = () => {
+    setSearchValues(null)
+    navigate('/')
+  }
 
   return (
     <div className='my-8'>
@@ -26,7 +26,9 @@ const FewProvidersMessage = () => {
           Try adjusting your search filters to see available providers
         </Text>
       </div>
-        <Button type="primary" onClick={handleClear}>Clear Filters</Button>
+      <Button type='primary' onClick={handleClear}>
+        Clear Filters
+      </Button>
     </div>
   )
 }
