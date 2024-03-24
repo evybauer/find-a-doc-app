@@ -11,6 +11,6 @@ export { languageSpoken as languageSpoken } from './filters'
 export { providersList as providersList } from './providersList'
 
 // SEARCH BAR
-export { insuranceSearchArray as insuranceSearchList } from './insuranceSearchList'
-export { locationSearchArray as locationSearchList } from './locationSearchList'
-export { medicalConditionsArray as medicalConditionsList } from './medicalConditionsList'
+export { insurance } from './insuranceSearchList'
+export { location } from './locationSearchList'
+export { medicalConditions } from './medicalConditionsList'

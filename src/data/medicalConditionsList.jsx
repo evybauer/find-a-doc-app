@@ -66,7 +66,7 @@ const capitalizeFirstLetterOfEachWord = (str) => {
     .join(' ')
 }
 
-export const medicalConditionsArray = sortedMedicalConditionsList.map(
+export const medicalConditions = sortedMedicalConditionsList.map(
   (condition) => ({
     value: condition,
     label: capitalizeFirstLetterOfEachWord(condition),

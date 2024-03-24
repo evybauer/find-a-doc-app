@@ -22,7 +22,7 @@ const SearchInput = ({ placeholder, icon, options, onChange }) => {
         showSearch
         allowClear
         placeholder={placeholder}
-        optionFilterProp='children'
+        optionFilterProp='items'
         onChange={handleChange}
         onSearch={onSearch}
         filterOption={filterOption}

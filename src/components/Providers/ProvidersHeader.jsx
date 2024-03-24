@@ -17,7 +17,7 @@ const thirteenDaysFromToday = dayjs().add(13, 'day')
 
 const ProvidersHeader = ({ providers }) => {
   return (
-    <div className='flex justify-between items-center border-b-2'>
+    <div className='flex justify-between items-center border-b-2 my-8'>
       <Title level={2} style={{ fontWeight: 400 }}>
         {providers.length} providers
       </Title>

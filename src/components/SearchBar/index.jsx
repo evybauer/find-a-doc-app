@@ -1,10 +1,12 @@
+import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import SearchInput from './SearchInput'
 import { Button, Form } from 'antd'
+import { SearchContext } from '../../providers/SearchProvider'
 
-import { insuranceSearchArray } from '../../data/insuranceSearchList'
-import { locationSearchArray } from '../../data/locationSearchList'
-import { medicalConditionsArray } from '../../data/medicalConditionsList'
+import { insurance } from '../../data/insuranceSearchList'
+import { location } from '../../data/locationSearchList'
+import { medicalConditions } from '../../data/medicalConditionsList'
 import {
   faAddressCard,
   faLocationDot,
@@ -16,25 +18,26 @@ const searchConfigs = [
     name: 'condition',
     placeholder: 'Condition, procedure, doctor...',
     icon: faMagnifyingGlass,
-    options: medicalConditionsArray,
+    options: medicalConditions,
   },
   {
     name: 'location',
     placeholder: 'City, state, or zip code',
     icon: faLocationDot,
-    options: locationSearchArray,
+    options: location,
   },
   {
     name: 'insurance',
     placeholder: 'Add insurance',
     icon: faAddressCard,
-    options: insuranceSearchArray,
+    options: insurance,
   },
 ]
 
-const SearchBar = ({ searchValues, setSearchValues }) => {
+const SearchBar = () => {
   let navigate = useNavigate()
   const [form] = Form.useForm()
+  const { setSearchValues } = useContext(SearchContext)
 
   const onFinish = (values) => {
     setSearchValues(values)

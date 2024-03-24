@@ -22,11 +22,20 @@ body {
 .custom-select-placeholder
   .ant-select-selector
   .ant-select-selection-placeholder {
-  color: black;
+  color: black !important;
+}
+
+.custom-select-placeholder-text .ant-select-selection-placeholder {
+  color: black !important;
 }
 
 .custom-menu .ant-menu-item-selected::after {
   border-color: #27a5b0 !important;
+}
+
+.custom-button:hover {
+  color: #f56565 !important;
+  border-color: #f56565 !important;
 }
 
 .ant-btn-primary {

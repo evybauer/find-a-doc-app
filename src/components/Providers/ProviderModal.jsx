@@ -2,7 +2,7 @@ import { Modal, Typography, Select } from 'antd'
 import ProviderCard from './ProviderCard'
 import AvailableTimes from './AvailableTimes'
 import SearchInput from '../SearchBar/SearchInput'
-import { insuranceSearchArray } from '../../data/insuranceSearchList'
+import { insurance } from '../../data/insuranceSearchList'
 
 const { Title, Text } = Typography
 
@@ -51,7 +51,7 @@ const ProviderModal = ({
         ))}
       </Select>
 
-      <SearchInput placeholder='Add insurance' options={insuranceSearchArray} />
+      <SearchInput placeholder='Add insurance' options={insurance} />
 
       <Title
         level={4}

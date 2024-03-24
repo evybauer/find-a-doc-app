@@ -1,13 +1,9 @@
-import React, { useContext } from 'react'
 import { Typography } from 'antd'
 import SearchBar from '../SearchBar'
-import { SearchContext } from '../../providers/SearchProvider'
 
 const { Title } = Typography
 
 const Home = () => {
-  const { searchValues, setSearchValues } = useContext(SearchContext)
-
   return (
     <>
       <div className='mb-16'>
@@ -19,10 +15,7 @@ const Home = () => {
         </Title>
       </div>
       <div>
-        <SearchBar
-          searchValues={searchValues}
-          setSearchValues={setSearchValues}
-        />
+        <SearchBar />
       </div>
     </>
   )
