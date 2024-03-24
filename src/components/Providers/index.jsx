@@ -7,12 +7,15 @@ import FewProvidersMessage from './FewProvidersMessage'
 import AvailableSpots from './AvailableSpots'
 import { providersList } from '../../data'
 import { SearchContext } from '../../providers/SearchProvider'
+import dayjs from 'dayjs'
 
 const Providers = () => {
   const { searchValues } = useContext(SearchContext)
   const [isModalVisible, setIsModalVisible] = useState(false)
   const [selectedProvider, setSelectedProvider] = useState(null)
   const [filteredOptions, setFilteredOptions] = useState({})
+  const [startDate, setStartDate] = useState(dayjs('2024-03-22'))
+  const [endDate, setEndDate] = useState(dayjs('2024-03-22').add(13, 'day'))
 
   const itemsPerPage = 10
   const [currentPage, setCurrentPage] = useState(1)
@@ -94,10 +97,16 @@ const Providers = () => {
           filteredOptions={filteredOptions}
           setFilteredOptions={setFilteredOptions}
         />
-        <ProvidersHeader providers={filteredProviders} />
+        <ProvidersHeader
+          providers={filteredProviders}
+          startDate={startDate}
+          setStartDate={setStartDate}
+          endDate={endDate}
+          setEndDate={setEndDate}
+        />
 
         {providersToShow.map((provider, index) => (
-          <div key={index} className='grid grid-cols-1 lg:grid-cols-3 my-8'>
+          <div key={index} className='grid grid-cols-1 lg:grid-cols-3 my-16'>
             <ProviderCard provider={provider} isModalVisible={false} />
             <div className='grid col-span-2'>
               <AvailableSpots
@@ -109,6 +118,8 @@ const Providers = () => {
                 setIsModalVisible={setIsModalVisible}
                 handleOk={handleOk}
                 handleCancel={handleCancel}
+                startDate={startDate}
+                endDate={endDate}
               />
             </div>
           </div>

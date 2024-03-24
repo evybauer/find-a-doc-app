@@ -1,4 +1,4 @@
-import { Modal, Typography, Select } from 'antd'
+import { Modal, Typography, Select, message } from 'antd'
 import ProviderCard from './ProviderCard'
 import AvailableTimes from './AvailableTimes'
 import SearchInput from '../SearchBar/SearchInput'
@@ -9,9 +9,11 @@ const { Title, Text } = Typography
 
 const ProviderModal = ({
   isModalVisible,
+  setIsModalVisible,
   handleOk,
   handleCancel,
   provider,
+  allDates,
 }) => {
   const { searchValues } = useContext(SearchContext)
 
@@ -44,7 +46,7 @@ const ProviderModal = ({
       <Title
         level={4}
         style={{ fontWeight: 400, marginBottom: 0 }}
-        className='mt-6'
+        className='mt-12'
       >
         Scheduling details
       </Title>
@@ -73,14 +75,18 @@ const ProviderModal = ({
       <Title
         level={4}
         style={{ fontWeight: 400, marginBottom: 0 }}
-        className='mt-6'
+        className='mt-8'
       >
         Available appointments
       </Title>
       <Text className='text-base font-extralight text-gray-500'>
-        Click a time to book for free.
+        Select a time to book for free.
       </Text>
-      <AvailableTimes availability={provider.availability} />
+      <AvailableTimes
+        availability={provider.availability}
+        allDates={allDates}
+        setIsModalVisible={setIsModalVisible}
+      />
     </Modal>
   )
 }
