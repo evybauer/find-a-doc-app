@@ -22,8 +22,6 @@ const AvailableTimes = ({ availability, allDates, setIsModalVisible }) => {
     form
       .validateFields()
       .then((values) => {
-        console.log('Success:', values)
-
         form.resetFields()
         setSelectedAppointmentIndex(null)
       })

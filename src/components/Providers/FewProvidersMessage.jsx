@@ -1,18 +1,16 @@
 import { Button, Typography } from 'antd'
 import { Divider } from 'antd'
-import { useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
 import { SearchContext } from '../../providers/SearchProvider'
 
 const { Text, Title } = Typography
 
-const FewProvidersMessage = () => {
+const FewProvidersMessage = ({ setFilteredOptions }) => {
   const { setSearchValues } = useContext(SearchContext)
-  const navigate = useNavigate()
 
   const handleClear = () => {
-    setSearchValues(null)
-    navigate('/')
+    setSearchValues({})
+    setFilteredOptions({})
   }
 
   return (

@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import SearchInput from './SearchInput'
 import { Button, Form } from 'antd'
 import { SearchContext } from '../../providers/SearchProvider'
@@ -7,29 +7,21 @@ import { SearchContext } from '../../providers/SearchProvider'
 import { insurance } from '../../data/insuranceSearchList'
 import { location } from '../../data/locationSearchList'
 import { medicalConditions } from '../../data/medicalConditionsList'
-import {
-  faAddressCard,
-  faLocationDot,
-  faMagnifyingGlass,
-} from '@fortawesome/free-solid-svg-icons'
 
 const searchConfigs = [
   {
     name: 'condition',
     placeholder: 'Condition, procedure, doctor...',
-    icon: faMagnifyingGlass,
     options: medicalConditions,
   },
   {
     name: 'location',
     placeholder: 'City, state, or zip code',
-    icon: faLocationDot,
     options: location,
   },
   {
     name: 'insurance',
     placeholder: 'Add insurance',
-    icon: faAddressCard,
     options: insurance,
   },
 ]
@@ -38,6 +30,7 @@ const SearchBar = () => {
   let navigate = useNavigate()
   const [form] = Form.useForm()
   const { searchValues, setSearchValues } = useContext(SearchContext)
+  const location = useLocation()
 
   const onFinish = (values) => {
     setSearchValues(values)
@@ -61,12 +54,15 @@ const SearchBar = () => {
           >
             <SearchInput
               placeholder={config.placeholder}
-              icon={config.icon}
               options={config.options}
               searchValue={searchValues[config.name]}
-              onChange={(value) =>
+              onChange={(value) => {
                 form.setFieldsValue({ [config.name]: value })
-              }
+                setSearchValues((prevValues) => ({
+                  ...prevValues,
+                  [config.name]: value || undefined,
+                }))
+              }}
             />
           </Form.Item>
           {index < searchConfigs.length - 1 && (
@@ -74,9 +70,11 @@ const SearchBar = () => {
           )}
         </div>
       ))}
-      <Button type='primary' htmlType='submit' className='search-bar-button'>
-        Find Doctors
-      </Button>
+      {location.pathname === '/' && (
+        <Button type='primary' htmlType='submit' className='search-bar-button'>
+          Find Doctors
+        </Button>
+      )}
     </Form>
   )
 }
