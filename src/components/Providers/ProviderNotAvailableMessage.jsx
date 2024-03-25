@@ -5,9 +5,10 @@ import { faCircleInfo } from '@fortawesome/free-solid-svg-icons'
 const { Text } = Typography
 
 const ProviderNotAvailableMessage = () => {
-
   const handleNotifyMe = () => {
-    message.success("Thank you! You'll be notified when the doctor is available.")
+    message.success(
+      "Thank you! You'll be notified when the doctor is available.",
+    )
   }
 
   return (
@@ -24,7 +25,10 @@ const ProviderNotAvailableMessage = () => {
           />
         </Tooltip>
       </div>
-      <Button onClick={handleNotifyMe} className='w-full mt-4 bg-white h-12 text-base text-gray-800'>
+      <Button
+        onClick={handleNotifyMe}
+        className='w-full mt-4 bg-white h-12 text-base text-gray-800'
+      >
         Notify me
       </Button>
     </div>

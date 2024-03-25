@@ -8,21 +8,30 @@ import { Link } from 'react-router-dom'
 const { Header } = Layout
 
 const labels = [
-  { name: 'Browse', onClick: () => message.warning('Browse functionality not yet implemented')},
-  { name: 'Help', onClick: () => message.warning('Help functionality not yet implemented') },
-  { name: 'List your practice on Avalon.AI', onClick: () => message.warning('Listing functionality not yet implemented') },
-];
+  {
+    name: 'Browse',
+    onClick: () => message.warning('Browse functionality not yet implemented'),
+  },
+  {
+    name: 'Help',
+    onClick: () => message.warning('Help functionality not yet implemented'),
+  },
+  {
+    name: 'List your practice on Avalon.AI',
+    onClick: () => message.warning('Listing functionality not yet implemented'),
+  },
+]
 
 const Navbar = () => {
   const { pathname } = useLocation()
   const isProvidersRoute = pathname === '/providers'
 
   const handleLogIn = () => {
-    message.warning("Log In functionality not yet implemented")
+    message.warning('Log In functionality not yet implemented')
   }
 
   const handleSignUp = () => {
-    message.warning("Sign Up functionality not yet implemented")
+    message.warning('Sign Up functionality not yet implemented')
   }
 
   const items = labels
@@ -31,7 +40,7 @@ const Navbar = () => {
       key: index + 1,
       label: item.name,
       onClick: item.onClick,
-    }));
+    }))
 
   return (
     <Header className='flex items-center py-12 bg-gray-800'>
@@ -69,7 +78,7 @@ const Navbar = () => {
             key={item.key}
             style={{ color: 'white' }}
             className='custom-menu'
-            onClick={item.onClick} 
+            onClick={item.onClick}
           >
             {item.label}
           </Menu.Item>

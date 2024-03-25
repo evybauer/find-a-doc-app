@@ -11,9 +11,8 @@ import { Tag } from 'antd'
 const { Text, Title } = Typography
 
 const ProviderCard = ({ isModalVisible, provider }) => {
-
   const handleCheckNetwork = () => {
-    message.warning("Check network functionality not yet implemented")
+    message.warning('Check network functionality not yet implemented')
   }
 
   return (
@@ -58,7 +57,10 @@ const ProviderCard = ({ isModalVisible, provider }) => {
             (Map)
           </a>
         </Text>
-        <a className='underline underline-offset-1 text-sky-600' onClick={handleCheckNetwork}>
+        <a
+          className='underline underline-offset-1 text-sky-600'
+          onClick={handleCheckNetwork}
+        >
           <FontAwesomeIcon icon={faShieldHeart} className='mr-2' />
           {"See if they're in network"}
         </a>
