@@ -76,120 +76,120 @@ export const gender = [
 
 export const languageSpoken = [
   {
-    value: 'spanish',
-    label: 'Spanish',
-  },
-  {
-    value: 'english',
-    label: 'English',
-  },
-  {
-    value: 'french',
-    label: 'French',
-  },
-  {
-    value: 'mandarin',
-    label: 'Mandarin',
-  },
-  {
-    value: 'russian',
-    label: 'Russian',
-  },
-  {
     value: 'arabic',
     label: 'Arabic',
-  },
-  {
-    value: 'hindi',
-    label: 'Hindi',
   },
   {
     value: 'bengali',
     label: 'Bengali',
   },
   {
-    value: 'portuguese',
-    label: 'Portuguese',
-  },
-  {
-    value: 'japanese',
-    label: 'Japanese',
-  },
-  {
-    value: 'german',
-    label: 'German',
-  },
-  {
-    value: 'korean',
-    label: 'Korean',
-  },
-  {
-    value: 'italian',
-    label: 'Italian',
-  },
-  {
-    value: 'vietnamese',
-    label: 'Vietnamese',
-  },
-  {
-    value: 'polish',
-    label: 'Polish',
-  },
-  {
-    value: 'tagalog',
-    label: 'Tagalog',
-  },
-  {
-    value: 'urdu',
-    label: 'Urdu',
-  },
-  {
-    value: 'turkish',
-    label: 'Turkish',
-  },
-  {
-    value: 'persian',
-    label: 'Persian',
-  },
-  {
-    value: 'dutch',
-    label: 'Dutch',
-  },
-  {
-    value: 'thai',
-    label: 'Thai',
-  },
-  {
-    value: 'greek',
-    label: 'Greek',
-  },
-  {
     value: 'czech',
     label: 'Czech',
-  },
-  {
-    value: 'swedish',
-    label: 'Swedish',
-  },
-  {
-    value: 'finnish',
-    label: 'Finnish',
   },
   {
     value: 'danish',
     label: 'Danish',
   },
   {
-    value: 'norwegian',
-    label: 'Norwegian',
+    value: 'dutch',
+    label: 'Dutch',
+  },
+  {
+    value: 'english',
+    label: 'English',
+  },
+  {
+    value: 'finnish',
+    label: 'Finnish',
+  },
+  {
+    value: 'french',
+    label: 'French',
+  },
+  {
+    value: 'german',
+    label: 'German',
+  },
+  {
+    value: 'greek',
+    label: 'Greek',
+  },
+  {
+    value: 'hebrew',
+    label: 'Hebrew',
+  },
+  {
+    value: 'hindi',
+    label: 'Hindi',
   },
   {
     value: 'hungarian',
     label: 'Hungarian',
   },
   {
-    value: 'hebrew',
-    label: 'Hebrew',
+    value: 'italian',
+    label: 'Italian',
+  },
+  {
+    value: 'japanese',
+    label: 'Japanese',
+  },
+  {
+    value: 'korean',
+    label: 'Korean',
+  },
+  {
+    value: 'mandarin',
+    label: 'Mandarin',
+  },
+  {
+    value: 'norwegian',
+    label: 'Norwegian',
+  },
+  {
+    value: 'persian',
+    label: 'Persian',
+  },
+  {
+    value: 'polish',
+    label: 'Polish',
+  },
+  {
+    value: 'portuguese',
+    label: 'Portuguese',
+  },
+  {
+    value: 'russian',
+    label: 'Russian',
+  },
+  {
+    value: 'spanish',
+    label: 'Spanish',
+  },
+  {
+    value: 'swedish',
+    label: 'Swedish',
+  },
+  {
+    value: 'tagalog',
+    label: 'Tagalog',
+  },
+  {
+    value: 'thai',
+    label: 'Thai',
+  },
+  {
+    value: 'turkish',
+    label: 'Turkish',
+  },
+  {
+    value: 'urdu',
+    label: 'Urdu',
+  },
+  {
+    value: 'vietnamese',
+    label: 'Vietnamese',
   },
 ]
 
