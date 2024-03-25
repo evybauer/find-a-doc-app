@@ -3,6 +3,8 @@ import ProviderModal from './ProviderModal'
 import { Button, Typography } from 'antd'
 import ProviderNotAvailableMessage from './ProviderNotAvailableMessage'
 import dayjs from 'dayjs'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons'
 
 const { Text } = Typography
 
@@ -78,15 +80,15 @@ const AvailableSpots = ({
   const availableSpots = getAvailableSpots(provider, allDates)
 
   const firstRowAvailability = allDates.slice(0, 7)
-  const secondRowAvailability = allDates.slice(7)
+  const secondRowAvailability = allDates.slice(7, 14)
 
   return (
     <div className='ml-4'>
-      <div className='grid grid-cols-7'>
+      <div className='grid grid-flow-row-dense grid-cols-3 md:grid-cols-7'>
         {firstRowAvailability.map((date, index) => (
           <div
             key={index}
-            className={`flex flex-col p-2 m-1 border rounded ${availableSpots[date] > 0 ? 'bg-[#128e99]' : 'bg-gray-300'} shadow-md`}
+            className={`flex flex-col p-2 m-1 border rounded ${availableSpots[date] > 0 ? 'bg-[#128e99]' : 'bg-gray-300'} shadow-md ${index === 0 || index === firstRowAvailability.length - 1 ? 'col-span-2 md:col-span-1' : ''}`}
             onClick={() => showModal(provider)}
           >
             <Text
@@ -104,26 +106,28 @@ const AvailableSpots = ({
                 day: 'numeric',
               })}
             </Text>
-            <Text
-              className={`${availableSpots[date] > 0 ? 'text-white' : 'text-slate-500'} mt-2`}
-            >
-              {availableSpots[date]}
-            </Text>
-            <Text
-              className={`${availableSpots[date] > 0 ? 'text-white' : 'text-slate-500'}`}
-            >
-              appts
-            </Text>
+            <div className='flex mt-2'>
+              <Text
+                className={`${availableSpots[date] > 0 ? 'text-white' : 'text-slate-500'} font-bold`}
+              >
+                {availableSpots[date]}
+              </Text>
+              <Text
+                className={`${availableSpots[date] > 0 ? 'text-white' : 'text-slate-500'} ml-1 font-bold`}
+              >
+                appts
+              </Text>
+            </div>
           </div>
         ))}
       </div>
       <div
-        className={`grid grid-cols-7 gap-1 ${showSecondRow ? '' : 'hidden md:grid'}`}
+        className={`grid grid-flow-row-dense grid-cols-3 md:grid-cols-7 gap-1 ${showSecondRow ? '' : 'hidden md:grid'}`}
       >
         {secondRowAvailability.map((date, index) => (
           <div
             key={index}
-            className={`flex flex-col p-2 m-1 border rounded ${availableSpots[date] > 0 ? 'bg-[#128e99]' : 'bg-gray-300'} shadow-md`}
+            className={`flex flex-col p-2 m-1 border rounded ${availableSpots[date] > 0 ? 'bg-[#128e99]' : 'bg-gray-300'} shadow-md ${index === 0 || index === secondRowAvailability.length - 1 ? 'col-span-2 md:col-span-1' : ''}`}
             onClick={() => showModal(provider)}
           >
             <Text
@@ -141,26 +145,39 @@ const AvailableSpots = ({
                 day: 'numeric',
               })}
             </Text>
-            <Text
-              className={`${availableSpots[date] > 0 ? 'text-white' : 'text-slate-500'} mt-2`}
-            >
-              {availableSpots[date]}
-            </Text>
-            <Text
-              className={`${availableSpots[date] > 0 ? 'text-white' : 'text-slate-500'}`}
-            >
-              appts
-            </Text>
+            <div className='flex mt-2'>
+              <Text
+                className={`${availableSpots[date] > 0 ? 'text-white' : 'text-slate-500'} font-bold`}
+              >
+                {availableSpots[date]}
+              </Text>
+              <Text
+                className={`${availableSpots[date] > 0 ? 'text-white' : 'text-slate-500'} ml-1 font-bold`}
+              >
+                appts
+              </Text>
+            </div>
           </div>
         ))}
       </div>
       {isProviderAvailable && (
-        <Button
-          className={`${showSecondRow ? 'hidden' : 'block md:hidden'} hide-on-md bg-blue-500 w-full mt-4`}
-          onClick={handleShowMore}
-        >
-          Show More
-        </Button>
+        <>
+          <Button
+            className={`${showSecondRow ? 'hidden' : 'block md:hidden'} bg-gray-800 text-white w-full mt-4`}
+            onClick={handleShowMore}
+          >
+            Show More
+            <FontAwesomeIcon icon={faChevronDown} className='ml-2' />
+          </Button>
+
+          <Button
+            className={`${showSecondRow ? 'block md:hidden' : 'hidden'} bg-gray-800 text-white w-full mt-4`}
+            onClick={() => setShowSecondRow(false)}
+          >
+            Show Less
+            <FontAwesomeIcon icon={faChevronUp} className='ml-2' />
+          </Button>
+        </>
       )}
       {selectedProvider === provider && (
         <ProviderModal
