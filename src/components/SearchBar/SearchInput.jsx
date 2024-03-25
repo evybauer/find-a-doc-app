@@ -23,9 +23,9 @@ const SearchInput = ({ placeholder, options, onChange, searchValue }) => {
       : false
 
   let icon
-  if (placeholder === 'Condition, procedure, doctor...') {
+  if (placeholder === 'Medical condition') {
     icon = faMagnifyingGlass
-  } else if (placeholder === 'City, state, or zip code') {
+  } else if (placeholder === 'Location') {
     icon = faLocationDot
   } else if (placeholder === 'Add insurance') {
     icon = faAddressCard
