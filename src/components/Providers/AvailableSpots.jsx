@@ -39,9 +39,24 @@ const AvailableSpots = ({
     setIsModalVisible(true)
   }
 
-  const isProviderAvailable = provider.availability.some(
-    (availability) => availability.appointmentsAvailable > 0,
-  )
+  const checkAvailability = (dates) => {
+    for (let date of dates) {
+      const availabilityForDate = provider.availability.find(
+        (availability) => availability.date === date,
+      )
+
+      if (
+        availabilityForDate &&
+        availabilityForDate.appointmentsAvailable !== undefined &&
+        availabilityForDate.appointmentsAvailable > 0
+      ) {
+        return true
+      }
+    }
+    return false
+  }
+
+  const isProviderAvailable = checkAvailability(allDates)
 
   function getAvailableSpots(provider, allDates) {
     const availableSpots = {}

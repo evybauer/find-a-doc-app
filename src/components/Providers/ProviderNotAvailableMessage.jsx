@@ -1,10 +1,16 @@
-import { Button, Tooltip, Typography } from 'antd'
+import { Button, Tooltip, Typography, message } from 'antd'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleInfo } from '@fortawesome/free-solid-svg-icons'
 
 const { Text } = Typography
 
 const ProviderNotAvailableMessage = () => {
+  const handleNotifyMe = () => {
+    message.success(
+      "Thank you! You'll be notified when the doctor is available.",
+    )
+  }
+
   return (
     <div className='justify-center mt-4'>
       <div className='bg-gray-100 p-8 border rounded-xl'>
@@ -19,7 +25,10 @@ const ProviderNotAvailableMessage = () => {
           />
         </Tooltip>
       </div>
-      <Button className='w-full mt-4 bg-white h-12 text-base text-gray-800'>
+      <Button
+        onClick={handleNotifyMe}
+        className='w-full mt-4 bg-white h-12 text-base text-gray-800'
+      >
         Notify me
       </Button>
     </div>
