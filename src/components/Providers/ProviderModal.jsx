@@ -1,4 +1,4 @@
-import { Modal, Typography, Select, message } from 'antd'
+import { Modal, Typography, Select } from 'antd'
 import ProviderCard from './ProviderCard'
 import AvailableTimes from './AvailableTimes'
 import SearchInput from '../SearchBar/SearchInput'
