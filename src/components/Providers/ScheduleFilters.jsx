@@ -8,12 +8,10 @@ import {
   timeOfDay,
   visitType,
 } from '../../data/filters'
-import { insurance } from '../../data/insuranceSearchList'
-import { location } from '../../data/locationSearchList'
-import { medicalConditions } from '../../data/medicalConditionsList'
 
 import { useContext } from 'react'
 import { SearchContext } from '../../providers/SearchProvider'
+import SearchBar from '../../components/SearchBar'
 
 const { Option } = Select
 
@@ -75,14 +73,8 @@ const filters = {
   languageSpoken,
 }
 
-const mobileFilters = {
-  medicalConditions,
-  location,
-  insurance,
-}
-
 const ScheduleFilters = ({ filteredOptions, setFilteredOptions }) => {
-  const { searchValues, setSearchValues } = useContext(SearchContext)
+  const { setSearchValues } = useContext(SearchContext)
   const [isModalVisible, setIsModalVisible] = useState(false)
 
   const showModal = () => {
@@ -104,26 +96,18 @@ const ScheduleFilters = ({ filteredOptions, setFilteredOptions }) => {
 
   return (
     <div>
-      <div className='flex justify-between flex-wrap md:hidden items-center'>
-        <div className='flex flex-grow py-4 space-x-4 md:py-0'>
-          {Object.entries(mobileFilters).map(
-            ([filterName, filterOptions], index) => (
-              <SelectComponent
-                key={index}
-                options={filterOptions}
-                filteredOptions={filteredOptions}
-                setFilteredOptions={setFilteredOptions}
-                filterName={filterName}
-                value={filteredOptions[filterName] || undefined}
-                searchValues={searchValues}
-                setSearchValues={setSearchValues}
-              />
-            ),
-          )}
-        </div>
-        <div className='flex justify-end space-x-4 ml-8'>
+      <div className='block justify-between items-center lg:hidden'>
+        <SearchBar />
+        <div className='flex justify-end mt-4 mt-4 ml-8 space-x-4'>
           <Button type='primary' onClick={showModal} className='min-h-[50px]'>
             More Filters
+          </Button>
+          <Button
+            key='clear'
+            className='bg-red-500 text-white h-[50px]'
+            onClick={handleClearFilters}
+          >
+            Clear Filters
           </Button>
         </div>
 
@@ -162,7 +146,7 @@ const ScheduleFilters = ({ filteredOptions, setFilteredOptions }) => {
           ))}
         </Modal>
       </div>
-      <div className='hidden md:flex justify-between w-full items-center'>
+      <div className='hidden lg:flex flex-wrap justify-start justify-between items-center w-full'>
         <div className='flex space-x-4'>
           {Object.entries(filters).map(([filterName, filterOptions], index) => (
             <SelectComponent
@@ -176,7 +160,7 @@ const ScheduleFilters = ({ filteredOptions, setFilteredOptions }) => {
             />
           ))}
         </div>
-        <div className='flex justify-end'>
+        <div className='flex'>
           <Button
             type='primary'
             onClick={handleClearFilters}

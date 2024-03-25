@@ -11,12 +11,12 @@ import { medicalConditions } from '../../data/medicalConditionsList'
 const searchConfigs = [
   {
     name: 'condition',
-    placeholder: 'Condition, procedure, doctor...',
+    placeholder: 'Medical conition',
     options: medicalConditions,
   },
   {
     name: 'location',
-    placeholder: 'City, state, or zip code',
+    placeholder: 'Location',
     options: location,
   },
   {
