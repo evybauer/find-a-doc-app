@@ -33,7 +33,7 @@ const ProviderCard = ({ isModalVisible, provider }) => {
         ) : (
           <Text>{provider?.specialty}</Text>
         )}
-        <div className='block md:flex md:gap-2'>
+        <div className='flex flex-wrap gap-2'>
           <Text>
             <FontAwesomeIcon icon={faStar} className='mr-2 text-red-500' />
             {`${provider.rating} (${provider.reviews})`}
