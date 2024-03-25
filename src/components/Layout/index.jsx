@@ -1,4 +1,3 @@
-import { useContext } from 'react'
 import { Layout as AntDLayout } from 'antd'
 import Navbar from './Navbar'
 import Footer from './Footer'
