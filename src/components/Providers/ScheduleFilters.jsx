@@ -98,6 +98,7 @@ const ScheduleFilters = ({ filteredOptions, setFilteredOptions }) => {
   }
 
   const handleClearFilters = () => {
+    setSearchValues({})
     setFilteredOptions({})
   }
 
