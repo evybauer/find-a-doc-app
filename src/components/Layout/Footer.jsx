@@ -1,7 +1,6 @@
 import { Divider, Layout, Typography } from 'antd'
 
 const { Text } = Typography
-
 const { Footer } = Layout
 
 const MainFooter = () => {
