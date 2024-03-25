@@ -11,7 +11,7 @@ import { medicalConditions } from '../../data/medicalConditionsList'
 const searchConfigs = [
   {
     name: 'condition',
-    placeholder: 'Medical conition',
+    placeholder: 'Medical condition',
     options: medicalConditions,
   },
   {

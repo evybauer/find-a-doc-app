@@ -1,3 +1,5 @@
+import { message } from 'antd'
+
 export const menuItems = [
   {
     name: 'Browse',
