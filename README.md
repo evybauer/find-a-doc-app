@@ -1,9 +1,16 @@
+<<<<<<< HEAD
 # Avalon.AI "Find-a-Doc" Web App Challenge 🏥
+=======
+# "Find-a-Doc" Web App 🏥
+>>>>>>> 69a07ce (First commit)
 
 ## Table of Contents 📚
 
 - [Project Description](#project-description-)
+<<<<<<< HEAD
 - [Live Demo](#live-demo-)
+=======
+>>>>>>> 69a07ce (First commit)
 - [Getting Started](#getting-started-)
   - [Prerequisites](#prerequisites)
   - [Running Locally](#running-locally)
@@ -16,11 +23,15 @@
 
 ## Project Description 📝
 
+<<<<<<< HEAD
 The Avalon.AI "Find-a-Doc" web application provides a seamless interface for locating top-tier physicians and connecting them with employees at self-insured companies. The app leverages healthcare data analytics to enhance care outcomes, reduce costs, and improve access to quality healthcare for all.
 
 ## Live Demo 🌐
 
 Check out the [working deployed demo](https://avalonai.evelynbauer.ca/) of the application to see it in action.
+=======
+The "Find-a-Doc" web application provides a seamless interface for locating top-tier physicians and connecting them with employees at self-insured companies. The app leverages healthcare data analytics to enhance care outcomes, reduce costs, and improve access to quality healthcare for all.
+>>>>>>> 69a07ce (First commit)
 
 ## Getting Started 🚀
 
@@ -38,7 +49,11 @@ To set up the project locally, follow these steps:
 1. Clone the repo:
 
 ```bash
+<<<<<<< HEAD
 git clone https://github.com/evybauer/avalonai-frontend.git
+=======
+git clone https://github.com/evybauer/find-a-doc-app.git
+>>>>>>> 69a07ce (First commit)
 ```
 
 2. Install Node dependencies:
@@ -96,7 +111,11 @@ Here's an overview of the main directories and files:
 
 ## Usage 💻
 
+<<<<<<< HEAD
 The Avalon.AI "Find-a-Doc" application is designed with user experience at the forefront, providing an intuitive and responsive interface that adapts seamlessly across different screen sizes. Here’s how the app stands out:
+=======
+The "Find-a-Doc" application is designed with user experience at the forefront, providing an intuitive and responsive interface that adapts seamlessly across different screen sizes. Here’s how the app stands out:
+>>>>>>> 69a07ce (First commit)
 
 - **Responsive Design**: Optimized for use on any device, whether you're on a desktop, tablet, or mobile phone, ensuring consistent functionality and aesthetic across all platforms.
 
@@ -106,7 +125,11 @@ The Avalon.AI "Find-a-Doc" application is designed with user experience at the f
 
 - **Calendar Navigation**: A beautifully designed UI provides users with a straightforward way to navigate through the calendar, discover available appointment times, and schedule a visit with their chosen doctor without hassle.
 
+<<<<<<< HEAD
 Whether you are seeking immediate medical attention or planning future healthcare needs, Avalon.AI facilitates a smooth and efficient doctor search and booking experience.
+=======
+Whether you are seeking immediate medical attention or planning future healthcare needs, it facilitates a smooth and efficient doctor search and booking experience.
+>>>>>>> 69a07ce (First commit)
 
 ## Contributing 👨‍💻
 
