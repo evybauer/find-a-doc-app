@@ -21,6 +21,7 @@ const Home = () => {
                 <li>OB-GYNs</li>
                 <li>dermatologists</li>
                 <li>cardiologists</li>
+                <li>ophthalmologists</li>
                 <li aria-hidden='true'>orthopedic surgeons</li>
               </ul>
             </span>
