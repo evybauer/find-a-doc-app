@@ -5,9 +5,10 @@ import ScheduleFilters from './ScheduleFilters'
 import ProvidersHeader from './ProvidersHeader'
 import FewProvidersMessage from './FewProvidersMessage'
 import AvailableSpots from './AvailableSpots'
-import { providersList } from '../../data'
 import { SearchContext } from '../../providers/SearchProvider'
 import dayjs from 'dayjs'
+import { useFetch } from '../../queries'
+import { getFirestoreURL } from '../../common/utils/getFirestoreURL'
 
 const toCamelCase = (str) => {
   return str
@@ -31,6 +32,16 @@ const Providers = () => {
 
   const itemsPerPage = 10
   const [currentPage, setCurrentPage] = useState(1)
+  const url = getFirestoreURL('providers')
+  const { data: providersList, loading, error } = useFetch(url)
+
+  if (loading) {
+    return <div>Loading...</div>
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>
+  }
 
   const matchesCondition = (provider, condition) =>
     condition ? provider.examsAvailable.includes(condition) : true
