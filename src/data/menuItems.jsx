@@ -10,7 +10,7 @@ export const menuItems = [
     onClick: () => message.warning('Help functionality not yet implemented'),
   },
   {
-    name: 'List your practice on Avalon.AI',
+    name: 'List your practice on Health Point',
     onClick: () => message.warning('Listing functionality not yet implemented'),
   },
   {
