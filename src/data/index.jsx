@@ -7,6 +7,10 @@ export { specialty as specialty } from './filters'
 export { gender as gender } from './filters'
 export { languageSpoken as languageSpoken } from './filters'
 
+// HOME PAGE
+export { services } from './services'
+export { reviews } from './reviews'
+
 // PROVIDERS LIST
 export { providersList as providersList } from './providersList'
 
