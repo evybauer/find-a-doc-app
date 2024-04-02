@@ -11,7 +11,7 @@ const MainFooter = () => {
       }}
     >
       <div className='flex flex-col sm:flex-row items-center justify-center'>
-        <Text>©2024 Avalon.AI All Rights Reserved </Text>
+        <Text>©2024 Health Point All Rights Reserved </Text>
         <Divider type='vertical' className='hidden sm:flex bg-gray-800' />
         <Text>
           Made with ❤️ by{' '}
