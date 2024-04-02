@@ -9,10 +9,6 @@ export { languageSpoken as languageSpoken } from './filters'
 
 // HOME PAGE
 export { services } from './services'
-export { reviews } from './reviews'
-
-// PROVIDERS LIST
-export { providersList as providersList } from './providersList'
 
 // SEARCH BAR
 export { insurance } from './insuranceSearchList'
