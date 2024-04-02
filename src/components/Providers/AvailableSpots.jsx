@@ -60,7 +60,7 @@ const AvailableSpots = ({
 
   const isProviderAvailable = checkAvailability(allDates)
 
-  function getAvailableSpots(provider, allDates) {
+  const getAvailableSpots = (provider, allDates) => {
     const availableSpots = {}
 
     allDates.forEach((date) => {
