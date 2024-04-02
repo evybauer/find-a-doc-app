@@ -58,7 +58,7 @@ const Navbar = () => {
   )
 
   return (
-    <Header className='flex items-center py-12 px-12 bg-gray-800'>
+    <Header className='flex items-center py-12 px-12 bg-gray-800 h-32'>
       <div className='flex items-center justify-between w-full'>
         <div className='flex items-center'>
           <div className='flex h-full w-14'>
@@ -104,7 +104,7 @@ const Navbar = () => {
           {itemsLargeScreen.map((item) => (
             <Menu.Item
               key={item.key}
-              style={{ color: 'white' }}
+              style={{ color: 'white', fontSize: '16px' }}
               onClick={item.onClick}
             >
               {item.label}
@@ -123,7 +123,7 @@ const Navbar = () => {
         />
         <Button
           style={{ margin: '0 16px' }}
-          className='bg-gray-200 border-none text-gray-900'
+          className='bg-gray-200 border-none text-gray-900 text-base'
           onClick={() =>
             message.warning('Log In functionality not yet implemented')
           }
@@ -132,7 +132,7 @@ const Navbar = () => {
         </Button>
         <Button
           type='primary'
-          className='border-none'
+          className='border-none text-base'
           onClick={() =>
             message.warning('Sign Up functionality not yet implemented')
           }
