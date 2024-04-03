@@ -1,51 +1,71 @@
 import { useState } from 'react'
-import { Button, Pagination, Typography, message } from 'antd'
+import { Button, Pagination, Spin, Typography, message } from 'antd'
 import { getFirestoreURL } from '../../../common/utils/getFirestoreURL'
 import { useFetch } from '../../../queries'
 import TopRatedDoctorCard from './TopRatedDoctorCard'
+import LoadingStatus from '../../../ui/LoadingStatus'
 
 const { Text, Title } = Typography
 
 const TopRatedDoctors = () => {
-
   const urlReviews = getFirestoreURL('reviews')
   const urlProviders = getFirestoreURL('providers')
 
   const { data: reviews, loadingReviews, errorReviews } = useFetch(urlReviews)
-  const { data: providersList, loadingProviders, errorProviders } = useFetch(urlProviders)
-  
+  const {
+    data: providersList,
+    loadingProviders,
+    errorProviders,
+  } = useFetch(urlProviders)
+
   const [currentPage, setCurrentPage] = useState(1)
   const itemsPerPage = 3
 
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = currentPage * itemsPerPage;
+  const startIndex = (currentPage - 1) * itemsPerPage
+  const endIndex = currentPage * itemsPerPage
 
-  if (loadingReviews || loadingProviders) {
-    return <div>Loading...</div>
+  if (loadingReviews || !reviews) {
+    return <LoadingStatus />
   }
 
-  if (errorReviews || errorProviders) {
+  if (loadingProviders || !providersList) {
+    return <LoadingStatus />
+  }
+
+  if (errorReviews) {
     return <div>Error: {error.message}</div>
   }
 
+  if (errorProviders) {
+    return <div>Error: {error.message}</div>
+  }
 
   const handleChange = (page) => {
     setCurrentPage(page)
   }
 
   const getHighestRatedReviewForProvider = (providerId) => {
-      if (!reviews) return null
+    if (!reviews) return null
 
-      const reviewsForProvider = reviews?.filter(review => review.providerId === providerId)
-      let highestRatedReview = reviewsForProvider?.reduce((highest, current) => {
-        return (current.rating > highest.rating) ? current : highest;
-      }, reviewsForProvider[0])
-      
-      return highestRatedReview
+    const reviewsForProvider = reviews.filter(
+      (review) => review.providerId === providerId,
+    )
+    let highestRatedReview = reviewsForProvider.reduce((highest, current) => {
+      return current.rating > highest.rating ? current : highest
+    }, reviewsForProvider[0])
+
+    return highestRatedReview
   }
 
-  const highestRatedReviews = providersList ? providersList?.map(provider => getHighestRatedReviewForProvider(provider.id)) : []
-  const highestRatedReviewsToShow = highestRatedReviews.slice(startIndex, endIndex)
+  const highestRatedReviews = providersList
+    ? providersList.map((provider) =>
+        getHighestRatedReviewForProvider(provider.id),
+      )
+    : []
+  const highestRatedReviewsToShow = highestRatedReviews.slice(
+    startIndex,
+    endIndex,
+  )
 
   return (
     <div className='flex flex-col lg:flex-row mt-48 mb-16'>
@@ -68,11 +88,13 @@ const TopRatedDoctors = () => {
 
       <div>
         <div className='flex flex-col items-center md:flex-row lg:justify-end gap-4'>
-          {highestRatedReviewsToShow?.map((review) => (
+          {highestRatedReviewsToShow.map((review) => (
             <TopRatedDoctorCard
-              key={review?.id}
+              key={review.id}
               review={review}
-              provider={providersList.find(provider => provider?.id === review?.providerId)}
+              provider={providersList.find(
+                (provider) => provider.id === review.providerId,
+              )}
             />
           ))}
         </div>
