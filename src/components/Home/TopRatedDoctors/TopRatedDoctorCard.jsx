@@ -39,7 +39,7 @@ const getNextAvailableDate = (provider) => {
                 Highly Reccomended
               </Tag>
             </div>
-            <ProviderCard provider={provider} isModalVisible={false} />
+            <ProviderCard key={provider.id} provider={provider} isModalVisible={false} />
           </div>
           <div className='text-start min-h-8 md:min-h-36 lg:min-h-24'>
             <Text>"{review.reviewText}"</Text>
