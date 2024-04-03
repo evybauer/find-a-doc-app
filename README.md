@@ -3,7 +3,7 @@
 ## Table of Contents 📚
 
 - [Project Description](#project-description-)
-- [Live Demo] (#live-demo-)
+- [Live Demo](#live-demo-)
 - [Getting Started](#getting-started-)
   - [Prerequisites](#prerequisites-)
   - [Running Locally](#running-locally-)
