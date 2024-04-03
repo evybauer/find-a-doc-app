@@ -41,7 +41,11 @@ const ProviderModal = ({
         Book with {provider.name}
       </Title>
 
-      <ProviderCard isModalVisible={isModalVisible} provider={provider} />
+      <ProviderCard
+        key={provider.id}
+        provider={provider}
+        isModalVisible={isModalVisible}
+      />
 
       <Title
         level={4}

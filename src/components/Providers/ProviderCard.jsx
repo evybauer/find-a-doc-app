@@ -12,7 +12,7 @@ import { Tag } from 'antd'
 
 const { Text, Title } = Typography
 
-const ProviderCard = ({ isModalVisible, provider }) => {
+const ProviderCard = ({ provider, isModalVisible }) => {
   const location = useLocation()
 
   const handleCheckNetwork = () => {

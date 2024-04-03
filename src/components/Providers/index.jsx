@@ -9,6 +9,7 @@ import { SearchContext } from '../../providers/SearchProvider'
 import dayjs from 'dayjs'
 import { useFetch } from '../../queries'
 import { getFirestoreURL } from '../../common/utils/getFirestoreURL'
+import LoadingStatus from '../../ui/LoadingStatus'
 
 const toCamelCase = (str) => {
   return str
@@ -35,8 +36,8 @@ const Providers = () => {
   const url = getFirestoreURL('providers')
   const { data: providersList, loading, error } = useFetch(url)
 
-  if (loading) {
-    return <div>Loading...</div>
+  if (loading || !providersList) {
+    return <LoadingStatus />
   }
 
   if (error) {
@@ -130,7 +131,11 @@ const Providers = () => {
 
         {providersToShow.map((provider, index) => (
           <div key={index} className='grid grid-cols-1 lg:grid-cols-3 my-16'>
-            <ProviderCard provider={provider} isModalVisible={false} />
+            <ProviderCard
+              key={provider.id}
+              provider={provider}
+              isModalVisible={false}
+            />
             <div className='grid col-span-2'>
               <AvailableSpots
                 provider={provider}
