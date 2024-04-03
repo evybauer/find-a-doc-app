@@ -1,11 +1,12 @@
-# "Find-a-Doc" Web App Challenge 🏥
+# Health Point Web App 🏥
 
 ## Table of Contents 📚
 
 - [Project Description](#project-description-)
+- [Live Demo] (#live-demo-)
 - [Getting Started](#getting-started-)
-  - [Prerequisites](#prerequisites)
-  - [Running Locally](#running-locally)
+  - [Prerequisites](#prerequisites-)
+  - [Running Locally](#running-locally-)
 - [Tech Stack](#tech-stack-)
 - [Folder Structure](#folder-structure-)
 - [Usage](#usage-)
@@ -15,7 +16,11 @@
 
 ## Project Description 📝
 
-The "Find-a-Doc" web application provides a seamless interface for locating top-tier physicians and connecting them with employees at self-insured companies. The app leverages healthcare data analytics to enhance care outcomes, reduce costs, and improve access to quality healthcare for all.
+Health Point is a "Find-a-Doc" web application provides a seamless interface for locating top-tier physicians and connecting them with employees at self-insured companies. The app leverages healthcare data analytics to enhance care outcomes, reduce costs, and improve access to quality healthcare for all.
+
+## Live Demo 🌐
+
+Check out the [working deployed demo](https://healthpoint.evelynbauer.ca/) of the application to see it in action.
 
 ## Getting Started 🚀
 
@@ -91,7 +96,7 @@ Here's an overview of the main directories and files:
 
 ## Usage 💻
 
-The "Find-a-Doc" application is designed with user experience at the forefront, providing an intuitive and responsive interface that adapts seamlessly across different screen sizes. Here’s how the app stands out:
+The Health Point ("Find-a-Doc") application is designed with user experience at the forefront, providing an intuitive and responsive interface that adapts seamlessly across different screen sizes. Here’s how the app stands out:
 
 - **Responsive Design**: Optimized for use on any device, whether you're on a desktop, tablet, or mobile phone, ensuring consistent functionality and aesthetic across all platforms.
 
