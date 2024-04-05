@@ -11,9 +11,11 @@ const MainFooter = () => {
       }}
     >
       <div className='flex flex-col sm:flex-row items-center justify-center'>
-        <Text>©2024 Health Point All Rights Reserved </Text>
+        <Text className='text-base'>
+          ©2024 Health Point All Rights Reserved{' '}
+        </Text>
         <Divider type='vertical' className='hidden sm:flex bg-gray-800' />
-        <Text>
+        <Text className='text-base'>
           Made with ❤️ by{' '}
           <a
             href='https://evelynbauer.ca/'

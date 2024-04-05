@@ -1,7 +1,6 @@
-import { Button, Typography } from 'antd'
-import { Divider } from 'antd'
 import { useContext } from 'react'
 import { SearchContext } from '../../providers/SearchProvider'
+import { Button, Divider, Typography } from 'antd'
 
 const { Text, Title } = Typography
 

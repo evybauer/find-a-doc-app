@@ -8,21 +8,9 @@ import AvailableSpots from './AvailableSpots'
 import { SearchContext } from '../../providers/SearchProvider'
 import dayjs from 'dayjs'
 import { useFetch } from '../../queries'
-import { getFirestoreURL } from '../../common/utils/getFirestoreURL'
+import { getFirestoreURL } from '../../common/utils/firestoreHelpers/getFirestoreURL'
 import LoadingStatus from '../../ui/LoadingStatus'
-
-const toCamelCase = (str) => {
-  return str
-    .split(' ')
-    .map((word, index) => {
-      if (index === 0) {
-        return word.toLowerCase()
-      }
-      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
-    })
-    .join('')
-}
-
+import { toCamelCase } from '../../common/utils'
 const Providers = () => {
   const { searchValues } = useContext(SearchContext)
   const [isModalVisible, setIsModalVisible] = useState(false)
@@ -121,6 +109,7 @@ const Providers = () => {
           filteredOptions={filteredOptions}
           setFilteredOptions={setFilteredOptions}
         />
+
         <ProvidersHeader
           providers={filteredProviders}
           startDate={startDate}
@@ -136,6 +125,7 @@ const Providers = () => {
               provider={provider}
               isModalVisible={false}
             />
+
             <div className='grid col-span-2'>
               <AvailableSpots
                 provider={provider}

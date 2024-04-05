@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { firestoreToValidData } from '../common/utils/firestoreToValidData'
+import { firestoreToValidData } from '../common/utils/firestoreHelpers/firestoreToValidData'
 
 export const useFetch = (url) => {
   const [data, setData] = useState(null)
