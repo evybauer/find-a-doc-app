@@ -1,9 +1,8 @@
 import { useContext } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
+import { SearchContext } from '../../providers/SearchProvider'
 import SearchInput from './SearchInput'
 import { Button, Form } from 'antd'
-import { SearchContext } from '../../providers/SearchProvider'
-
 import { insurance } from '../../data/insuranceSearchList'
 import { location } from '../../data/locationSearchList'
 import { medicalConditions } from '../../data/medicalConditionsList'

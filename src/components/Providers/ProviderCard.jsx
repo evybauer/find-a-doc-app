@@ -1,6 +1,5 @@
-import React from 'react'
 import { useLocation } from 'react-router-dom'
-import { Avatar, Typography, message } from 'antd'
+import { Avatar, Tag, Typography, message } from 'antd'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faHeart,
@@ -8,7 +7,6 @@ import {
   faShieldHeart,
   faStar,
 } from '@fortawesome/free-solid-svg-icons'
-import { Tag } from 'antd'
 
 const { Text, Title } = Typography
 
@@ -39,10 +37,10 @@ const ProviderCard = ({ provider, isModalVisible }) => {
             {provider?.specialty}
           </Title>
         ) : (
-          <Text>{provider?.specialty}</Text>
+          <Text className='text-base'>{provider?.specialty}</Text>
         )}
         <div className='flex flex-wrap gap-2'>
-          <Text>
+          <Text className='text-base'>
             <FontAwesomeIcon icon={faStar} className='mr-2 text-red-500' />
             {`${provider.rating.toFixed(1)} (${provider.reviews} ${location.pathname === '/' ? 'reviews' : ''})`}
           </Text>
@@ -54,8 +52,8 @@ const ProviderCard = ({ provider, isModalVisible }) => {
           )}
         </div>
         {location.pathname !== '/' && (
-          <React.Fragment>
-            <Text>
+          <>
+            <Text className='text-base'>
               <FontAwesomeIcon icon={faLocationDot} className='mr-2' />
               {`${provider.distance} mi - ${provider.address.streetAddress}, ${provider.address.city} ${provider.address.state} ${provider.address.postalCode} `}
               <a
@@ -68,7 +66,7 @@ const ProviderCard = ({ provider, isModalVisible }) => {
               </a>
             </Text>
             <a
-              className='underline underline-offset-1 text-sky-600'
+              className='underline text-base underline-offset-1 text-sky-600'
               onClick={handleCheckNetwork}
             >
               <FontAwesomeIcon icon={faShieldHeart} className='mr-2' />
@@ -84,7 +82,7 @@ const ProviderCard = ({ provider, isModalVisible }) => {
                   .filter(Boolean)
                   .map((text, index, arr) => (
                     <span key={index}>
-                      <Text className='text-sm font-extralight text-gray-500'>
+                      <Text className='text-base font-extralight text-gray-500'>
                         {text}
                       </Text>
                       {index < arr.length - 1 && (
@@ -94,7 +92,7 @@ const ProviderCard = ({ provider, isModalVisible }) => {
                   ))}
               </div>
             )}
-          </React.Fragment>
+          </>
         )}
       </div>
     </div>

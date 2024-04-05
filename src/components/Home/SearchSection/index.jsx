@@ -21,7 +21,7 @@ const SearchSection = () => {
           who take your insurance
         </Title>
       </div>
-        <SearchBar />
+      <SearchBar />
     </>
   )
 }

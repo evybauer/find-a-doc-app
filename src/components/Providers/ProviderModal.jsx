@@ -1,9 +1,9 @@
+import { useContext } from 'react'
+import { SearchContext } from '../../providers/SearchProvider'
 import { Modal, Typography, Select } from 'antd'
 import ProviderCard from './ProviderCard'
 import AvailableTimes from './AvailableTimes'
 import SearchInput from '../SearchBar/SearchInput'
-import { SearchContext } from '../../providers/SearchProvider'
-import { useContext } from 'react'
 
 const { Title, Text } = Typography
 

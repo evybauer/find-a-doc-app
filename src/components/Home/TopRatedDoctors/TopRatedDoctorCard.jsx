@@ -1,21 +1,10 @@
 import { Button, message, Tag, Typography } from 'antd'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendarDays, faStar } from '@fortawesome/free-solid-svg-icons'
+import { getNextAvailableDate } from '../../../common/utils'
 import ProviderCard from '../../Providers/ProviderCard'
 
 const { Text } = Typography
-
-const getNextAvailableDate = (provider) => {
-  if (provider.availability && provider.availability.length > 0) {
-    const nextAvailableDate = new Date(provider.availability[0].date * 1000)
-    return nextAvailableDate.toLocaleDateString('en-US', {
-      weekday: 'short',
-      month: 'short',
-      day: 'numeric',
-    })
-  }
-  return 'No availability'
-}
 
 const TopRatedDoctorCard = ({ review, provider }) => {
   return (
@@ -33,7 +22,7 @@ const TopRatedDoctorCard = ({ review, provider }) => {
         </div>
         <div className='mt-28 lg:mt-32'>
           <div className='flex my-4 lg:absolute lg:top-2 lg:right-0 lg:my-0'>
-            <Tag color='cyan'>
+            <Tag color='cyan' className='text-base'>
               <FontAwesomeIcon icon={faStar} className='mr-2' />
               Highly Reccomended
             </Tag>
@@ -45,7 +34,7 @@ const TopRatedDoctorCard = ({ review, provider }) => {
           />
         </div>
         <div className='text-start min-h-8 md:min-h-36 lg:min-h-24'>
-          <Text>"{review.reviewText}"</Text>
+          <Text className='text-base'>"{review.reviewText}"</Text>
         </div>
         <div className='flex flex-col justify-between py-8'>
           <div className='flex flex-wrap items-center my-4'>
