@@ -5,7 +5,6 @@ import ProviderCard from "../Providers/ProviderCard"
 import { Divider } from "antd"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faStar } from "@fortawesome/free-solid-svg-icons"
-import LoadingStatus from '../../ui/LoadingStatus'
 
 const { Title, Text } = Typography
 
@@ -18,7 +17,7 @@ const Reviews = ({provider, isModalVisible, closeModal, isHomeView}) => {
       } = useFetch(urlReviews)
 
       if (loadingReviews || !reviews) {
-          return <LoadingStatus />
+          return null
       }
 
       if (errorReviews) {
