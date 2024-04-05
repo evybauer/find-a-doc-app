@@ -1,20 +1,32 @@
+import { useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { Avatar, Tag, Typography, message } from 'antd'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
+  faComment,
   faHeart,
   faLocationDot,
   faShieldHeart,
   faStar,
 } from '@fortawesome/free-solid-svg-icons'
+import Reviews from '../Reviews'
 
 const { Text, Title } = Typography
 
 const ProviderCard = ({ provider, isModalVisible }) => {
   const location = useLocation()
+  const [isReviewsModalVisible, setIsReviewsModalVisible] = useState(false)
 
   const handleCheckNetwork = () => {
     message.warning('Check network functionality not yet implemented')
+  }
+
+  const handleReviewsModalOpen = () => {
+    setIsReviewsModalVisible(true)
+  }
+
+  const handleReviewsModalClose = () => {
+    setIsReviewsModalVisible(false)
   }
 
   return (
@@ -70,8 +82,16 @@ const ProviderCard = ({ provider, isModalVisible }) => {
               onClick={handleCheckNetwork}
             >
               <FontAwesomeIcon icon={faShieldHeart} className='mr-2' />
-              {"See if they're in network"}
+              See if they're in network
             </a>
+            <a
+                  className='text-base underline-offset-1 text-sky-600'
+                  onClick={handleReviewsModalOpen}
+                >
+                  <FontAwesomeIcon icon={faComment} className='mr-2' />
+                  Reviews
+          </a>
+          <Reviews provider={provider} isModalVisible={isReviewsModalVisible} closeModal={handleReviewsModalClose} isHomeView={false}/>
             {!isModalVisible && (
               <div>
                 {[
