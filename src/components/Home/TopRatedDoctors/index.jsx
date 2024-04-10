@@ -1,14 +1,17 @@
-import { useState, useEffect, useMemo } from 'react'
+import { Suspense, useState, useEffect, useMemo } from 'react'
 import { Pagination } from 'antd'
 import { getFirestoreURL } from '../../../common/utils/firestoreHelpers/getFirestoreURL'
 import { useFetch } from '../../../queries'
 import TopRatedDoctorCard from './TopRatedDoctorCard'
-import LoadingStatus from '../../../ui/LoadingStatus'
+import LoadingStatus from '../../../ui/Status/LoadingStatus'
 import TopRatedDoctorsCallToAction from './TopRatedDoctorsCallToAction'
+import { ErrorCard } from '../../../ui/Error/ErrorCard'
+import { ErrorBoundary } from 'react-error-boundary'
+import { resetApplication } from '../../../common/utils'
 
 const Error = ({ message }) => <div>Error: {message}</div>
 
-const TopRatedDoctors = () => {
+const TopRatedDoctorsContent = () => {
   const urlReviews = getFirestoreURL('reviews')
   const urlProviders = getFirestoreURL('providers')
 
@@ -92,5 +95,13 @@ const TopRatedDoctors = () => {
     </div>
   )
 }
+
+const TopRatedDoctors = () => (
+  <ErrorBoundary FallbackComponent={ErrorCard} onReset={resetApplication}>
+    <Suspense fallback={<LoadingStatus />}>
+      <TopRatedDoctorsContent />
+    </Suspense>
+  </ErrorBoundary>
+)
 
 export default TopRatedDoctors

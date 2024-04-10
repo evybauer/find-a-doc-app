@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { Suspense, useContext, useState } from 'react'
 import { Pagination } from 'antd'
 import ProviderCard from './ProviderCard'
 import ScheduleFilters from './ScheduleFilters'
@@ -9,9 +9,13 @@ import { SearchContext } from '../../providers/SearchProvider'
 import dayjs from 'dayjs'
 import { useFetch } from '../../queries'
 import { getFirestoreURL } from '../../common/utils/firestoreHelpers/getFirestoreURL'
-import LoadingStatus from '../../ui/LoadingStatus'
+import LoadingStatus from '../../ui/Status/LoadingStatus'
 import { toCamelCase } from '../../common/utils'
-const Providers = () => {
+import { ErrorBoundary } from 'react-error-boundary'
+import { ErrorCard } from '../../ui/Error/ErrorCard'
+import { resetApplication } from '../../common/utils'
+
+const ProvidersContent = () => {
   const { searchValues } = useContext(SearchContext)
   const [isModalVisible, setIsModalVisible] = useState(false)
   const [selectedProvider, setSelectedProvider] = useState(null)
@@ -103,7 +107,7 @@ const Providers = () => {
   }
 
   return (
-    <>
+    <Suspense fallback={<LoadingStatus />}>
       <div className='block lg:min-w-[1024px] mr-2'>
         <ScheduleFilters
           filteredOptions={filteredOptions}
@@ -156,8 +160,14 @@ const Providers = () => {
           <FewProvidersMessage setFilteredOptions={setFilteredOptions} />
         )}
       </div>
-    </>
+    </Suspense>
   )
 }
+
+const Providers = () => (
+  <ErrorBoundary FallbackComponent={ErrorCard} onReset={resetApplication}>
+    <ProvidersContent />
+  </ErrorBoundary>
+)
 
 export default Providers

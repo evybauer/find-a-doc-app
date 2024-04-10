@@ -95,7 +95,7 @@ const ScheduleFilters = ({ filteredOptions, setFilteredOptions }) => {
   }
 
   return (
-    <div>
+    <>
       <div className='block justify-between items-center lg:hidden'>
         <SearchBar />
         <div className='flex justify-end mt-4 mt-4 ml-8 space-x-4'>
@@ -170,7 +170,7 @@ const ScheduleFilters = ({ filteredOptions, setFilteredOptions }) => {
           </Button>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 

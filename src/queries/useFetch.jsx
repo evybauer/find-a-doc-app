@@ -14,9 +14,11 @@ export const useFetch = (url) => {
         setData(convertedData)
         setLoading(false)
       })
-      .catch((error) => console.error('Error:', error))
-    setError(error)
-  }, [])
+      .catch((error) => {
+        console.error('Error:', error)
+        setError(error)
+      })
+  }, [url])
 
   return { data, loading, error }
 }

@@ -2,10 +2,13 @@ import React from 'react'
 import SearchBar from '../../SearchBar'
 import { Typography } from 'antd'
 import AnimatedProvidersList from './AnimatedProvidersList'
+import { ErrorBoundary } from 'react-error-boundary'
+import { resetApplication } from '../../../common/utils'
+import { ErrorCard } from '../../../ui/Error/ErrorCard'
 
 const { Title } = Typography
 
-const SearchSection = () => {
+const SearchSectionContent = () => {
   return (
     <>
       <div className='my-16'>
@@ -25,5 +28,11 @@ const SearchSection = () => {
     </>
   )
 }
+
+const SearchSection = () => (
+  <ErrorBoundary FallbackComponent={ErrorCard} onReset={resetApplication}>
+    <SearchSectionContent />
+  </ErrorBoundary>
+)
 
 export default SearchSection

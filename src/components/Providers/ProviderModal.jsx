@@ -4,10 +4,13 @@ import { Modal, Typography, Select } from 'antd'
 import ProviderCard from './ProviderCard'
 import AvailableTimes from './AvailableTimes'
 import SearchInput from '../SearchBar/SearchInput'
+import { ErrorBoundary } from 'react-error-boundary'
+import { ErrorCard } from '../../ui/Error/ErrorCard'
+import { resetApplication } from '../../common/utils'
 
 const { Title, Text } = Typography
 
-const ProviderModal = ({
+const ProviderModalContent = ({
   isModalVisible,
   setIsModalVisible,
   handleOk,
@@ -94,5 +97,11 @@ const ProviderModal = ({
     </Modal>
   )
 }
+
+const ProviderModal = (props) => (
+  <ErrorBoundary FallbackComponent={ErrorCard} onReset={resetApplication}>
+    <ProviderModalContent {...props} />
+  </ErrorBoundary>
+)
 
 export default ProviderModal
