@@ -1,13 +1,33 @@
+import { useState } from 'react'
 import { Button, message } from 'antd'
+import { ErrorCard } from '../../ui/Error/ErrorCard'
+import { ErrorBoundary } from 'react-error-boundary'
+import { resetApplication } from '../../common/utils'
 
-const TrustedDoctorsBanner = () => {
+const TrustedDoctorsBannerContent = () => {
+  const [imgLoadError, setImgLoadError] = useState(false)
+
+  const handleImageError = () => {
+    setImgLoadError(true)
+  }
+
+  const handleImageLoad = () => {
+    setImgLoadError(false)
+  }
+
+  if (imgLoadError) {
+    throw new Error('Image loading error')
+  }
+
   return (
     <div className='hidden md:flex md:relative'>
-      <img
-        src='/assets/banners/trustedDoctorsBanner.png'
-        className='z-0'
-        alt='Banner showing trusted doctors'
-      />
+      {!imgLoadError && (
+        <img
+          src='/assets/banners/trustedDoctorsBanner.png'
+          onError={handleImageError}
+          onLoad={handleImageLoad}
+        />
+      )}
       <div className='flex absolute bottom-4 right-4 md:bottom-6 md:right-6 lg:bottom-12 lg:right-12'>
         <Button
           className='text-base md:text-xl min-h-[50px] text-gray-600 shadow-md'
@@ -33,5 +53,11 @@ const TrustedDoctorsBanner = () => {
     </div>
   )
 }
+
+const TrustedDoctorsBanner = () => (
+  <ErrorBoundary FallbackComponent={ErrorCard} onReset={resetApplication}>
+    <TrustedDoctorsBannerContent />
+  </ErrorBoundary>
+)
 
 export default TrustedDoctorsBanner
