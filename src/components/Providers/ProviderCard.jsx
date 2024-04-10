@@ -10,10 +10,13 @@ import {
   faStar,
 } from '@fortawesome/free-solid-svg-icons'
 import Reviews from '../Reviews'
+import { ErrorBoundary } from 'react-error-boundary'
+import { resetApplication } from '../../common/utils'
+import { ErrorCard } from '../../ui/Error/ErrorCard'
 
 const { Text, Title } = Typography
 
-const ProviderCard = ({ provider, isModalVisible }) => {
+const ProviderCardContent = ({ provider, isModalVisible }) => {
   const location = useLocation()
   const [isReviewsModalVisible, setIsReviewsModalVisible] = useState(false)
 
@@ -27,6 +30,10 @@ const ProviderCard = ({ provider, isModalVisible }) => {
 
   const handleReviewsModalClose = () => {
     setIsReviewsModalVisible(false)
+  }
+
+  if (!provider) {
+    return null
   }
 
   return (
@@ -46,10 +53,10 @@ const ProviderCard = ({ provider, isModalVisible }) => {
         )}
         {isModalVisible ? (
           <Title level={4} style={{ margin: 0, fontWeight: 500 }}>
-            {provider?.specialty}
+            {provider.specialty}
           </Title>
         ) : (
-          <Text className='text-base'>{provider?.specialty}</Text>
+          <Text className='text-base'>{provider.specialty}</Text>
         )}
         <div className='flex flex-wrap gap-2'>
           <Text className='text-base'>
@@ -85,13 +92,18 @@ const ProviderCard = ({ provider, isModalVisible }) => {
               See if they're in network
             </a>
             <a
-                  className='text-base underline-offset-1 text-sky-600'
-                  onClick={handleReviewsModalOpen}
-                >
-                  <FontAwesomeIcon icon={faComment} className='mr-2' />
-                  Reviews
-          </a>
-          <Reviews provider={provider} isModalVisible={isReviewsModalVisible} closeModal={handleReviewsModalClose} isHomeView={false}/>
+              className='text-base underline-offset-1 text-sky-600'
+              onClick={handleReviewsModalOpen}
+            >
+              <FontAwesomeIcon icon={faComment} className='mr-2' />
+              Reviews
+            </a>
+            <Reviews
+              provider={provider}
+              isModalVisible={isReviewsModalVisible}
+              closeModal={handleReviewsModalClose}
+              isHomeView={false}
+            />
             {!isModalVisible && (
               <div>
                 {[
@@ -118,5 +130,11 @@ const ProviderCard = ({ provider, isModalVisible }) => {
     </div>
   )
 }
+
+const ProviderCard = (props) => (
+  <ErrorBoundary FallbackComponent={ErrorCard} onReset={resetApplication}>
+    <ProviderCardContent {...props} />
+  </ErrorBoundary>
+)
 
 export default ProviderCard
