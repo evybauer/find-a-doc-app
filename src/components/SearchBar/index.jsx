@@ -6,6 +6,9 @@ import { Button, Form } from 'antd'
 import { insurance } from '../../data/insuranceSearchList'
 import { location } from '../../data/locationSearchList'
 import { medicalConditions } from '../../data/medicalConditionsList'
+import { ErrorBoundary } from 'react-error-boundary'
+import { ErrorCard } from '../../ui/Error/ErrorCard'
+import { resetApplication } from '../../common/utils'
 
 const searchConfigs = [
   {
@@ -25,7 +28,7 @@ const searchConfigs = [
   },
 ]
 
-const SearchBar = () => {
+const SearchBarContent = () => {
   let navigate = useNavigate()
   const [form] = Form.useForm()
   const { searchValues, setSearchValues } = useContext(SearchContext)
@@ -77,5 +80,11 @@ const SearchBar = () => {
     </Form>
   )
 }
+
+const SearchBar = () => (
+  <ErrorBoundary FallbackComponent={ErrorCard} onReset={resetApplication}>
+    <SearchBarContent />
+  </ErrorBoundary>
+)
 
 export default SearchBar
