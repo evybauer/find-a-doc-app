@@ -7,8 +7,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons'
 import { checkAvailability, generateAllDates } from '../../common/utils'
 import AvailabilityCards from './AvailabilityCard'
+import { getAvailableSpots } from '../../common/utils'
+import { ErrorBoundary } from 'react-error-boundary'
+import { resetApplication } from '../../common/utils'
+import { ErrorCard } from '../../ui/Error/ErrorCard'
 
-const AvailableSpots = ({
+const AvailableSpotsContent = ({
   provider,
   showModal,
   selectedProvider,
@@ -33,6 +37,8 @@ const AvailableSpots = ({
 
   const isProviderAvailable = checkAvailability(provider, allDates)
 
+  const availableSpots = getAvailableSpots(provider, allDates)
+
   return (
     <div className='ml-4'>
       <AvailabilityCards
@@ -40,6 +46,7 @@ const AvailableSpots = ({
         allDates={allDates}
         showModal={showModal}
         showSecondRow={showSecondRow}
+        availableSpots={availableSpots}
       />
       {isProviderAvailable && (
         <Button
@@ -78,5 +85,11 @@ const AvailableSpots = ({
     </div>
   )
 }
+
+const AvailableSpots = (props) => (
+  <ErrorBoundary FallbackComponent={ErrorCard} onReset={resetApplication}>
+    <AvailableSpotsContent {...props} />
+  </ErrorBoundary>
+)
 
 export default AvailableSpots
