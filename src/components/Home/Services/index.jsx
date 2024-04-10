@@ -1,9 +1,12 @@
 import { Typography } from 'antd'
 import ServicesList from './ServicesList'
+import { ErrorBoundary } from 'react-error-boundary'
+import { resetApplication } from '../../../common/utils'
+import { ErrorCard } from '/src/ui/Error/ErrorCard'
 
 const { Title } = Typography
 
-const Services = () => {
+const ServicesContent = () => {
   return (
     <div className='bg-gray-100 p-4'>
       <div className='flex justify-center text-center my-20'>
@@ -15,5 +18,11 @@ const Services = () => {
     </div>
   )
 }
+
+const Services = () => (
+  <ErrorBoundary FallbackComponent={ErrorCard} onReset={resetApplication}>
+    <ServicesContent />
+  </ErrorBoundary>
+)
 
 export default Services
