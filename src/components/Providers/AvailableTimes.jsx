@@ -1,10 +1,17 @@
 import { Pagination, Typography } from 'antd'
 import { useState } from 'react'
 import BookAppointmentForm from './BookAppointmentForm'
+import { ErrorBoundary } from 'react-error-boundary'
+import { resetApplication } from '../../common/utils'
+import { ErrorCard } from '../../ui/Error/ErrorCard'
 
 const { Text, Title } = Typography
 
-const AvailableTimes = ({ availability, allDates, setIsModalVisible }) => {
+const AvailableTimesContent = ({
+  availability,
+  allDates,
+  setIsModalVisible,
+}) => {
   const [selectedTime, setSelectedTime] = useState(null)
 
   const [selectedAppointmentIndex, setSelectedAppointmentIndex] = useState(null)
@@ -92,5 +99,11 @@ const AvailableTimes = ({ availability, allDates, setIsModalVisible }) => {
     </div>
   )
 }
+
+const AvailableTimes = (props) => (
+  <ErrorBoundary FallbackComponent={ErrorCard} onReset={resetApplication}>
+    <AvailableTimesContent {...props} />
+  </ErrorBoundary>
+)
 
 export default AvailableTimes
