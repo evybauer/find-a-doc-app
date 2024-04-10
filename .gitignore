@@ -19,3 +19,5 @@ pnpm-lock.yaml
 .firebase/
 .firebaserc
 firebase.json
+
+*storybook.log
