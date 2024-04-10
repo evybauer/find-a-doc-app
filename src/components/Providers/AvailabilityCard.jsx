@@ -1,16 +1,17 @@
 import { Typography } from 'antd'
-import { getAvailableSpots } from '../../common/utils'
+import { ErrorBoundary } from 'react-error-boundary'
+import { resetApplication } from '../../common/utils'
+import { ErrorCard } from '/src/ui/Error/ErrorCard'
 
 const { Text } = Typography
 
-const AvailabilityCards = ({
+const AvailabilityCardContent = ({
   provider,
-  allDates,
   showModal,
   showSecondRow,
+  availableSpots,
+  allDates,
 }) => {
-  const availableSpots = getAvailableSpots(provider, allDates)
-
   const firstRowAvailability = allDates.slice(0, 7)
   const secondRowAvailability = allDates.slice(7, 14)
 
@@ -96,4 +97,12 @@ const AvailabilityCards = ({
   )
 }
 
-export default AvailabilityCards
+const AvailabilityCard = (props) => {
+  return (
+    <ErrorBoundary FallbackComponent={ErrorCard} onReset={resetApplication}>
+      <AvailabilityCardContent {...props} />
+    </ErrorBoundary>
+  )
+}
+
+export default AvailabilityCard
