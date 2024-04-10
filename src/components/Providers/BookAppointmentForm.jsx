@@ -1,10 +1,13 @@
 import { Form, Input, Button, Typography, message } from 'antd'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendarDay, faClock } from '@fortawesome/free-solid-svg-icons'
+import { ErrorBoundary } from 'react-error-boundary'
+import { resetApplication } from '../../common/utils'
+import { ErrorCard } from '../../ui/Error/ErrorCard'
 
 const { Title } = Typography
 
-const BookAppointmentForm = ({
+const BookAppointmentFormContent = ({
   displayDate,
   selectedTime,
   setIsModalVisible,
@@ -98,5 +101,11 @@ const BookAppointmentForm = ({
     </Form>
   )
 }
+
+const BookAppointmentForm = (props) => (
+  <ErrorBoundary FallbackComponent={ErrorCard} onReset={resetApplication}>
+    <BookAppointmentFormContent {...props} />
+  </ErrorBoundary>
+)
 
 export default BookAppointmentForm
