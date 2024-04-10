@@ -1,10 +1,13 @@
 import { useContext } from 'react'
 import { SearchContext } from '../../providers/SearchProvider'
 import { Button, Divider, Typography } from 'antd'
+import { ErrorBoundary } from 'react-error-boundary'
+import { resetApplication } from '../../common/utils'
+import { ErrorCard } from '../../ui/Error/ErrorCard'
 
 const { Text, Title } = Typography
 
-const FewProvidersMessage = ({ setFilteredOptions }) => {
+const FewProvidersMessageContent = ({ setFilteredOptions }) => {
   const { setSearchValues } = useContext(SearchContext)
 
   const handleClear = () => {
@@ -29,5 +32,11 @@ const FewProvidersMessage = ({ setFilteredOptions }) => {
     </div>
   )
 }
+
+const FewProvidersMessage = (props) => (
+  <ErrorBoundary FallbackComponent={ErrorCard} onReset={resetApplication}>
+    <FewProvidersMessageContent {...props} />
+  </ErrorBoundary>
+)
 
 export default FewProvidersMessage
