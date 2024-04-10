@@ -1,11 +1,14 @@
 import { useState } from 'react'
 import { Button, message, Tag, Typography } from 'antd'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCalendarDays, faComment, faStar } from '@fortawesome/free-solid-svg-icons'
+import {
+  faCalendarDays,
+  faComment,
+  faStar,
+} from '@fortawesome/free-solid-svg-icons'
 import { getNextAvailableDate } from '../../../common/utils'
 import ProviderCard from '../../Providers/ProviderCard'
 import Reviews from '../../Reviews'
-
 
 const { Text } = Typography
 
@@ -50,15 +53,20 @@ const TopRatedDoctorCard = ({ review, provider }) => {
           <Text className='text-base'>"{review.reviewText}"</Text>
           <div className='flex my-2'>
             <a
-                className='text-base underline-offset-1 text-sky-600'
-                onClick={handleReviewsModalOpen}
-              >
-                <FontAwesomeIcon icon={faComment} className='mr-2' />
-                See more reviews
+              className='text-base underline-offset-1 text-sky-600'
+              onClick={handleReviewsModalOpen}
+            >
+              <FontAwesomeIcon icon={faComment} className='mr-2' />
+              See more reviews
             </a>
           </div>
         </div>
-        <Reviews provider={provider} isModalVisible={isReviewsModalVisible} closeModal={handleReviewsModalClose} isHomeView={true}/>
+        <Reviews
+          provider={provider}
+          isModalVisible={isReviewsModalVisible}
+          closeModal={handleReviewsModalClose}
+          isHomeView={true}
+        />
         <div className='flex flex-col justify-between py-8'>
           <div className='flex flex-wrap items-center my-4'>
             <Text className='text-base text-semibold'>
