@@ -2,9 +2,11 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-:root {
-  margin: 0;
-  min-height: 100vh;
+@layer base {
+  :root {
+    margin: 0;
+    min-height: 100vh;
+  }
 }
 
 body {
@@ -13,26 +15,22 @@ body {
   min-height: 100vh;
 }
 
-/* ANT DESIGN STYLES */
-
-.custom-select-search-bar .ant-select-selector {
-  border: none !important;
+.ant-typography {
+  font-size: 16px;
 }
 
-.custom-select-placeholder
-  .ant-select-selector
-  .ant-select-selection-placeholder {
-  color: black !important;
+span {
+  font-size: 16px;
+}
+
+.custom-select-placeholder .ant-select-selection-placeholder {
+  color: white !important;
   font-size: 18px !important;
 }
 
-.custom-select-placeholder-text .ant-select-selection-placeholder {
-  color: black !important;
-}
-
-.custom-menu .ant-menu-item-selected::after,
-.custom-menu .ant-menu-item:hover::after {
-  border-color: #27a5b0 !important;
+.ant-select-selector {
+  border: none !important;
+  background-color: transparent !important;
 }
 
 .custom-button:hover {
@@ -40,12 +38,23 @@ body {
   border-color: #f56565 !important;
 }
 
-.ant-btn-primary {
-  background-color: #27a5b0;
+/* NAVBAR STYLES */
+
+.ant-layout-header {
+  background-color: #1f2937 !important;
 }
 
-.ant-layout {
-  background-color: #ffffff;
+.ant-menu {
+  background-color: transparent !important;
+}
+
+.ant-menu-item {
+  color: #f3f4f6 !important;
+}
+
+.custom-menu .ant-menu-item-selected::after,
+.custom-menu .ant-menu-item:hover::after {
+  border-color: #27a5b0 !important;
 }
 
 .ant-dropdown .ant-dropdown-menu {
