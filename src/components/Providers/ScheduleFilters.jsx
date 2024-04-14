@@ -49,11 +49,12 @@ const SelectComponent = ({
     <Select
       allowClear={true}
       placeholder={placeholder}
-      className='text-black w-full min-h-[50px] custom-select-placeholder-text my-4 lg:m-0lg:flex lg:w-1/4 lg:items-start'
+      className='w-full min-h-[50px] my-4 lg:m-0lg:flex lg:w-1/4 lg:items-start border border-1 rounded-md'
       getPopupContainer={(node) => node.parentNode}
       dropdownStyle={{ minWidth: 200 }}
       value={value}
       onChange={handleChange}
+      aria-label={placeholder}
     >
       {options.map((item, index) => (
         <Option key={index} value={item.value}>
@@ -104,7 +105,9 @@ const ScheduleFilters = ({ filteredOptions, setFilteredOptions }) => {
           </Button>
           <Button
             key='clear'
-            className='bg-red-500 text-white h-[50px]'
+            type='primary'
+            danger
+            className='h-[50px]'
             onClick={handleClearFilters}
           >
             Clear Filters
@@ -119,13 +122,14 @@ const ScheduleFilters = ({ filteredOptions, setFilteredOptions }) => {
             <div className='flex justify-between w-full' key='footer'>
               <Button
                 key='clear'
-                className='bg-red-500 text-white'
+                type='primary'
+                danger
                 onClick={handleClearFilters}
               >
                 Clear Filters
               </Button>
-              <div className='flex gap-4'>
-                <Button key='cancel' onClick={handleCancel}>
+              <div className='flex gap-2'>
+                <Button key='cancel' className='mr-1' onClick={handleCancel}>
                   Cancel
                 </Button>
                 <Button key='submit' type='primary' onClick={handleOk}>
