@@ -3,12 +3,20 @@ import { Select } from 'antd'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faAddressCard,
+  faChevronDown,
   faLocationDot,
   faMagnifyingGlass,
 } from '@fortawesome/free-solid-svg-icons'
 
-const SearchInput = ({ placeholder, options, onChange, searchValue }) => {
-  const location = useLocation()
+const SearchInput = ({
+  placeholder,
+  options,
+  onChange,
+  searchValue,
+  isNavbar,
+  isProviderModal,
+}) => {
+  const { pathname } = useLocation()
   const handleChange = (value) => {
     onChange(value)
   }
@@ -18,9 +26,7 @@ const SearchInput = ({ placeholder, options, onChange, searchValue }) => {
   }
 
   const filterOption = (input, option) =>
-    option.searchValue
-      ? option.searchValue.toLowerCase().includes(input.toLowerCase())
-      : false
+    option.searchValue.toLowerCase().includes(input.toLowerCase())
 
   let icon
   if (placeholder === 'Medical condition') {
@@ -46,8 +52,10 @@ const SearchInput = ({ placeholder, options, onChange, searchValue }) => {
         onSearch={onSearch}
         filterOption={filterOption}
         options={options}
-        suffixIcon={null}
-        className='custom-select-placeholder w-full min-h-[50px]'
+        suffixIcon={
+          isProviderModal ? <FontAwesomeIcon icon={faChevronDown} /> : null
+        }
+        className={`w-full min-h-[50px] ${isNavbar && pathname === '/providers' ? 'custom-select-placeholder' : ''}`}
       />
     </div>
   )
