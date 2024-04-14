@@ -28,7 +28,7 @@ const searchConfigs = [
   },
 ]
 
-const SearchBarContent = () => {
+const SearchBarContent = (isNavbar) => {
   let navigate = useNavigate()
   const [form] = Form.useForm()
   const { searchValues, setSearchValues } = useContext(SearchContext)
@@ -43,7 +43,7 @@ const SearchBarContent = () => {
     <Form
       form={form}
       onFinish={onFinish}
-      className='flex items-center border border-teal-500 rounded bg-white lg:pl-2 lg:flex-row flex-col align-stretch custom-select-search-bar'
+      className='flex items-center border border-teal-500 rounded lg:pl-2 lg:flex-row flex-col align-stretch'
     >
       {searchConfigs.map((config, index) => (
         <div
@@ -52,7 +52,12 @@ const SearchBarContent = () => {
         >
           <Form.Item
             name={config.name}
-            style={{ margin: 0, padding: 0, flexGrow: 1 }}
+            style={{
+              margin: 0,
+              padding: 0,
+              flexGrow: 1,
+              backgroundColor: 'transparent',
+            }}
           >
             <SearchInput
               placeholder={config.placeholder}
@@ -65,6 +70,7 @@ const SearchBarContent = () => {
                   [config.name]: value || undefined,
                 }))
               }}
+              isNavbar={isNavbar}
             />
           </Form.Item>
           {index < searchConfigs.length - 1 && (
@@ -81,9 +87,9 @@ const SearchBarContent = () => {
   )
 }
 
-const SearchBar = () => (
+const SearchBar = (props) => (
   <ErrorBoundary FallbackComponent={ErrorCard} onReset={resetApplication}>
-    <SearchBarContent />
+    <SearchBarContent {...props} />
   </ErrorBoundary>
 )
 
