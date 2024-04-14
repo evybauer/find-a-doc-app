@@ -1,17 +1,19 @@
 import { useLocation } from 'react-router-dom'
 import SearchBar from '../SearchBar'
-import { Layout, Dropdown, Image, Menu, Button, message } from 'antd'
-import { Divider } from 'antd'
+import { Layout, Divider, Dropdown, Image, Menu, Button, message } from 'antd'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faMoon, faSun } from '@fortawesome/free-solid-svg-icons'
 import { menuItems } from '../../data/menuItems'
+import { ThemeContext } from '../../lib/themes'
+import { useContext } from 'react'
 
 const { Header } = Layout
 
 const Navbar = () => {
   const { pathname } = useLocation()
   const isProvidersRoute = pathname === '/providers'
+  const { theme, toggleTheme } = useContext(ThemeContext)
 
   const removeLoginAndSignUp = (menuItems) => {
     return menuItems.filter(
@@ -58,33 +60,35 @@ const Navbar = () => {
   )
 
   return (
-    <Header className='flex items-center py-12 px-12 bg-gray-800 h-32'>
+    <Header className='flex items-center py-12 px-12 h-32'>
       <div className='flex items-center justify-between w-full'>
         <div className='flex items-center'>
-          <div className='flex h-full w-14'>
-            <Link to='/' className='flex items-center flex-shrink-0 w-32'>
+          <div className='flex h-full w-16'>
+            <Link to='/' className='flex items-center flex-shrink-0 w-40'>
               <Image
                 src='/assets/logo/logo.png'
+                alt='Health Point Logo'
                 preview={false}
-                className='w-full object-contain'
+                className='w-full object-contain mb-4'
               />
             </Link>
           </div>
 
           {isProvidersRoute && (
             <div className='hidden lg:block ml-28' style={{ width: '540px' }}>
-              <SearchBar />
+              <SearchBar isNavbar={true} />
             </div>
           )}
         </div>
         <div className='flex md:hidden md:justify-end'>
           <Dropdown overlay={menu} trigger={['click']}>
             <Button
-              style={{ backgroundColor: '#1F2937', borderColor: '#1F2937' }}
+              style={{ backgroundColor: 'transparent', border: 'none' }}
+              className='group'
             >
               <FontAwesomeIcon
                 icon={faBars}
-                className='text-white font-semibold'
+                className='text-white font-semibold text-base group-hover:text-cyan-500 group-hover:text-lg'
               />
             </Button>
           </Dropdown>
@@ -93,20 +97,11 @@ const Navbar = () => {
         <Menu
           mode='horizontal'
           defaultSelectedKeys={[]}
-          style={{
-            flex: 1,
-            minWidth: 0,
-            justifyContent: 'end',
-            border: 'none',
-          }}
-          className='hidden md:flex bg-gray-800 custom-menu'
+          style={{ border: 'none' }}
+          className='hidden md:flex custom-menu justify-end min-w-0 flex-1'
         >
           {itemsLargeScreen.map((item) => (
-            <Menu.Item
-              key={item.key}
-              style={{ color: 'white', fontSize: '16px' }}
-              onClick={item.onClick}
-            >
+            <Menu.Item key={item.key} onClick={item.onClick}>
               {item.label}
             </Menu.Item>
           ))}
@@ -114,16 +109,19 @@ const Navbar = () => {
       </div>
 
       <div className='hidden md:flex'>
-        <Divider
-          type='vertical'
-          style={{
-            height: 30,
-            backgroundColor: 'white',
-          }}
-        />
+        <Divider type='vertical' className='bg-white h-8' />
         <Button
+          onClick={toggleTheme}
+          className='bg-transparent border-none hover:bg-transparent focus:bg-transparent'
+        >
+          <FontAwesomeIcon
+            className='w-4 h-4 text-white'
+            icon={theme.type === 'light' ? faSun : faMoon}
+          />
+        </Button>
+        <Button
+          type='primary'
           style={{ margin: '0 16px' }}
-          className='bg-gray-200 border-none text-gray-900 text-base'
           onClick={() =>
             message.warning('Log In functionality not yet implemented')
           }
@@ -132,7 +130,6 @@ const Navbar = () => {
         </Button>
         <Button
           type='primary'
-          className='border-none text-base'
           onClick={() =>
             message.warning('Sign Up functionality not yet implemented')
           }
