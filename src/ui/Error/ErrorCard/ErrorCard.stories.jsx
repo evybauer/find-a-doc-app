@@ -1,7 +1,7 @@
 import { ErrorCard } from './index'
 
 export default {
-  title: 'ErrorCard',
+  title: 'ui/Error/ErrorCard/ErrorCard',
   component: ErrorCard,
 }
 
