@@ -7,10 +7,10 @@ export const RetryButton = ({ resetErrorBoundary }) => {
     <Button
       key='retry'
       onClick={resetErrorBoundary}
-      className='text-base min-h-[50px] bg-[#037f8a] text-white'
+      className='min-h-[50px]'
       aria-label='Retry'
       role='button'
-      type='button'
+      type='primary'
     >
       <FontAwesomeIcon icon={faRotateRight} className='mr-2' />
       Retry

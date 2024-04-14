@@ -17,7 +17,7 @@ const AvailabilityCardContent = ({
 
   return (
     <>
-      <div className='grid grid-flow-row-dense grid-cols-3 md:grid-cols-7'>
+      <div className='grid grid-flow-row-dense grid-cols-3 mt-8 md:mt-0 md:grid-cols-7'>
         {firstRowAvailability.map((date) => (
           <div
             key={date}

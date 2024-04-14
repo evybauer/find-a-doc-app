@@ -1,9 +1,8 @@
-import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { RetryButton } from './index'
 
 export default {
-  title: 'RetryButton',
+  title: 'ui/Buttons/RetryButton',
   component: RetryButton,
 }
 

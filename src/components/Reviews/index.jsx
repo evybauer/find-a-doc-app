@@ -35,7 +35,7 @@ const Reviews = ({ provider, isModalVisible, closeModal, isHomeView }) => {
       <Modal open={isModalVisible} onCancel={closeModal} footer={null}>
         <Image
           src={provider.photo}
-          alt={provider.name}
+          alt={`${provider.name} photo`}
           className='mb-4'
           preview={false}
         />
@@ -45,15 +45,18 @@ const Reviews = ({ provider, isModalVisible, closeModal, isHomeView }) => {
           Reviews
         </Title>
         {providerReviews.map((review) => (
-          <Text key={review.id} className='flex flex-col my-6 text-base '>
-            <div className='flex font-semibold text-red-500 mb-1'>
-              <FontAwesomeIcon icon={faStar} className='mr-2 text-red-600' />
+          <Text key={review.id} className='flex flex-col my-6'>
+            <Text
+              type='danger'
+              className='flex items-center font-semibold mb-1'
+            >
+              <FontAwesomeIcon type='danger' icon={faStar} className='mr-2' />
               {review.rating.toFixed(1)}
-            </div>
-            <div className='flex text-gray-800'>{review.reviewText}</div>
-            <div className='flex justify-end font-light text-gray-700'>
+            </Text>
+            <Text className='flex'>{review.reviewText}</Text>
+            <Text type='secondary' className='flex justify-end font-light'>
               {review.username} ({review.state} - USA)
-            </div>
+            </Text>
           </Text>
         ))}
       </Modal>

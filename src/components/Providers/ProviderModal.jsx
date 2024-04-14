@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { SearchContext } from '../../providers/SearchProvider'
-import { Modal, Typography, Select } from 'antd'
+import { Form, Modal, Typography, Select } from 'antd'
 import ProviderCard from './ProviderCard'
 import AvailableTimes from './AvailableTimes'
 import SearchInput from '../SearchBar/SearchInput'
@@ -18,6 +18,7 @@ const ProviderModalContent = ({
   provider,
   allDates,
 }) => {
+  const [form] = Form.useForm()
   const { searchValues } = useContext(SearchContext)
 
   let providerInsuranceList = provider.insurance
@@ -64,7 +65,7 @@ const ProviderModalContent = ({
       <Select
         placeholder='Select a reason for your visit'
         style={{ width: '100%' }}
-        className='my-4 min-h-[50px] custom-select-placeholder'
+        className='my-4 min-h-[50px] border'
       >
         {provider.examsAvailable.map((exam, index) => (
           <Select.Option key={index} value={exam}>
@@ -73,11 +74,25 @@ const ProviderModalContent = ({
         ))}
       </Select>
 
-      <SearchInput
-        placeholder={searchValues.insurance || 'Add insurance'}
-        options={providerInsuranceList}
-        searchValue={searchValues.insurance}
-      />
+      <Form.Item
+        name='insurance'
+        style={{ margin: 0, padding: 0, flexGrow: 1 }}
+        className='border'
+      >
+        <SearchInput
+          placeholder={searchValues.insurance || 'Add insurance'}
+          options={providerInsuranceList}
+          searchValue={searchValues.insurance}
+          onChange={(value) => {
+            form.setFieldsValue({ insurance: value })
+            setSearchValues((prevValues) => ({
+              ...prevValues,
+              insurance: value || undefined,
+            }))
+          }}
+          isProviderModal={true}
+        />
+      </Form.Item>
 
       <Title
         level={4}

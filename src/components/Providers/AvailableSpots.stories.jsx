@@ -1,4 +1,3 @@
-import React from 'react'
 import dayjs from 'dayjs'
 import AvailableSpots from './AvailableSpots'
 import { SearchContext } from '../../providers/SearchProvider'
@@ -8,7 +7,7 @@ const startDateMock = dayjs()
 const endDateMock = dayjs().add(7, 'day')
 
 export default {
-  title: 'AvailableSpots',
+  title: 'Components/Providers/AvailableSpots',
   component: AvailableSpots,
   argTypes: {
     showModal: { action: 'showModal' },

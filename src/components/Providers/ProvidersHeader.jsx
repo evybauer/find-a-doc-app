@@ -34,7 +34,11 @@ const ProvidersHeader = ({
         {providers.length} providers
       </Title>
       <div className='flex justify-between mt-0 md:items-center md:space-x-4 '>
-        <Button className='bg-none border-none' onClick={handleLeftClick}>
+        <Button
+          className='bg-none border-none'
+          onClick={handleLeftClick}
+          aria-label='Previous'
+        >
           <FontAwesomeIcon
             icon={faChevronLeft}
             className={`text-base ${startDate.isSame('2024-03-22') ? 'text-gray-300' : 'text-gray-600'}`}
@@ -46,7 +50,11 @@ const ProvidersHeader = ({
           allowClear={false}
           className='border-none shadow-none outline-none focus:ring-0 focus:ring-offset-0 focus:ring-offset-transparent focus:ring-transparent focus:border-none focus:border-none'
         />
-        <Button className='bg-none border-none' onClick={handleRightClick}>
+        <Button
+          className='bg-none border-none'
+          onClick={handleRightClick}
+          aria-label='Next'
+        >
           <FontAwesomeIcon
             icon={faChevronRight}
             className='text-base text-gray-600'

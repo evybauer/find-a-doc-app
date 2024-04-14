@@ -1,8 +1,9 @@
 import '../src/index.css'
+import { withColorScheme } from './decorators/withColorScheme'
 
 export default {
   title: 'Your Story',
-  decorators: [],
+  decorators: [withColorScheme],
 }
 
 export const parameters = {

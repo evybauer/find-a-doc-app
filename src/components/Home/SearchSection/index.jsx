@@ -1,4 +1,3 @@
-import React from 'react'
 import SearchBar from '../../SearchBar'
 import { Typography } from 'antd'
 import AnimatedProvidersList from './AnimatedProvidersList'

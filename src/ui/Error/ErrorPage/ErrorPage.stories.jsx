@@ -1,7 +1,7 @@
 import { ErrorPage } from './index'
 
 export default {
-  title: 'ErrorPage',
+  title: 'ui/Error/ErrorPage/ErrorPage',
   component: ErrorPage,
 }
 

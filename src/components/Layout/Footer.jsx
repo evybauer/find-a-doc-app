@@ -1,6 +1,6 @@
 import { Divider, Layout, Typography } from 'antd'
 
-const { Text } = Typography
+const { Link, Text } = Typography
 const { Footer } = Layout
 
 const MainFooter = () => {
@@ -11,20 +11,17 @@ const MainFooter = () => {
       }}
     >
       <div className='flex flex-col sm:flex-row items-center justify-center'>
-        <Text className='text-base'>
-          ©2024 Health Point All Rights Reserved{' '}
-        </Text>
-        <Divider type='vertical' className='hidden sm:flex bg-gray-800' />
-        <Text className='text-base'>
+        <Text>©2024 Health Point All Rights Reserved </Text>
+        <Divider type='vertical' className='hidden sm:flex' />
+        <Text>
           Made with ❤️ by{' '}
-          <a
+          <Link
             href='https://evelynbauer.ca/'
             target='_blank'
             rel='noopener noreferrer'
-            className='text-[#27a5b0]'
           >
             Evelyn Bauer
-          </a>
+          </Link>
         </Text>
       </div>
     </Footer>

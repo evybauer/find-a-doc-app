@@ -24,13 +24,15 @@ const TrustedDoctorsBannerContent = () => {
       {!imgLoadError && (
         <img
           src='/assets/banners/trustedDoctorsBanner.png'
+          alt='Trusted Doctors Banner'
           onError={handleImageError}
           onLoad={handleImageLoad}
         />
       )}
       <div className='flex absolute bottom-4 right-4 md:bottom-6 md:right-6 lg:bottom-12 lg:right-12'>
         <Button
-          className='text-base md:text-xl min-h-[50px] text-gray-600 shadow-md'
+          type='primary'
+          className='md:text-xl min-h-[50px] border-none shadow-md bg-neutral-100 text-black'
           onClick={() =>
             message.warning(
               'Find Trusted Doctors functionality not yet implemented',
@@ -40,7 +42,8 @@ const TrustedDoctorsBannerContent = () => {
           Find Trusted Doctors
         </Button>
         <Button
-          className='hidden md:block text-xl min-h-[50px] bg-gray-700 text-white border-none shadow-md ml-4'
+          type='primary'
+          className='hidden md:block text-xl min-h-[50px] border-none shadow-md ml-4 bg-neutral-800 text-white'
           onClick={() =>
             message.warning(
               'Book Trusted Doctorfunctionality not yet implemented',
