@@ -1,5 +1,6 @@
 export const mockProvider = {
-  photo: '/assets/images/doctor3.jpg',
+  id: 3,
+  photo: '/assets/images/doctors/doctor3.jpg',
   name: 'Dr. Sarah Thompson',
   specialty: 'Endocrinologist',
   sponsored: true,
