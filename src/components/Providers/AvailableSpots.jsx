@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react'
 import ProviderModal from './ProviderModal'
-import { Button } from 'antd'
+import { Card, Button } from 'antd'
 import ProviderNotAvailableMessage from './ProviderNotAvailableMessage'
 import dayjs from 'dayjs'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -40,7 +40,11 @@ const AvailableSpotsContent = ({
   const availableSpots = getAvailableSpots(provider, allDates)
 
   return (
-    <div className='ml-4'>
+    <Card
+      className='border-none'
+      style={{ backgroundColor: 'transparent' }}
+      bodyStyle={{ padding: '0' }}
+    >
       <AvailabilityCards
         provider={provider}
         allDates={allDates}
@@ -82,7 +86,7 @@ const AvailableSpotsContent = ({
           </a>
         </div>
       )}
-    </div>
+    </Card>
   )
 }
 
