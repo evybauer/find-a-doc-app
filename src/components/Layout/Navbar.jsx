@@ -107,9 +107,8 @@ const Navbar = () => {
             <Menu.Item
               key={item.key}
               onClick={item.onClick}
-              className='capital'
             >
-              {item.label}
+              {cap(item.label)}
             </Menu.Item>
           ))}
         </Menu>
