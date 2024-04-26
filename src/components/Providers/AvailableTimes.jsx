@@ -4,6 +4,8 @@ import BookAppointmentForm from './BookAppointmentForm'
 import { ErrorBoundary } from 'react-error-boundary'
 import { resetApplication } from '../../common/utils'
 import { ErrorCard } from '../../ui/Error/ErrorCard'
+import { useTranslation } from 'react-i18next'
+import { cap } from '../../common/utils'
 
 const { Text, Title } = Typography
 
@@ -12,6 +14,7 @@ const AvailableTimesContent = ({
   allDates,
   setIsModalVisible,
 }) => {
+  const { t } = useTranslation('global')
   const [selectedTime, setSelectedTime] = useState(null)
 
   const [selectedAppointmentIndex, setSelectedAppointmentIndex] = useState(null)
@@ -73,7 +76,7 @@ const AvailableTimesContent = ({
                 ))
               ) : (
                 <Text className='text-base font-extralight text-gray-500'>
-                  No available appointments
+                  {cap(t('providers.no_appointments'))}
                 </Text>
               )}
             </div>
