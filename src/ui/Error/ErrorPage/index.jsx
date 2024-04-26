@@ -23,7 +23,9 @@ export const ErrorPage = ({ error, resetErrorBoundary }) => {
           </div>
           <div className='max-w-md flex flex-col items-center md:items-start text-center md:text-left bottom-0'>
             <Title level={1} style={{ margin: 0, fontWeight: 800 }}>
-              {error.status ? error.status : `${cap(t('message.error.something_went_wrong'))}`}
+              {error.status
+                ? error.status
+                : `${cap(t('message.error.something_went_wrong'))}`}
             </Title>
             <Title level={2} style={{ margin: 0, fontWeight: 500 }}>
               {error.message}

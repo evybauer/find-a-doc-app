@@ -19,7 +19,7 @@ export const TranslationButton = () => {
     <Menu>
       <Menu.Item
         key='en'
-        style={{ color: 'white', textTransform: 'capitalize'}}
+        style={{ color: 'white', textTransform: 'capitalize' }}
         onClick={() => handleChangeLanguage('en')}
       >
         {t('language.english')}
@@ -40,7 +40,9 @@ export const TranslationButton = () => {
         className='text-white ant-dropdown-link'
         onClick={(e) => e.preventDefault()}
       >
-        {language === 'en' ? `${cap(t('language.english'))}` : `${cap(t('language.spanish'))}`}
+        {language === 'en'
+          ? `${cap(t('language.english'))}`
+          : `${cap(t('language.spanish'))}`}
         <FontAwesomeIcon
           className='w-4 h-4 ml-2 text-white'
           icon={faCaretDown}

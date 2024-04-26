@@ -104,10 +104,7 @@ const Navbar = () => {
           className='hidden md:flex custom-menu justify-end min-w-0 flex-1'
         >
           {itemsLargeScreen.map((item) => (
-            <Menu.Item
-              key={item.key}
-              onClick={item.onClick}
-            >
+            <Menu.Item key={item.key} onClick={item.onClick}>
               {cap(item.label)}
             </Menu.Item>
           ))}
