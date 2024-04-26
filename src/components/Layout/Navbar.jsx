@@ -1,55 +1,56 @@
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import SearchBar from '../SearchBar'
 import { Layout, Divider, Dropdown, Image, Menu, Button, message } from 'antd'
-import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faMoon, faSun } from '@fortawesome/free-solid-svg-icons'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { menuItems } from '../../data/menuItems'
-import { ThemeContext } from '../../lib/themes'
-import { useContext } from 'react'
+import { useTranslation } from 'react-i18next'
+import { cap } from '../../common/utils'
+import { TranslationButton } from '../../ui/Buttons/TranslationButton'
+import { ThemeButton } from '../../ui/Buttons/ThemeButton'
 
 const { Header } = Layout
 
 const Navbar = () => {
   const { pathname } = useLocation()
   const isProvidersRoute = pathname === '/providers'
-  const { theme, toggleTheme } = useContext(ThemeContext)
+  const { t } = useTranslation('global')
 
   const removeLoginAndSignUp = (menuItems) => {
     return menuItems.filter(
-      (label) => label.name !== 'Log in' && label.name !== 'Sign up',
+      (label) => label.value !== 'login' && label.value !== 'signup',
     )
   }
 
   const updatedMenuItems = removeLoginAndSignUp(menuItems)
 
   const itemsLargeScreen = updatedMenuItems
-    .filter((item) => !isProvidersRoute || item.name === 'Help')
-    .map((item, index) => ({
-      key: index + 1,
-      label: item.name,
-      onClick: item.onClick,
+    .filter((item) => !isProvidersRoute || item.value === 'help')
+    .map((item) => ({
+      key: item.id,
+      label: t(item.label),
+      onClick: () => message.warning(`${cap(t(`${item.error}`))}`),
     }))
 
   const itemsSmallScreen = menuItems
     .filter(
       (item) =>
         !isProvidersRoute ||
-        item.name === 'Help' ||
-        item.name === 'Log in' ||
-        item.name === 'Sign up',
+        item.value === 'help' ||
+        item.value === 'login' ||
+        item.value === 'signup',
     )
-    .map((item, index) => ({
-      key: index + 1,
-      label: item.name,
-      onClick: item.onClick,
+    .map((item) => ({
+      key: item.id,
+      label: cap(t(item.label)),
+      onClick: () => message.warning(`${cap(t(`${item.error}`))}`),
     }))
 
   const menu = (
     <Menu>
       {itemsSmallScreen.map((item) => (
         <Menu.Item
-          key={item.key}
+          key={item.id}
           style={{ color: 'white', margin: '8px 0' }}
           onClick={item.onClick}
         >
@@ -80,7 +81,9 @@ const Navbar = () => {
             </div>
           )}
         </div>
-        <div className='flex md:hidden md:justify-end'>
+        <div className='flex md:hidden md:justify-end items-center'>
+          <TranslationButton />
+          <ThemeButton />
           <Dropdown overlay={menu} trigger={['click']}>
             <Button
               style={{ backgroundColor: 'transparent', border: 'none' }}
@@ -88,7 +91,7 @@ const Navbar = () => {
             >
               <FontAwesomeIcon
                 icon={faBars}
-                className='text-white font-semibold text-base group-hover:text-cyan-500 group-hover:text-lg'
+                className='text-white font-semibold text-base group-hover:text-cyan-500'
               />
             </Button>
           </Dropdown>
@@ -101,40 +104,42 @@ const Navbar = () => {
           className='hidden md:flex custom-menu justify-end min-w-0 flex-1'
         >
           {itemsLargeScreen.map((item) => (
-            <Menu.Item key={item.key} onClick={item.onClick}>
+            <Menu.Item
+              key={item.key}
+              onClick={item.onClick}
+              className='capital'
+            >
               {item.label}
             </Menu.Item>
           ))}
         </Menu>
       </div>
 
-      <div className='hidden md:flex'>
+      <div className='hidden md:flex items-center'>
         <Divider type='vertical' className='bg-white h-8' />
-        <Button
-          onClick={toggleTheme}
-          className='bg-transparent border-none hover:bg-transparent focus:bg-transparent'
-        >
-          <FontAwesomeIcon
-            className='w-4 h-4 text-white'
-            icon={theme.type === 'light' ? faSun : faMoon}
-          />
-        </Button>
+        <TranslationButton />
+        <ThemeButton />
         <Button
           type='primary'
-          style={{ margin: '0 16px' }}
+          style={{ margin: '0 16px', textTransform: 'capitalize' }}
           onClick={() =>
-            message.warning('Log In functionality not yet implemented')
+            message.warning(
+              `${cap(t('message.warning.no_login_functionality'))}`,
+            )
           }
         >
-          Log in
+          {t('action.login')}
         </Button>
         <Button
           type='primary'
           onClick={() =>
-            message.warning('Sign Up functionality not yet implemented')
+            message.warning(
+              `${cap(t('message.warning.no_signup_functionality'))}`,
+            )
           }
+          style={{ textTransform: 'capitalize' }}
         >
-          Sign up
+          {t('action.signup')}
         </Button>
       </div>
     </Header>
