@@ -1,9 +1,8 @@
-let postcssLoaderOptions
-;(async () => {
-  postcssLoaderOptions = {
-    implementation: await import('postcss'),
-  }
-})()
+let postcssImplementation
+
+import('postcss').then((postcss) => {
+  postcssImplementation = postcss
+})
 
 const config = {
   framework: '@storybook/react-vite',
@@ -15,10 +14,13 @@ const config = {
     '@storybook/addon-a11y',
     '@storybook/addon-viewport',
     '@storybook/addon-actions',
+    'storybook-react-i18next',
     {
       name: '@storybook/addon-postcss',
       options: {
-        postcssLoaderOptions,
+        postcssLoaderOptions: {
+          implementation: postcssImplementation,
+        },
       },
     },
   ],

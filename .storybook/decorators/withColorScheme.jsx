@@ -6,8 +6,8 @@ import { darkTheme } from '../../src/lib/themes/dark'
 export const withColorScheme = (Story) => {
   const [theme, setTheme] = useState(lightTheme)
 
-  const toggleTheme = () => {
-    setTheme(theme.type === 'light' ? darkTheme : lightTheme)
+  const handleCompareThemes = () => {
+    setTheme(darkTheme)
   }
 
   const handleDefaultTheme = () => {
@@ -54,39 +54,54 @@ export const withColorScheme = (Story) => {
     />
   )
 
-  return (
-    <>
-      <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 10 }}>
+  const ThemeSwitcher = () => {
+    return (
+      <div>
         <button
           style={{
             width: '150px',
-            height: '70px',
+            height: '50px',
             backgroundColor: 'blue',
             color: 'white',
             border: '1px blue solid',
             borderRadius: '12px',
             marginRight: '8px',
           }}
-          onClick={toggleTheme}
+          onClick={handleDefaultTheme}
         >
           Default Theme
         </button>
         <button
           style={{
             width: '150px',
-            height: '70px',
+            height: '50px',
             backgroundColor: 'red',
             color: 'white',
             border: '1px red solid',
             borderRadius: '12px',
           }}
-          onClick={handleDefaultTheme}
+          onClick={handleCompareThemes}
         >
           Compare Themes
         </button>
       </div>
-      {theme.type === 'light' ? (
-        <div className='flex items-center justify-center my-8'>
+    )
+  }
+
+  return (
+    <>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'flex-end',
+          gap: 10,
+          marginBottom: '16px',
+        }}
+      >
+        <ThemeSwitcher />
+      </div>
+      {theme.type !== 'light' ? (
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
           <ConfigProvider theme={themeConfigLight}>
             <Flex>
               <Story />

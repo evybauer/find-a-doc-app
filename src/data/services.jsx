@@ -1,20 +1,20 @@
 export const services = [
   {
     id: 1,
-    title: 'Browse providers who take your insurance',
-    buttonText: 'See specialties',
+    title: 'services.insurance',
+    buttonText: 'services.button.specialties',
     source: '/assets/icons/insurance.png',
   },
   {
     id: 2,
-    title: 'Read reviews from users',
-    buttonText: 'See providers',
+    title: 'services.reviews',
+    buttonText: 'services.button.providers',
     source: '/assets/icons/review.png',
   },
   {
     id: 3,
-    title: 'Book appointments online',
-    buttonText: 'See availability',
+    title: 'services.appointments',
+    buttonText: 'services.button.availability',
     source: '/assets/icons/appointment.png',
   },
 ]

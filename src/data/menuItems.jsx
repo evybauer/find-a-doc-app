@@ -1,25 +1,33 @@
-import { message } from 'antd'
-
 export const menuItems = [
   {
-    name: 'Browse',
-    onClick: () => message.warning('Browse functionality not yet implemented'),
+    id: 1,
+    value: 'browse',
+    label: 'navbar.browse',
+    error: 'message.warning.no_browse_functionality',
   },
   {
-    name: 'Help',
-    onClick: () => message.warning('Help functionality not yet implemented'),
+    id: 2,
+    value: 'help',
+    label: 'navbar.help',
+    error: 'message.warning.no_help_functionality',
   },
   {
-    name: 'List your practice on Health Point',
-    onClick: () => message.warning('Listing functionality not yet implemented'),
+    id: 3,
+    value: 'list',
+    label: 'navbar.list_your_practice',
+    error: 'message.warning.no_listing_functionality',
   },
   {
-    name: 'Log in',
-    onClick: () => message.warning('Log in functionality not yet implemented'),
+    id: 4,
+    value: 'login',
+    label: 'action.login',
+    error: 'message.warning.no_login_functionality',
   },
 
   {
-    name: 'Sign up',
-    onClick: () => message.warning('Sign up functionality not yet implemented'),
+    id: 5,
+    value: 'signup',
+    label: 'action.signup',
+    error: 'message.warning.no_signup_functionality',
   },
 ]

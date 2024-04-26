@@ -7,8 +7,11 @@ import {
   faLocationDot,
   faMagnifyingGlass,
 } from '@fortawesome/free-solid-svg-icons'
+import { useTranslation } from 'react-i18next'
+import { cap } from '../../common/utils'
 
 const SearchInput = ({
+  name,
   placeholder,
   options,
   onChange,
@@ -16,6 +19,7 @@ const SearchInput = ({
   isNavbar,
   isProviderModal,
 }) => {
+  const { t } = useTranslation('global')
   const { pathname } = useLocation()
   const handleChange = (value) => {
     onChange(value)
@@ -29,11 +33,11 @@ const SearchInput = ({
     option.searchValue.toLowerCase().includes(input.toLowerCase())
 
   let icon
-  if (placeholder === 'Medical condition') {
+  if (name === 'condition') {
     icon = faMagnifyingGlass
-  } else if (placeholder === 'Location') {
+  } else if (name === 'location') {
     icon = faLocationDot
-  } else if (placeholder === 'Add insurance') {
+  } else if (name === 'insurance') {
     icon = faAddressCard
   }
 
@@ -46,7 +50,7 @@ const SearchInput = ({
         value={searchValue}
         showSearch
         allowClear
-        placeholder={searchValue || placeholder}
+        placeholder={searchValue || `${cap(t(placeholder))}`}
         optionFilterProp='items'
         onChange={handleChange}
         onSearch={onSearch}
@@ -55,7 +59,7 @@ const SearchInput = ({
         suffixIcon={
           isProviderModal ? <FontAwesomeIcon icon={faChevronDown} /> : null
         }
-        className={`w-full min-h-[50px] ${isNavbar && pathname === '/providers' ? 'custom-select-placeholder' : ''}`}
+        className={`w-full min-h-[50px] ${isNavbar ? 'custom-select-placeholder' : 'text-black'}`}
       />
     </div>
   )

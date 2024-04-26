@@ -9,10 +9,13 @@ import {
 import { getNextAvailableDate } from '../../../common/utils'
 import ProviderCard from '../../Providers/ProviderCard'
 import Reviews from '../../Reviews'
+import { useTranslation } from 'react-i18next'
+import { cap } from '../../../common/utils'
 
 const { Link, Text } = Typography
 
 const TopRatedDoctorCard = ({ review, provider }) => {
+  const { t } = useTranslation('global')
   const [isReviewsModalVisible, setIsReviewsModalVisible] = useState(false)
 
   const handleReviewsModalOpen = () => {
@@ -30,7 +33,7 @@ const TopRatedDoctorCard = ({ review, provider }) => {
           <div className='relative'>
             <img
               src={provider.photo}
-              alt={`${provider.name} photo`}
+              alt={`${provider.name} ${t('label.photo')}`}
               className='shadow-xl rounded-full align-start border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-[150px]'
             />
           </div>
@@ -38,9 +41,13 @@ const TopRatedDoctorCard = ({ review, provider }) => {
       </div>
       <div className='mt-28 lg:mt-32'>
         <div className='flex my-4 lg:absolute lg:top-2 lg:right-0 lg:my-0'>
-          <Tag color='cyan' className='text-base'>
+          <Tag
+            color='cyan'
+            style={{ textTransform: 'capitalize' }}
+            className='text-base'
+          >
             <FontAwesomeIcon icon={faStar} className='mr-2' />
-            Highly Reccomended
+            {t('tag.highly_recommended')}
           </Tag>
         </div>
         <ProviderCard
@@ -65,7 +72,7 @@ const TopRatedDoctorCard = ({ review, provider }) => {
             onClick={handleReviewsModalOpen}
           >
             <FontAwesomeIcon icon={faComment} className='mr-2' />
-            See more reviews
+            {cap(t('link.see_reviews'))}
           </Link>
         </div>
       </div>
@@ -78,19 +85,22 @@ const TopRatedDoctorCard = ({ review, provider }) => {
       <div className='flex flex-col justify-between py-8'>
         <div className='flex flex-wrap items-center my-4'>
           <Text className='text-bold'>
-            <FontAwesomeIcon icon={faCalendarDays} /> Appointments available on{' '}
-            {getNextAvailableDate(provider)}
+            <FontAwesomeIcon icon={faCalendarDays} />{' '}
+            {cap(t('reviews.availability'))} {getNextAvailableDate(provider)}
           </Text>
         </div>
         <div className='w-full flex flex-wrap justify-center'>
           <Button
             type='primary'
+            style={{ textTransform: 'uppercase' }}
             className='w-full min-h-[50px]'
             onClick={() =>
-              message.warning('BOOK NOW functionality not yet implemented')
+              message.warning(
+                `${cap(t('message.warning.no_book_now_functionality'))}`,
+              )
             }
           >
-            BOOK NOW
+            {t('action.book_now')}
           </Button>
         </div>
       </div>

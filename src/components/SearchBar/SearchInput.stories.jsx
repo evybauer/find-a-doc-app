@@ -31,6 +31,5 @@ Default.args = {
     { value: 'option3', label: 'Option 3' },
   ],
   searchValue: 'option1',
-  isNavbar: false,
   isProviderModal: false,
 }

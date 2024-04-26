@@ -8,12 +8,8 @@ export default {
 }
 
 export const Default = () => {
-  const args = {
-    isNavbar: false,
-  }
-
   return (
-    <MemoryRouter initialEntries={['/providers']}>
+    <MemoryRouter initialEntries={['/']}>
       <SearchProvider>
         <SearchBar {...args} />
       </SearchProvider>

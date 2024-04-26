@@ -1,9 +1,9 @@
 import '../src/index.css'
-import { withColorScheme } from './decorators/withColorScheme'
+import { withColorScheme, withI18next } from './decorators'
 
 export default {
   title: 'Your Story',
-  decorators: [withColorScheme],
+  decorators: [withColorScheme, withI18next],
 }
 
 export const parameters = {
@@ -12,6 +12,22 @@ export const parameters = {
   options: {
     storySort: {
       order: ['Introduction', 'Components'],
+    },
+  },
+}
+
+export const globalTypes = {
+  locale: {
+    name: 'Locale',
+    description: 'Internationalization locale',
+    defaultValue: 'en',
+    toolbar: {
+      icon: 'globe',
+      items: [
+        { value: 'en', title: 'english' },
+        { value: 'es', title: 'spanish' },
+      ],
+      showName: true,
     },
   },
 }

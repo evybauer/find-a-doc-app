@@ -1,9 +1,13 @@
 import { RetryButton } from '../../Buttons/RetryButton'
 import { Space, Typography } from 'antd'
+import { useTranslation } from 'react-i18next'
+import { cap } from '../../../common/utils'
 
 const { Text, Title } = Typography
 
 export const ErrorPage = ({ error, resetErrorBoundary }) => {
+  const { t } = useTranslation('global')
+
   return (
     <Space>
       <div className='h-screen w-screen flex items-center justify-center'>
@@ -19,14 +23,15 @@ export const ErrorPage = ({ error, resetErrorBoundary }) => {
           </div>
           <div className='max-w-md flex flex-col items-center md:items-start text-center md:text-left bottom-0'>
             <Title level={1} style={{ margin: 0, fontWeight: 800 }}>
-              {error.status ? error.status : 'Something went wrong.'}
+              {error.status
+                ? error.status
+                : `${cap(t('message.error.something_went_wrong'))}`}
             </Title>
             <Title level={2} style={{ margin: 0, fontWeight: 500 }}>
               {error.message}
             </Title>
             <Text type='secondary' className='mt-2 mb-6'>
-              But dont worry, you can find plenty of other things on our
-              homepage.
+              {cap(t('message.error.homepage_redirect'))}
             </Text>
             <RetryButton resetErrorBoundary={resetErrorBoundary} />
           </div>

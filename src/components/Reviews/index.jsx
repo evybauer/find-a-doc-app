@@ -7,10 +7,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import { Suspense } from 'react'
 import LoadingStatus from '../../ui/Status/LoadingStatus'
+import { useTranslation } from 'react-i18next'
 
 const { Title, Text } = Typography
 
 const Reviews = ({ provider, isModalVisible, closeModal, isHomeView }) => {
+  const { t } = useTranslation('global')
+
   const urlReviews = getFirestoreURL('reviews')
   const {
     data: reviews,
@@ -41,8 +44,15 @@ const Reviews = ({ provider, isModalVisible, closeModal, isHomeView }) => {
         />
         {isHomeView && <ProviderCard provider={provider} />}
         <Divider direction='horizontal' />
-        <Title level={2} style={{ fontWeight: 400, marginBottom: 0 }}>
-          Reviews
+        <Title
+          level={2}
+          style={{
+            fontWeight: 400,
+            marginBottom: 0,
+            textTransform: 'capitalize',
+          }}
+        >
+          {t('reviews.title')}
         </Title>
         {providerReviews.map((review) => (
           <Text key={review.id} className='flex flex-col my-6'>

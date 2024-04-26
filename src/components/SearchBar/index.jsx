@@ -9,30 +9,36 @@ import { medicalConditions } from '../../data/medicalConditionsList'
 import { ErrorBoundary } from 'react-error-boundary'
 import { ErrorCard } from '../../ui/Error/ErrorCard'
 import { resetApplication } from '../../common/utils'
+import { useTranslation } from 'react-i18next'
+import { cap } from '../../common/utils'
 
 const searchConfigs = [
   {
+    id: 1,
     name: 'condition',
-    placeholder: 'Medical condition',
+    placeholder: 'action.find_doctors',
     options: medicalConditions,
   },
   {
+    id: 2,
     name: 'location',
-    placeholder: 'Location',
+    placeholder: 'search.location',
     options: location,
   },
   {
+    id: 3,
     name: 'insurance',
-    placeholder: 'Add insurance',
+    placeholder: 'search.add_insurance',
     options: insurance,
   },
 ]
 
-const SearchBarContent = (isNavbar) => {
+const SearchBarContent = ({ isNavbar }) => {
   let navigate = useNavigate()
   const [form] = Form.useForm()
   const { searchValues, setSearchValues } = useContext(SearchContext)
   const location = useLocation()
+  const { t } = useTranslation('global')
 
   const onFinish = (values) => {
     setSearchValues(values)
@@ -51,7 +57,7 @@ const SearchBarContent = (isNavbar) => {
           className='min-h-[50px] flex w-full p-[16px] border-b border-teal-500 lg:p-[0_8px] lg:border-none'
         >
           <Form.Item
-            name={config.name}
+            name={config.value}
             style={{
               margin: 0,
               padding: 0,
@@ -60,14 +66,15 @@ const SearchBarContent = (isNavbar) => {
             }}
           >
             <SearchInput
-              placeholder={config.placeholder}
+              placeholder={cap(t(config.placeholder))}
+              name={config.name}
               options={config.options}
-              searchValue={searchValues[config.name]}
+              searchValue={searchValues[config.value]}
               onChange={(value) => {
-                form.setFieldsValue({ [config.name]: value })
+                form.setFieldsValue({ [config.value]: value })
                 setSearchValues((prevValues) => ({
                   ...prevValues,
-                  [config.name]: value || undefined,
+                  [config.value]: value || undefined,
                 }))
               }}
               isNavbar={isNavbar}
@@ -80,7 +87,7 @@ const SearchBarContent = (isNavbar) => {
       ))}
       {location.pathname === '/' && (
         <Button type='primary' htmlType='submit' className='search-bar-button'>
-          Find Doctors
+          {cap(t('action.find_doctors'))}
         </Button>
       )}
     </Form>

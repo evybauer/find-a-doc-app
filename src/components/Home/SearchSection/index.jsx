@@ -4,23 +4,32 @@ import AnimatedProvidersList from './AnimatedProvidersList'
 import { ErrorBoundary } from 'react-error-boundary'
 import { resetApplication } from '../../../common/utils'
 import { ErrorCard } from '../../../ui/Error/ErrorCard'
+import { useTranslation } from 'react-i18next'
 
 const { Title } = Typography
 
 const SearchSectionContent = () => {
+  const { t } = useTranslation('global')
+
   return (
     <>
       <div className='my-16'>
         <div className='flex flex-wrap items-center'>
           <Title
-            style={{ fontSize: 60, fontWeight: 100, margin: 0, marginRight: 8 }}
+            style={{
+              fontSize: 50,
+              fontWeight: 100,
+              margin: 0,
+              marginRight: 8,
+              textTransform: 'capitalize',
+            }}
           >
-            Book local
+            {t('specialties.home_main_title_1')}
           </Title>
           <AnimatedProvidersList />
         </div>
-        <Title style={{ fontSize: 60, fontWeight: 100, margin: 0 }}>
-          who take your insurance
+        <Title style={{ fontSize: 50, fontWeight: 100, margin: 0 }}>
+          {t('specialties.home_main_title_2')}
         </Title>
       </div>
       <SearchBar />

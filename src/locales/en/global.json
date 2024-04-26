@@ -1,0 +1,271 @@
+{
+  "action": {
+    "login": "login",
+    "signup": "sign up",
+    "logout": "logout",
+    "retry": "retry",
+    "book_trusted_doctors": "book trusted doctors",
+    "confirm_appointment": "confirm appointment",
+    "find_trusted_doctors": "find trusted doctors",
+    "find_more_providers": "find more providers",
+    "clear_filters": "clear filters",
+    "notify_me": "notify me",
+    "cancel": "cancel",
+    "ok": "ok",
+    "find_doctors": "find doctors",
+    "more_filters": "more filters",
+    "book_now": "book now"
+  },
+  "label": {
+    "name": "name",
+    "email": "email",
+    "phone": "phone",
+    "photo": "photo"
+  },
+  "specialties": {
+    "doctors": "doctors",
+    "dentists": "dentists",
+    "OB_GYNs": "OB-GYNs",
+    "dermatologists": "dermatologists",
+    "cardiologists": "cardiologists",
+    "ophthalmologists": "ophthalmologists",
+    "orthopedic_surgeons": "orthopedic_surgeons",
+    "home_main_title_1": "book local",
+    "home_main_title_2": "who take your insurance",
+    "services_title": "let’s get you a professional who gets you"
+  },
+  "navbar": {
+    "alt": "health point logo",
+    "browse": "browse",
+    "help": "help",
+    "list_your_practice": "list your practice on health point"
+  },
+  "filters": {
+    "specialty": "specialty",
+    "distance": "distance",
+    "language_spoken": "language spoken",
+    "time_of_day": "time of day",
+    "gender": "gender",
+    "visit_type": "visit type"
+  },
+  "gender": {
+    "female": "female",
+    "male": "male",
+    "non_binary": "non-binary"
+  },
+  "language": {
+    "arabic": "arabic",
+    "bengali": "bengali",
+    "czech": "czech",
+    "danish": "danish",
+    "dutch": "dutch",
+    "english": "english",
+    "finnish": "finnish",
+    "french": "french",
+    "german": "german",
+    "greek": "greek",
+    "hebrew": "hebrew",
+    "hindi": "hindi",
+    "hungarian": "hungarian",
+    "italian": "italian",
+    "japanese": "japanese",
+    "korean": "korean",
+    "mandarin": "mandarin",
+    "norwegian": "norwegian",
+    "persian": "persian",
+    "polish": "polish",
+    "portuguese": "portuguese",
+    "russian": "russian",
+    "spanish": "spanish",
+    "swedish": "swedish",
+    "tagalog": "tagalog",
+    "thai": "thai",
+    "turkish": "turkish",
+    "urdu": "urdu",
+    "vietnamese": "vietnamese"
+  },
+  "visit": {
+    "in_person-and_video": "in-person and video visits",
+    "in_person_only": "in-person visits only",
+    "video_only": "video visits only"
+  },
+  "time": {
+    "early_morning": "early morning",
+    "morning": "morning",
+    "afternoon": "afternoon",
+    "evening": "evening"
+  },
+  "reason": {
+    "acquired_hypothyroidism": "acquired hypothyroidism",
+    "all_diabetes": "all diabetes",
+    "alzheimers_disease": "alzheimer's disease",
+    "anemia": "anemia",
+    "anxiety": "anxiety",
+    "asthma": "asthma",
+    "bariatric_surgery": "bariatric surgery",
+    "breast_cancer": "breast cancer",
+    "bronchiectasis": "bronchiectasis",
+    "bronchitis": "bronchitis",
+    "chronic_obstructive_pulmonary_disease": "chronic obstructive pulmonary disease",
+    "colorectral_cancer": "colorectral cancer",
+    "covid_19": "covid-19",
+    "depression": "depression",
+    "diabetes_type1": "diabetes type 1",
+    "diabetes_type2": "diabetes type 2",
+    "diagnostic_imaging": "diagnostic imaging",
+    "ear_nose_and_throat_conditions": "ear, nose, and throat conditions",
+    "emphysema": "emphysema",
+    "endometrial_cancer": "endometrial cancer",
+    "foot_and_ankle_conditions": "foot and ankle conditions",
+    "genetic_testing": "genetic testing",
+    "heart_transplant": "heart transplant",
+    "hepatitis": "hepatitis",
+    "hernia": "hernia",
+    "leukemia": "leukemia",
+    "lungcancer": "lung cancer",
+    "lymphoma": "lymphoma",
+    "metastatic_brain_tumor": "metastatic brain tumor",
+    "migraine_headaches": "migraine headaches",
+    "multiple_sclerosis": "multiple sclerosis",
+    "opioid_dependency": "opioid dependency",
+    "osteoporosis": "osteoporosis",
+    "ovarian_cancer": "ovarian cancer",
+    "parkinsons_disease": "parkinson's disease",
+    "pediatric_care": "pediatric care",
+    "physical_therapy": "physical therapy",
+    "prostate_cancer": "prostate cancer",
+    "resuscitation": "resuscitation",
+    "senile_dementia": "senile dementia",
+    "skin_cancer": "skin cancer",
+    "trigeminal_neuralgia": "trigeminal neuralgia",
+    "ventricular_assist_device": "ventricular assist device (VAD)"
+  },
+  "specialty": {
+    "allergist_immunologist": "allergist/immunologist",
+    "cardiologist": "cardiologist",
+    "dermatologist": "dermatologist",
+    "endocrinologist": "endocrinologist",
+    "gastroenterologist": "gastroenterologist",
+    "geneticist": "geneticist",
+    "geriatric_medicine": "geriatric medicine",
+    "infectious_disease_specialist": "infectious disease specialist",
+    "nephrologist": "nephrologist",
+    "neurologist": "neurologist",
+    "obstetrician_gynecologist": "obstetrician/gynecologist",
+    "oncologist": "oncologist",
+    "ophthalmologist": "ophthalmologist",
+    "orthopedic_surgeon": "orthopedic surgeon",
+    "otolaryngologist": "otolaryngologist (ent)",
+    "pediatrician": "pediatrician",
+    "plastic_surgeon": "plastic surgeon",
+    "podiatrist": "podiatrist",
+    "psychiatrist": "psychiatrist",
+    "pulmonologist": "pulmonologist",
+    "radiologist": "radiologist",
+    "rheumatologist": "rheumatologist",
+    "urologist": "urologist",
+    "doctors": "doctors",
+    "dentists": "dentists",
+    "ob_gyns": "OB-GYNs",
+    "dermatologists": "dermatologists",
+    "cardiologists": "cardiologists",
+    "ophthalmologists": "ophthalmologists",
+    "orthopedic_surgeons": "orthopedic_surgeons",
+    "infectious _disease _specialist": "infectious disease specialist",
+    "plastic _surgeon": "plastic surgeon",
+    "geriatric _medicine": "geriatric medicine"
+  },
+  "services": {
+    "insurance": "browse providers who take your insurance",
+    "reviews": "read reviews from users",
+    "appointments": "book appointments online",
+    "appts": "appts",
+    "button": {
+      "specialties": "see specialties",
+      "providers": "see providers",
+      "availability": "see availability"
+    }
+  },
+  "reviews": {
+    "title": "top rated doctors",
+    "reviews": "reviews",
+    "cta_info": "according to 90% of patients",
+    "availability": "appointments available on",
+    "cta_button": "see more highly-recommended doctors"
+  },
+  "providers": {
+    "providers": "providers",
+    "view_availability": "view availability",
+    "insurance": "insurance",
+    "book_with": "book with",
+    "scheduling_detailes": "scheduling details",
+    "your_selections": "your selections will help show the right availability.",
+    "available_appointments": "available appointments",
+    "select_reason": "select a reason for your visit",
+    "select_time": "select a time to book for free.",
+    "no_appointments": "no available appointments",
+    "adjust_filters": "try adjusting your search filters to see available providers",
+    "map": "map",
+    "network_availability": "see if they're in network",
+    "new_patient_appointments": "new patient appointments",
+    "highly_recommended": "highly recommended",
+    "wait_time": "excellent wait time",
+    "no_availability": "at this time, the provider has no availability on health point at this location for appointments that meet your search criteria.",
+    "contact_disclaimer": "this may not reflect the provider’s full availability. The provider’s office may be able to accommodate additional appointments if you contact them directly.",
+    "form": {
+      "enter_details": "enter your details",
+      "enter_name": "enter your name",
+      "enter_email": "enter your email",
+      "enter_phone": "enter your phone number"
+    }
+  },
+  "search": {
+    "medical_condition": "medical condition",
+    "location": "location",
+    "add_insurance": "add insurance"
+  },
+  "banner": {
+    "alt": "trusted doctors banner"
+  },
+  "footer": {
+    "reserved_rights": "2024 health point all rights reserved",
+    "privacy_policy": "Privacy Policy",
+    "made_with": "made with",
+    "by": "by"
+  },
+  "message": {
+    "warning": {
+      "no_functionality": "functionality not yet implemented.",
+      "no_book_now_functionality": "book now functionality not yet implemented.",
+      "no_highly_recommended_functionality": "see more highly-recommended doctors functionality not yet implemented.",
+      "no_trusted_doctors_functionality": "find trusted doctors functionality not yet implemented.",
+      "no_book_trusted_doctors_functionality": "book trusted doctors functionality not yet implemented.",
+      "no_login_functionality": "log in functionality not yet implemented.",
+      "no_signup_functionality": "sign up functionality not yet implemented.",
+      "no_browse_functionality": "browse functionality not yet implemented.",
+      "no_help_functionality": "help functionality not yet implemented.",
+      "no_listing_functionality": "listing functionality not yet implemented.",
+      "no_check_network": "check network functionality not yet implemented."
+    },
+    "error": {
+      "image_loading": "image loading error",
+      "name_validation": "please input your name!",
+      "email_validation": "the input is not a valid e-mail!",
+      "phone_validation": "please input your phone number!",
+      "something_went_wrong": "something went wrong.",
+      "try_again_later": "please try again later.",
+      "homepage_redirect": "but dont worry, you can find plenty of other things on our homepage."
+    },
+    "success": {
+      "appointment_confirmation": "your appointment has been booked!",
+      "notification_confirmation": "thank you! You'll be notified when the doctor is available."
+    }
+  },
+  "tag": {
+    "highly_recommended": "highly recommended",
+    "loyal_patients": "loyal patients"
+  },
+  "link": {
+    "see_reviews": "see more reviews"
+  }
+}

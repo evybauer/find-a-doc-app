@@ -12,6 +12,8 @@ import {
 import { useContext } from 'react'
 import { SearchContext } from '../../providers/SearchProvider'
 import SearchBar from '../../components/SearchBar'
+import { useTranslation } from 'react-i18next'
+import { cap } from '../../common/utils'
 
 const { Option } = Select
 
@@ -23,12 +25,18 @@ const SelectComponent = ({
   searchValues,
   setSearchValues,
 }) => {
+  const { t } = useTranslation('global')
+
   let placeholder = filterName
-    .replace(/([A-Z])/g, ' $1')
-    .replace(/\b\w/g, (char) => char.toUpperCase())
+    .replace(/[\w]([A-Z])/g, function (g) {
+      return g[0] + '_' + g[1].toLowerCase()
+    })
+    .toLowerCase()
 
   if (['medicalConditions', 'location', 'insurance'].includes(filterName)) {
-    placeholder = searchValues[filterName] || placeholder
+    placeholder = searchValues[filterName]
+  } else {
+    placeholder = cap(t(`filters.${placeholder}`))
   }
 
   const handleChange = (value) => {
@@ -45,6 +53,11 @@ const SelectComponent = ({
     }
   }
 
+  const translatedOptions = options.map((option) => ({
+    ...option,
+    label: cap(t(`${option.label}`)),
+  }))
+
   return (
     <Select
       allowClear={true}
@@ -56,7 +69,7 @@ const SelectComponent = ({
       onChange={handleChange}
       aria-label={placeholder}
     >
-      {options.map((item, index) => (
+      {translatedOptions.map((item, index) => (
         <Option key={index} value={item.value}>
           {item.label}
         </Option>
@@ -75,6 +88,7 @@ const filters = {
 }
 
 const ScheduleFilters = ({ filteredOptions, setFilteredOptions }) => {
+  const { t } = useTranslation('global')
   const { setSearchValues } = useContext(SearchContext)
   const [isModalVisible, setIsModalVisible] = useState(false)
 
@@ -101,7 +115,7 @@ const ScheduleFilters = ({ filteredOptions, setFilteredOptions }) => {
         <SearchBar />
         <div className='flex justify-end mt-4 mt-4 ml-8 space-x-4'>
           <Button type='primary' onClick={showModal} className='min-h-[50px]'>
-            More Filters
+            {cap(t('action.more_filters'))}
           </Button>
           <Button
             key='clear'
@@ -110,7 +124,7 @@ const ScheduleFilters = ({ filteredOptions, setFilteredOptions }) => {
             className='h-[50px]'
             onClick={handleClearFilters}
           >
-            Clear Filters
+            {cap(t('action.clear_filters'))}
           </Button>
         </div>
 
@@ -126,14 +140,24 @@ const ScheduleFilters = ({ filteredOptions, setFilteredOptions }) => {
                 danger
                 onClick={handleClearFilters}
               >
-                Clear Filters
+                {cap(t('action.clear_filters'))}
               </Button>
               <div className='flex gap-2'>
-                <Button key='cancel' className='mr-1' onClick={handleCancel}>
-                  Cancel
+                <Button
+                  key='cancel'
+                  className='mr-1'
+                  onClick={handleCancel}
+                  style={{ textTransform: 'capitalize' }}
+                >
+                  {t('action.cancel')}
                 </Button>
-                <Button key='submit' type='primary' onClick={handleOk}>
-                  OK
+                <Button
+                  key='submit'
+                  type='primary'
+                  onClick={handleOk}
+                  style={{ textTransform: 'capitalize' }}
+                >
+                  {t('action.ok')}
                 </Button>
               </div>
             </div>,
@@ -170,7 +194,7 @@ const ScheduleFilters = ({ filteredOptions, setFilteredOptions }) => {
             onClick={handleClearFilters}
             className='min-h-[50px]'
           >
-            Clear Filters
+            {cap(t('action.clear_filters'))}
           </Button>
         </div>
       </div>

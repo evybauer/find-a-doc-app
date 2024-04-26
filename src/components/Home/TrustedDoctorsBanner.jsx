@@ -3,8 +3,12 @@ import { Button, message } from 'antd'
 import { ErrorCard } from '../../ui/Error/ErrorCard'
 import { ErrorBoundary } from 'react-error-boundary'
 import { resetApplication } from '../../common/utils'
+import { useTranslation } from 'react-i18next'
+import { cap } from '../../common/utils'
 
 const TrustedDoctorsBannerContent = () => {
+  const { t } = useTranslation('global')
+
   const [imgLoadError, setImgLoadError] = useState(false)
 
   const handleImageError = () => {
@@ -35,22 +39,22 @@ const TrustedDoctorsBannerContent = () => {
           className='md:text-xl min-h-[50px] border-none shadow-md bg-neutral-100 text-black'
           onClick={() =>
             message.warning(
-              'Find Trusted Doctors functionality not yet implemented',
+              `${cap(t('message.warning.no_trusted_doctors_functionality'))}`,
             )
           }
         >
-          Find Trusted Doctors
+          {cap(t('action.find_trusted_doctors'))}
         </Button>
         <Button
           type='primary'
           className='hidden md:block text-xl min-h-[50px] border-none shadow-md ml-4 bg-neutral-800 text-white'
           onClick={() =>
             message.warning(
-              'Book Trusted Doctorfunctionality not yet implemented',
+              `${cap(t('message.warning.no_book_trusted_doctors_functionality'))}`,
             )
           }
         >
-          Book Trusted Doctors
+          {cap(t('action.book_trusted_doctors'))}
         </Button>
       </div>
     </div>
