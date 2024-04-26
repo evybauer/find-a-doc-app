@@ -14,16 +14,18 @@ import Reviews from '../Reviews'
 import { ErrorBoundary } from 'react-error-boundary'
 import { resetApplication } from '../../common/utils'
 import { ErrorCard } from '../../ui/Error/ErrorCard'
+import { useTranslation } from 'react-i18next'
+import { cap } from '../../common/utils'
 
 const { Link, Text, Title } = Typography
-const { Meta } = Card
 
 const ProviderCardContent = ({ provider, isModalVisible }) => {
+  const { t } = useTranslation('global')
   const location = useLocation()
   const [isReviewsModalVisible, setIsReviewsModalVisible] = useState(false)
 
   const handleCheckNetwork = () => {
-    message.warning('Check network functionality not yet implemented')
+    message.warning(`${cap(t('message.warning.no_check_network'))}`)
   }
 
   const handleReviewsModalOpen = () => {
@@ -36,6 +38,13 @@ const ProviderCardContent = ({ provider, isModalVisible }) => {
 
   if (!provider) {
     return null
+  }
+
+  const toSnakeCase = (str) => {
+    return str
+      .replace(/\.?([A-Z]+)/g, (x, y) => '_' + y.toLowerCase())
+      .replace(/^_/, '')
+      .replace(/\//g, '')
   }
 
   return (
@@ -60,20 +69,22 @@ const ProviderCardContent = ({ provider, isModalVisible }) => {
           )}
           {isModalVisible ? (
             <Title level={4} style={{ margin: 0, fontWeight: 500 }}>
-              {provider.specialty}
+              {cap(t(`specialty.${toSnakeCase(provider.specialty)}`))}
             </Title>
           ) : (
-            <Text>{provider.specialty}</Text>
+            <Text>
+              {cap(t(`specialty.${toSnakeCase(provider.specialty)}`))}
+            </Text>
           )}
           <div className='flex flex-wrap gap-2'>
             <Text>
               <FontAwesomeIcon icon={faStar} className='mr-2 text-red-500' />
-              {`${provider.rating} (${provider.reviews} ${location.pathname === '/' ? 'reviews' : ''})`}
+              {`${provider.rating} (${provider.reviews} ${location.pathname === '/' ? `${t('reviews.reviews')}` : ''})`}
             </Text>
             {provider.loyalPatients > 20 && location.pathname !== '/' && (
-              <Tag color='red'>
+              <Tag color='red' style={{ textTransform: 'uppercase' }}>
                 <FontAwesomeIcon icon={faHeart} className='mr-2' />
-                LOYAL PATIENTS
+                {t('tag.loyal_patients')}
               </Tag>
             )}
           </div>
@@ -86,9 +97,10 @@ const ProviderCardContent = ({ provider, isModalVisible }) => {
                   href={`https://www.google.com/maps/search/?api=1&query=${provider.address.latitude},${provider.address.longitude}`}
                   target='_blank'
                   rel='noopener noreferrer'
+                  style={{ textTransform: 'capitalize' }}
                   underline
                 >
-                  Map{' '}
+                  {t('providers.map')}{' '}
                   <FontAwesomeIcon
                     className='text-sm'
                     icon={faUpRightFromSquare}
@@ -97,12 +109,16 @@ const ProviderCardContent = ({ provider, isModalVisible }) => {
               </Text>
               <Link onClick={handleCheckNetwork} target='_blank'>
                 <FontAwesomeIcon icon={faShieldHeart} className='mr-2' />
-                See if they're in network
+                {cap(t('providers.network_availability'))}
               </Link>
               <div>
-                <Link onClick={handleReviewsModalOpen} target='_blank'>
+                <Link
+                  onClick={handleReviewsModalOpen}
+                  target='_blank'
+                  style={{ textTransform: 'capitalize' }}
+                >
                   <FontAwesomeIcon icon={faComment} className='mr-2' />
-                  Reviews
+                  {t('reviews.reviews')}
                 </Link>
               </div>
               <Reviews
@@ -114,18 +130,21 @@ const ProviderCardContent = ({ provider, isModalVisible }) => {
               {!isModalVisible && (
                 <div className='flex flex-col'>
                   {[
-                    provider.newPatientAppointments &&
-                      'New patient appointments',
-                    provider.highlyRecommended && 'Highly Recommended',
-                    provider.excellentWaitTime && 'Excellent wait time',
+                    provider.newPatientAppointments && t('providers.wait_time'),
+                    provider.highlyRecommended &&
+                      t('providers.highly_recommended'),
+                    provider.excellentWaitTime && t('providers.wait_time'),
                   ]
                     .filter(Boolean)
                     .map((text, index, arr) => (
-                      <Meta
+                      <Text
                         key={index}
-                        className='text-base font-light'
-                        description={`${text}${index < arr.length - 1 ? '•' : ''}`}
-                      />
+                        type='secondary'
+                        style={{ textTransform: 'capitalize' }}
+                        className='flex flex-col text-base font-light'
+                      >
+                        {`${text}${index < arr.length - 1 ? '•' : ''}`}
+                      </Text>
                     ))}
                 </div>
               )}
