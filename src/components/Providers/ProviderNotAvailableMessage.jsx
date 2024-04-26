@@ -1,24 +1,24 @@
 import { Button, Tooltip, Typography, message } from 'antd'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleInfo } from '@fortawesome/free-solid-svg-icons'
+import { useTranslation } from 'react-i18next'
+import { cap } from '../../common/utils'
 
 const { Text } = Typography
 
 const ProviderNotAvailableMessage = () => {
+  const { t } = useTranslation('global')
   const handleNotifyMe = () => {
-    message.success(
-      "Thank you! You'll be notified when the doctor is available.",
-    )
+    message.success(`${t('message.success.notification_confirmation')}`)
   }
 
   return (
     <div className='justify-center mt-4'>
       <div className='p-8 border rounded-xl'>
-        <Text>
-          At this time, the provider has no availability on Health Point at this
-          location for appointments that meet your search criteria.
+        <Text className='normal-case'>
+          {cap(t('providers.no_availability'))}
         </Text>
-        <Tooltip title='This may not reflect the provider’s full availability. The provider’s office may be able to accommodate additional appointments if you contact them directly.'>
+        <Tooltip title={t('providers.contact_disclaimer')}>
           <FontAwesomeIcon
             icon={faCircleInfo}
             className='ml-1 cursor-pointer'
@@ -26,7 +26,7 @@ const ProviderNotAvailableMessage = () => {
         </Tooltip>
       </div>
       <Button onClick={handleNotifyMe} className='w-full mt-4 h-12'>
-        Notify me
+        {cap(t('action.notify_me'))}
       </Button>
     </div>
   )
