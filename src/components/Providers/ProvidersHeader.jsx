@@ -4,6 +4,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Button, DatePicker, Typography } from 'antd'
+import { useTranslation } from 'react-i18next'
 
 const { RangePicker } = DatePicker
 const { Title } = Typography
@@ -15,6 +16,7 @@ const ProvidersHeader = ({
   endDate,
   setEndDate,
 }) => {
+  const { t } = useTranslation('global')
   const handleLeftClick = () => {
     if (startDate.isSame('2024-03-22')) {
       return
@@ -31,7 +33,7 @@ const ProvidersHeader = ({
   return (
     <div className='flex flex-col sm:flex-row justify-between md:items-center border-b-2 my-8'>
       <Title level={2} className='text-left' style={{ fontWeight: 400 }}>
-        {providers.length} providers
+        {providers.length} {t('providers.providers')}
       </Title>
       <div className='flex justify-between mt-0 md:items-center md:space-x-4 '>
         <Button
