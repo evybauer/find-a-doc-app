@@ -4,6 +4,8 @@ import { faCalendarDay, faClock } from '@fortawesome/free-solid-svg-icons'
 import { ErrorBoundary } from 'react-error-boundary'
 import { resetApplication } from '../../common/utils'
 import { ErrorCard } from '../../ui/Error/ErrorCard'
+import { useTranslation } from 'react-i18next'
+import { cap } from '../../common/utils'
 
 const { Title } = Typography
 
@@ -13,6 +15,7 @@ const BookAppointmentFormContent = ({
   setIsModalVisible,
   setSelectedAppointmentIndex,
 }) => {
+  const { t } = useTranslation('global')
   const [form] = Form.useForm()
 
   const handleAppointmentConfirmation = () => {
@@ -26,7 +29,7 @@ const BookAppointmentFormContent = ({
         console.log('Failed:', errorInfo)
       })
     setIsModalVisible(false)
-    message.success('Your appointment has been booked.')
+    message.success(cap(t('message.success.appointment_confirmation')))
   }
 
   return (
@@ -59,43 +62,58 @@ const BookAppointmentFormContent = ({
         </div>
 
         <Title level={5} style={{ marginBottom: 16, fontWeight: 400 }}>
-          Enter your details:
+          {cap(t('providers.form.enter_details'))}:
         </Title>
         <Form.Item
+          style={{ textTransform: 'capitalize' }}
           name='name'
-          label='Name'
-          rules={[{ required: true, message: 'Please input your name!' }]}
+          label={t('label.name')}
+          rules={[
+            {
+              required: true,
+              message: cap(t('message.error.name_validation')),
+            },
+          ]}
         >
-          <Input placeholder='Enter your name' />
+          <Input placeholder={cap(t('providers.form.enter_phone'))} />
         </Form.Item>
         <Form.Item
+          style={{ textTransform: 'capitalize' }}
           name='email'
-          label='Email'
+          label={t('label.email')}
           rules={[
-            { required: true, message: 'Please input your email!' },
+            {
+              required: true,
+              message: cap(t('message.error.email_validation')),
+            },
             {
               type: 'email',
               message: 'The input is not valid E-mail!',
             },
           ]}
         >
-          <Input placeholder='Enter your email' />
+          <Input placeholder={cap(t('providers.form.enter_email'))} />
         </Form.Item>
         <Form.Item
+          style={{ textTransform: 'capitalize' }}
           name='phone'
-          label='Phone'
+          label={t('label.phone')}
           rules={[
             {
               required: true,
-              message: 'Please input your phone number!',
+              message: cap(t('message.error.phone_validation')),
             },
           ]}
         >
-          <Input placeholder='Enter your phone number' />
+          <Input placeholder={cap(t('providers.form.enter_phone'))} />
         </Form.Item>
         <Form.Item className='flex justify-end'>
-          <Button type='primary' htmlType='submit'>
-            Confirm Appointment
+          <Button
+            type='primary'
+            htmlType='submit'
+            style={{ textTransform: 'capitalize' }}
+          >
+            {t('action.confirm_appointment')}
           </Button>
         </Form.Item>
       </Form>
