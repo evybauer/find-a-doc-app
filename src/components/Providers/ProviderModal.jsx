@@ -7,6 +7,8 @@ import SearchInput from '../SearchBar/SearchInput'
 import { ErrorBoundary } from 'react-error-boundary'
 import { ErrorCard } from '../../ui/Error/ErrorCard'
 import { resetApplication } from '../../common/utils'
+import { useTranslation } from 'react-i18next'
+import { cap } from '../../common/utils'
 
 const { Title, Text } = Typography
 
@@ -18,6 +20,7 @@ const ProviderModalContent = ({
   provider,
   allDates,
 }) => {
+  const { t } = useTranslation('global')
   const [form] = Form.useForm()
   const { searchValues } = useContext(SearchContext)
 
@@ -42,7 +45,7 @@ const ProviderModalContent = ({
       footer={null}
     >
       <Title level={2} style={{ marginBottom: 16, fontWeight: 500 }}>
-        Book with {provider.name}
+        {cap(t('providers.book_with'))} {provider.name}
       </Title>
 
       <ProviderCard
@@ -56,14 +59,14 @@ const ProviderModalContent = ({
         style={{ fontWeight: 400, marginBottom: 0 }}
         className='mt-12'
       >
-        Scheduling details
+        {cap(t('providers.scheduling_detailes'))}
       </Title>
       <Text className='text-base font-extralight text-gray-500'>
-        Your selections will help show the right availability.
+        {cap(t('providers.your_selections'))}
       </Text>
 
       <Select
-        placeholder='Select a reason for your visit'
+        placeholder={cap(t('providers.select_reason'))}
         style={{ width: '100%' }}
         className='my-4 min-h-[50px] border'
       >
@@ -80,7 +83,9 @@ const ProviderModalContent = ({
         className='border'
       >
         <SearchInput
-          placeholder={searchValues.insurance || 'Add insurance'}
+          placeholder={
+            searchValues.insurance || `${cap(t('search.add_insurance'))}`
+          }
           options={providerInsuranceList}
           searchValue={searchValues.insurance}
           onChange={(value) => {
@@ -99,10 +104,10 @@ const ProviderModalContent = ({
         style={{ fontWeight: 400, marginBottom: 0 }}
         className='mt-8'
       >
-        Available appointments
+        {cap(t('providers.available_appointments'))}
       </Title>
       <Text className='text-base font-extralight text-gray-500'>
-        Select a time to book for free.
+        {cap(t('providers.select_time'))}
       </Text>
       <AvailableTimes
         availability={provider.availability}
