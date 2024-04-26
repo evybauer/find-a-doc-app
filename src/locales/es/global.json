@@ -1,0 +1,271 @@
+{
+  "action": {
+    "login": "iniciar sesión",
+    "signup": "inscribirse",
+    "logout": "cerrar sesión",
+    "retry": "reintentar",
+    "book_trusted_doctors": "reservar médicos de confianza",
+    "confirm_appointment": "confirmar cita",
+    "find_trusted_doctors": "encontrar médicos de confianza",
+    "find_more_providers": "encontrar más proveedores",
+    "clear_filters": "limpiar filtros",
+    "notify_me": "notificarme",
+    "cancel": "cancelar",
+    "ok": "aceptar",
+    "find_doctors": "buscar médicos",
+    "more_filters": "más filtros",
+    "book_now": "reservar ahora"
+  },
+  "label": {
+    "name": "nombre",
+    "email": "correo electrónico",
+    "phone": "teléfono",
+    "photo": "foto"
+  },
+  "specialties": {
+    "doctors": "médicos",
+    "dentists": "dentistas",
+    "OB_GYNs": "gineco-obstetras",
+    "dermatologists": "dermatólogos",
+    "cardiologists": "cardiólogos",
+    "ophthalmologists": "oftalmólogos",
+    "orthopedic_surgeons": "cirujanos ortopédicos",
+    "home_main_title_1": "reservar local",
+    "home_main_title_2": "que aceptan tu seguro",
+    "services_title": "consigamos un profesional que te entienda"
+  },
+  "navbar": {
+    "alt": "logo de health point",
+    "browse": "explorar",
+    "help": "ayuda",
+    "list_your_practice": "lista tu consulta en health point"
+  },
+  "filters": {
+    "specialty": "especialidad",
+    "distance": "distancia",
+    "language_spoken": "idioma hablado",
+    "time_of_day": "hora del día",
+    "gender": "género",
+    "visit_type": "tipo de visita"
+  },
+  "gender": {
+    "female": "mujer",
+    "male": "masculino",
+    "non_binary": "no binario"
+  },
+  "language": {
+    "arabic": "árabe",
+    "bengali": "bengali",
+    "czech": "checo",
+    "danish": "danés",
+    "dutch": "holandés",
+    "english": "inglés",
+    "finnish": "finlandés",
+    "french": "francés",
+    "german": "alemán",
+    "greek": "griego",
+    "hebrew": "hebreo",
+    "hindi": "hindi",
+    "hungarian": "húngaro",
+    "italian": "italiano",
+    "japanese": "japonés",
+    "korean": "coreano",
+    "mandarin": "mandarín",
+    "norwegian": "noruego",
+    "persian": "persa",
+    "polish": "polaco",
+    "portuguese": "portugués",
+    "russian": "ruso",
+    "spanish": "español",
+    "swedish": "sueco",
+    "tagalog": "tagalog",
+    "thai": "tailandés",
+    "turkish": "turco",
+    "urdu": "urdu",
+    "vietnamese": "vietnamita"
+  },
+  "visit": {
+    "in_person-and_video": "visitas en persona y por vídeo",
+    "in_person_only": "solo visitas en persona",
+    "video_only": "solo visitas por video"
+  },
+  "time": {
+    "early_morning": "emprano en la mañana",
+    "morning": "mañana",
+    "afternoon": "tarde",
+    "evening": "noche"
+  },
+  "reason": {
+    "acquired_hypothyroidism": "hipotiroidismo adquirido",
+    "all_diabetes": "todas las diabetes",
+    "alzheimers_disease": "enfermedad de Alzheimer",
+    "anemia": "anemia",
+    "anxiety": "ansiedad",
+    "asthma": "asma",
+    "bariatric_surgery": "cirugía bariátrica",
+    "breast_cancer": "cáncer de mama",
+    "bronchiectasis": "bronquiectasia",
+    "bronchitis": "bronquitis",
+    "chronic_obstructive_pulmonary_disease": "enfermedad pulmonar obstructiva crónica",
+    "colorectral_cancer": "cáncer colorrectal",
+    "covid_19": "COVID-19",
+    "depression": "depresión",
+    "diabetes_type1": "diabetes tipo 1",
+    "diabetes_type2": "diabetes tipo 2",
+    "diagnostic_imaging": "imagen diagnóstica",
+    "ear_nose_and_throat_conditions": "condiciones de oído, nariz y garganta",
+    "emphysema": "enfisema",
+    "endometrial_cancer": "cáncer de endometrio",
+    "foot_and_ankle_conditions": "condiciones del pie y tobillo",
+    "genetic_testing": "pruebas genéticas",
+    "heart_transplant": "trasplante de corazón",
+    "hepatitis": "hepatitis",
+    "hernia": "hernia",
+    "leukemia": "leucemia",
+    "lungcancer": "cáncer de pulmón",
+    "lymphoma": "linfoma",
+    "metastatic_brain_tumor": "tumor cerebral metastásico",
+    "migraine_headaches": "dolores de cabeza por migraña",
+    "multiple_sclerosis": "esclerosis múltiple",
+    "opioid_dependency": "dependencia de opioides",
+    "osteoporosis": "osteoporosis",
+    "ovarian_cancer": "cáncer de ovario",
+    "parkinsons_disease": "enfermedad de Parkinson",
+    "pediatric_care": "cuidado pediátrico",
+    "physical_therapy": "fisioterapia",
+    "prostate_cancer": "cáncer de próstata",
+    "resuscitation": "resucitación",
+    "senile_dementia": "demencia senil",
+    "skin_cancer": "cáncer de piel",
+    "trigeminal_neuralgia": "neuralgia del trigémino",
+    "ventricular_assist_device": "dispositivo de asistencia ventricular (DAV)"
+  },
+  "specialty": {
+    "allergist_immunologist": "alergólogo/inmunólogo",
+    "cardiologist": "cardiólogo",
+    "dermatologist": "dermatólogo",
+    "endocrinologist": "endocrinólogo",
+    "gastroenterologist": "gastroenterólogo",
+    "geneticist": "genetista",
+    "geriatric_medicine": "medicina geriátrica",
+    "infectious_disease_specialist": "especialista en enfermedades infecciosas",
+    "nephrologist": "nefrólogo",
+    "neurologist": "neurólogo",
+    "obstetrician_gynecologist": "obstetra/ginecólogo",
+    "oncologist": "oncólogo",
+    "ophthalmologist": "oftalmólogo",
+    "orthopedic_surgeon": "cirujano ortopédico",
+    "otolaryngologist": "otorrinolaringólogo",
+    "pediatrician": "pediatra",
+    "plastic_surgeon": "cirujano plástico",
+    "podiatrist": "podólogo",
+    "psychiatrist": "psiquiatra",
+    "pulmonologist": "neumólogo",
+    "radiologist": "radiólogo",
+    "rheumatologist": "reumatólogo",
+    "urologist": "urólogo",
+    "doctors": "médicos",
+    "dentists": "dentistas",
+    "ob_gyns": "obstetra/ginecólogo",
+    "dermatologists": "dermatólogos",
+    "cardiologists": "cardiólogos",
+    "ophthalmologists": "oftalmólogos",
+    "orthopedic_surgeons": "cirujanos_ortopédicos",
+    "infectious _disease _specialist": "especialistas en enfermedades infecciosas",
+    "plastic _surgeon": "cirujano plástico",
+    "geriatric _medicine": "medicina geriátrica"
+  },
+  "services": {
+    "insurance": "explorar proveedores que aceptan tu seguro",
+    "reviews": "leer reseñas de usuarios",
+    "appointments": "reservar citas en línea",
+    "appts": "citas",
+    "button": {
+      "specialties": "ver especialidades",
+      "providers": "ver proveedores",
+      "availability": "ver disponibilidad"
+    }
+  },
+  "reviews": {
+    "title": "médicos mejor valorados",
+    "reviews": "reseñas",
+    "cta_info": "según el 90% de los pacientes",
+    "availability": "citas disponibles en",
+    "cta_button": "ver más médicos altamente recomendados"
+  },
+  "providers": {
+    "providers": "proveedores",
+    "view_availability": "ver disponibilidad",
+    "insurance": "seguro",
+    "book_with": "reservar con",
+    "scheduling_detailes": "detalles de programación",
+    "your_selections": "tus selecciones ayudarán a mostrar la disponibilidad correcta",
+    "available_appointments": "citas disponibles",
+    "select_reason": "selecciona una razón para la cita",
+    "select_time": "selecciona un horario para reservar gratis",
+    "no_appointments": "no hay citas disponibles",
+    "adjust_filters": "intenta ajustar tus filtros de búsqueda para ver proveedores disponibles",
+    "map": "mapa",
+    "network_availability": "ver si están en la red",
+    "new_patient_appointments": "citas para nuevos pacientes",
+    "highly_recommended": "muy recomendado",
+    "wait_time": "tiempo de espera excelente",
+    "no_availability": "en este momento, el proveedor no tiene disponibilidad en health point en esta ubicación para citas que cumplan con tus criterios de búsqueda",
+    "contact_disclaimer": "esto puede no reflejar la disponibilidad completa del proveedor. La oficina del proveedor podría acomodar citas adicionales si los contactas directamente",
+    "form": {
+      "enter_details": "introduce tus detalles",
+      "enter_name": "introduce tu nombre",
+      "enter_email": "introduce tu correo electrónico",
+      "enter_phone": "introduce tu número de teléfono"
+    }
+  },
+  "search": {
+    "medical_condition": "condición médica",
+    "location": "ubicación",
+    "add_insurance": "agregar seguro"
+  },
+  "banner": {
+    "alt": "banner de médicos de confianza"
+  },
+  "footer": {
+    "reserved_rights": "2024 Health Point Todos los derechos reservados",
+    "privacy_policy": "Política de Privacidad",
+    "made_with": "hecho con",
+    "by": "por"
+  },
+  "message": {
+    "warning": {
+      "no_functionality": "funcionalidad aún no implementada",
+      "no_book_now_functionality": "funcionalidad de reservar ahora no implementada",
+      "no_highly_recommended_functionality": "funcionalidad de ver más médicos altamente recomendados no implementada",
+      "no_trusted_doctors_functionality": "funcionalidad de encontrar médicos de confianza no implementada",
+      "no_book_trusted_doctors_functionality": "funcionalidad de reservar médicos de confianza no implementada",
+      "no_login_functionality": "funcionalidad de iniciar sesión no implementada",
+      "no_signup_functionality": "funcionalidad de registrarse no implementada",
+      "no_browse_functionality": "funcionalidad de explorar no implementada",
+      "no_help_functionality": "funcionalidad de ayuda no implementada",
+      "no_listing_functionality": "funcionalidad de listar no implementada",
+      "no_check_network": "funcionalidad de verificar red no implementada"
+    },
+    "error": {
+      "image_loading": "error de carga de imagen",
+      "name_validation": "¡por favor ingresa tu nombre!",
+      "email_validation": "¡la entrada no es un correo electrónico válido!",
+      "phone_validation": "¡por favor ingresa tu número de teléfono!",
+      "something_went_wrong": "¡algo salió mal!",
+      "try_again_later": "¡por favor, inténtalo de nuevo más tarde!",
+      "homepage_redirect": "no te preocupes, puedes encontrar muchas otras cosas en nuestra página de inicio."
+    },
+    "success": {
+      "appointment_confirmation": "tu cita ha sido reservada",
+      "notification_confirmation": "¡gracias! Serás notificado cuando el médico esté disponible."
+    }
+  },
+  "tag": {
+    "highly_recommended": "altamente recomendado",
+    "loyal_patients": "pacientes leales"
+  },
+  "link": {
+    "see_reviews": "ver más reseñas"
+  }
+}
