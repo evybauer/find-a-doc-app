@@ -2,6 +2,7 @@ import { Typography } from 'antd'
 import { ErrorBoundary } from 'react-error-boundary'
 import { resetApplication } from '../../common/utils'
 import { ErrorCard } from '/src/ui/Error/ErrorCard'
+import { useTranslation } from 'react-i18next'
 
 const { Text } = Typography
 
@@ -12,6 +13,7 @@ const AvailabilityCardContent = ({
   availableSpots,
   allDates,
 }) => {
+  const { t } = useTranslation('global')
   const firstRowAvailability = allDates.slice(0, 7)
   const secondRowAvailability = allDates.slice(7, 14)
 
@@ -48,7 +50,7 @@ const AvailabilityCardContent = ({
               <Text
                 className={`${availableSpots[date] > 0 ? 'text-white' : 'text-slate-500'} ml-1 font-bold`}
               >
-                appts
+                {t('services.appts')}
               </Text>
             </div>
           </div>
@@ -87,7 +89,7 @@ const AvailabilityCardContent = ({
               <Text
                 className={`${availableSpots[date] > 0 ? 'text-white' : 'text-slate-500'} ml-1 font-bold`}
               >
-                appts
+                {t('services.appts')}
               </Text>
             </div>
           </div>
