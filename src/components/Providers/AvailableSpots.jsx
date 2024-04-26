@@ -11,6 +11,8 @@ import { getAvailableSpots } from '../../common/utils'
 import { ErrorBoundary } from 'react-error-boundary'
 import { resetApplication } from '../../common/utils'
 import { ErrorCard } from '../../ui/Error/ErrorCard'
+import { useTranslation } from 'react-i18next'
+import { cap } from '../../common/utils'
 
 const AvailableSpotsContent = ({
   provider,
@@ -24,6 +26,7 @@ const AvailableSpotsContent = ({
   startDate,
   endDate,
 }) => {
+  const { t } = useTranslation('global')
   const [showSecondRow, setShowSecondRow] = useState(false)
   const start = dayjs.unix(startDate.valueOf() / 1000)
   const end = dayjs.unix(endDate.valueOf() / 1000)
@@ -82,7 +85,7 @@ const AvailableSpotsContent = ({
             className='underline underline-offset-1 text-sky-600'
             onClick={handleOpenModal}
           >
-            View Availability
+            {cap(t('providers.view_availability'))}
           </a>
         </div>
       )}
