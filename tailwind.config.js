@@ -1,7 +1,7 @@
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   darkMode: 'media',
-  mode: 'jit',
+  mode: 'all',
   theme: {
     extend: {
       animation: {
