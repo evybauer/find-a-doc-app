@@ -1,6 +1,6 @@
 import { render, fireEvent } from '@testing-library/react'
 import { ThemeButton } from './index.jsx'
-import { ThemeContext } from '../../../lib/themes'
+import { ThemeContext } from '../../../../lib/themes'
 import { vi } from 'vitest'
 
 describe('ThemeButton', () => {
