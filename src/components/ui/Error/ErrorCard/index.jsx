@@ -1,6 +1,6 @@
 import { RetryButton } from '../../Buttons/RetryButton'
 import { useTranslation } from 'react-i18next'
-import { cap } from '../../../common/utils'
+import { cap } from '../../../../common/utils'
 
 export const ErrorCard = ({ resetErrorBoundary }) => {
   const { t } = useTranslation('global')

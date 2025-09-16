@@ -4,7 +4,7 @@ import TrustedDoctorsBanner from './TrustedDoctorsBanner'
 import SearchSection from './SearchSection'
 import { ErrorBoundary } from 'react-error-boundary'
 import { resetApplication } from '../../common/utils'
-import { ErrorCard } from '../../ui/Error/ErrorCard'
+import { ErrorCard } from '../ui/Error/ErrorCard'
 
 const HomeContent = () => {
   return (

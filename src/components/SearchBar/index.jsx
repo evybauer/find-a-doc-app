@@ -7,7 +7,7 @@ import { insurance } from '../../data/insuranceSearchList'
 import { location } from '../../data/locationSearchList'
 import { medicalConditions } from '../../data/medicalConditionsList'
 import { ErrorBoundary } from 'react-error-boundary'
-import { ErrorCard } from '../../ui/Error/ErrorCard'
+import { ErrorCard } from '../ui/Error/ErrorCard'
 import { resetApplication } from '../../common/utils'
 import { useTranslation } from 'react-i18next'
 import { cap } from '../../common/utils'
@@ -57,7 +57,7 @@ const SearchBarContent = ({ isNavbar }) => {
           className='min-h-[50px] flex w-full p-[16px] border-b border-teal-500 lg:p-[0_8px] lg:border-none'
         >
           <Form.Item
-            name={config.value}
+            name={config.name}
             style={{
               margin: 0,
               padding: 0,
@@ -66,15 +66,16 @@ const SearchBarContent = ({ isNavbar }) => {
             }}
           >
             <SearchInput
+              key={searchValues[config.name] || ''}
               placeholder={cap(t(config.placeholder))}
               name={config.name}
               options={config.options}
-              searchValue={searchValues[config.value]}
+              searchValue={searchValues[config.name]}
               onChange={(value) => {
-                form.setFieldsValue({ [config.value]: value })
+                form.setFieldsValue({ [config.name]: value })
                 setSearchValues((prevValues) => ({
                   ...prevValues,
-                  [config.value]: value || undefined,
+                  [config.name]: value || undefined,
                 }))
               }}
               isNavbar={isNavbar}

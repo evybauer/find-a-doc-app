@@ -1,0 +1,66 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders without crashing 1`] = `
+<div
+  className="relative max-w-xl mt-6 min-w-0 break-words w-full mb-6 shadow-lg rounded-xl mt-16"
+>
+  <div
+    className="ant-card ant-card-bordered border-none px-6 css-dev-only-do-not-override-1kuana8"
+    style={{}}
+  >
+    <div
+      className="ant-card-body"
+      style={{}}
+    >
+      <div
+        className="flex flex-wrap justify-center"
+      >
+        <div
+          className="w-full flex justify-center"
+        >
+          <div
+            className="relative"
+          >
+            <img
+              alt="testTitle"
+              className="shadow-xl rounded-full align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-[150px]"
+              src="testSource"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="mt-20 py-8 text-center border-none"
+      >
+        <h3
+          className="ant-typography text-xl text-textBase md:text-2xl lg:min-h-16 css-dev-only-do-not-override-1kuana8"
+          style={
+            {
+              "WebkitLineClamp": undefined,
+              "fontWeight": 400,
+              "margin": 0,
+            }
+          }
+        >
+          TestTitle
+        </h3>
+        <div
+          className="flex justify-center items-end pt-8"
+        >
+          <button
+            className="ant-btn css-dev-only-do-not-override-1kuana8 ant-btn-primary min-h-[50px]"
+            disabled={false}
+            onClick={[Function]}
+            style={{}}
+            type="button"
+          >
+            <span>
+              TestButton
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

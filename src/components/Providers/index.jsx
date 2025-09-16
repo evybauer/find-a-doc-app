@@ -7,13 +7,13 @@ import FewProvidersMessage from './FewProvidersMessage'
 import AvailableSpots from './AvailableSpots'
 import { SearchContext } from '../../providers/SearchProvider'
 import dayjs from 'dayjs'
-import { useFetch } from '../../queries'
-import { getFirestoreURL } from '../../common/utils/firestoreHelpers/getFirestoreURL'
-import LoadingStatus from '../../ui/Status/LoadingStatus'
+import LoadingStatus from '../ui/Status/LoadingStatus'
 import { toCamelCase } from '../../common/utils'
 import { ErrorBoundary } from 'react-error-boundary'
-import { ErrorCard } from '../../ui/Error/ErrorCard'
+import { ErrorCard } from '../ui/Error/ErrorCard'
 import { resetApplication } from '../../common/utils'
+import { fetchProviders } from '../../lib/crud/fetchProviders'
+import { useEffect } from 'react'
 
 const ProvidersContent = () => {
   const { searchValues } = useContext(SearchContext)
@@ -25,8 +25,24 @@ const ProvidersContent = () => {
 
   const itemsPerPage = 10
   const [currentPage, setCurrentPage] = useState(1)
-  const url = getFirestoreURL('providers')
-  const { data: providersList, loading, error } = useFetch(url)
+
+  const [providersList, setProvidersList] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await fetchProviders()
+        setProvidersList(data)
+        setLoading(false)
+      } catch (error) {
+        setError(error)
+      }
+    }
+
+    fetchData()
+  }, [])
 
   if (loading || !providersList) {
     return <LoadingStatus />

@@ -27,7 +27,7 @@ const TopRatedDoctorCard = ({ review, provider }) => {
   }
 
   return (
-    <Card className='relative max-w-2xl mt-16 min-w-0 break-words border-none w-full mb-6 shadow-lg rounded-xl mt-24 md:mt-16'>
+    <Card className='relative max-w-2xl mt-24 md:mt-16 min-w-0 break-words border-none w-full mb-6 shadow-lg rounded-xl'>
       <div className='flex flex-wrap justify-start ml-16'>
         <div className='w-full flex justify-start'>
           <div className='relative'>
@@ -39,12 +39,25 @@ const TopRatedDoctorCard = ({ review, provider }) => {
           </div>
         </div>
       </div>
-      <div className='mt-28 lg:mt-32'>
-        <div className='flex my-4 lg:absolute lg:top-2 lg:right-0 lg:my-0'>
+      {/* Highly Recommended Tag - responsive positioning */}
+      <div className='absolute top-20 right-6 z-20 lg:block hidden'>
+        <Tag
+          color='cyan'
+          style={{ textTransform: 'capitalize' }}
+          className='text-sm sm:text-base shadow-md'
+        >
+          <FontAwesomeIcon icon={faStar} className='mr-2' />
+          {t('tag.highly_recommended')}
+        </Tag>
+      </div>
+      
+      <div className='mt-28 lg:mt-32 relative'>
+        {/* Tag for smaller screens - positioned below photo */}
+        <div className='flex justify-end my-4 lg:hidden'>
           <Tag
             color='cyan'
             style={{ textTransform: 'capitalize' }}
-            className='text-base'
+            className='text-sm shadow-md'
           >
             <FontAwesomeIcon icon={faStar} className='mr-2' />
             {t('tag.highly_recommended')}

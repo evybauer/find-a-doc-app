@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Button, message } from 'antd'
-import { ErrorCard } from '../../ui/Error/ErrorCard'
+import { ErrorCard } from '../ui/Error/ErrorCard'
 import { ErrorBoundary } from 'react-error-boundary'
 import { resetApplication } from '../../common/utils'
 import { useTranslation } from 'react-i18next'

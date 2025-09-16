@@ -43,14 +43,14 @@ const SearchInput = ({
 
   return (
     <div style={{ display: 'flex', alignItems: 'center' }}>
-      {location.pathname !== '/providers' && (
+      {pathname !== '/providers' && (
         <FontAwesomeIcon icon={icon} className='select-icon' />
       )}
       <Select
         value={searchValue}
         showSearch
         allowClear
-        placeholder={searchValue || `${cap(t(placeholder))}`}
+        placeholder={`${cap(t(placeholder))}`}
         optionFilterProp='items'
         onChange={handleChange}
         onSearch={onSearch}

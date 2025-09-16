@@ -1,7 +1,7 @@
 import { Typography } from 'antd'
 import { ErrorBoundary } from 'react-error-boundary'
 import { resetApplication } from '../../common/utils'
-import { ErrorCard } from '/src/ui/Error/ErrorCard'
+import { ErrorCard } from '../ui/Error/ErrorCard'
 import { useTranslation } from 'react-i18next'
 
 const { Text } = Typography

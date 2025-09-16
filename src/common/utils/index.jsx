@@ -1,6 +1,5 @@
 //  FIRESTORE HELPERS
 export { firestoreToValidData } from './firestoreHelpers/firestoreToValidData'
-export { getFirestoreURL } from './firestoreHelpers/getFirestoreURL'
 
 // HELPERS
 export { getNextAvailableDate } from './helpers/getNextAvailableDate'
