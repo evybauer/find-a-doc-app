@@ -1,7 +1,7 @@
 import { RetryButton } from '../../Buttons/RetryButton'
 import { Space, Typography } from 'antd'
 import { useTranslation } from 'react-i18next'
-import { cap } from '../../../common/utils'
+import { cap } from '../../../../common/utils'
 
 const { Text, Title } = Typography
 

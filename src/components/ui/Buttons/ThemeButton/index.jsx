@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { Button } from 'antd'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
-import { ThemeContext } from '../../../lib/themes'
+import { ThemeContext } from '../../../../lib/themes'
 
 export const ThemeButton = () => {
   const { theme, toggleTheme } = useContext(ThemeContext)

@@ -3,7 +3,7 @@ import { useState } from 'react'
 import BookAppointmentForm from './BookAppointmentForm'
 import { ErrorBoundary } from 'react-error-boundary'
 import { resetApplication } from '../../common/utils'
-import { ErrorCard } from '../../ui/Error/ErrorCard'
+import { ErrorCard } from '../ui/Error/ErrorCard'
 import { useTranslation } from 'react-i18next'
 import { cap } from '../../common/utils'
 

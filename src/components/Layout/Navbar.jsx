@@ -6,8 +6,8 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { menuItems } from '../../data/menuItems'
 import { useTranslation } from 'react-i18next'
 import { cap } from '../../common/utils'
-import { TranslationButton } from '../../ui/Buttons/TranslationButton'
-import { ThemeButton } from '../../ui/Buttons/ThemeButton'
+import { TranslationButton } from '../ui/Buttons/TranslationButton'
+import { ThemeButton } from '../ui/Buttons/ThemeButton'
 
 const { Header } = Layout
 
