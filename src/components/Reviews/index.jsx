@@ -1,5 +1,3 @@
-import { useFetch } from '../../queries'
-import { getFirestoreURL } from '../../common/utils'
 import { Image, Modal, Typography } from 'antd'
 import ProviderCard from '../Providers/ProviderCard'
 import { Divider } from 'antd'
@@ -8,18 +6,32 @@ import { faStar } from '@fortawesome/free-solid-svg-icons'
 import { Suspense } from 'react'
 import LoadingStatus from '../../ui/Status/LoadingStatus'
 import { useTranslation } from 'react-i18next'
+import { useState, useEffect } from 'react'
+import { fetchReviews } from '../../lib/crud/fetchReviews'
 
 const { Title, Text } = Typography
 
 const Reviews = ({ provider, isModalVisible, closeModal, isHomeView }) => {
   const { t } = useTranslation('global')
 
-  const urlReviews = getFirestoreURL('reviews')
-  const {
-    data: reviews,
-    loading: loadingReviews,
-    error: errorReviews,
-  } = useFetch(urlReviews)
+  const [reviews, setReviews] = useState(null)
+  const [loadingReviews, setLoadingReviews] = useState(true)
+  const [errorReviews, setErrorReviews] = useState(null)
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await fetchReviews()
+        setReviews(data)
+        setLoadingReviews(false)
+      } catch (error) {
+        setErrorReviews(error)
+      }
+    }
+
+    fetchData()
+  }, [])
+
 
   if (loadingReviews || !reviews) {
     return null

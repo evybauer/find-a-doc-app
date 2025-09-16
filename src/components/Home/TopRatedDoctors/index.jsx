@@ -1,30 +1,53 @@
 import { Suspense, useState, useEffect, useMemo } from 'react'
 import { Pagination } from 'antd'
-import { getFirestoreURL } from '../../../common/utils/firestoreHelpers/getFirestoreURL'
-import { useFetch } from '../../../queries'
 import TopRatedDoctorCard from './TopRatedDoctorCard'
 import LoadingStatus from '../../../ui/Status/LoadingStatus'
 import TopRatedDoctorsCallToAction from './TopRatedDoctorsCallToAction'
 import { ErrorCard } from '../../../ui/Error/ErrorCard'
 import { ErrorBoundary } from 'react-error-boundary'
 import { resetApplication } from '../../../common/utils'
+import { fetchProviders } from '../../../lib/crud/fetchProviders'
+import { fetchReviews } from '../../../lib/crud/fetchReviews'
 
 const Error = ({ message }) => <div>Error: {message}</div>
 
 const TopRatedDoctorsContent = () => {
-  const urlReviews = getFirestoreURL('reviews')
-  const urlProviders = getFirestoreURL('providers')
 
-  const {
-    data: reviews,
-    loading: loadingReviews,
-    error: errorReviews,
-  } = useFetch(urlReviews)
-  const {
-    data: providersList,
-    loading: loadingProviders,
-    error: errorProviders,
-  } = useFetch(urlProviders)
+  const [providersList, setProvidersList] = useState(null)
+  const [loadingProviders, setLoadingProviders] = useState(true)
+  const [errorProviders, setErrorProviders] = useState(null)
+  
+  const [reviews, setReviews] = useState(null)
+  const [loadingReviews, setLoadingReviews] = useState(true)
+  const [errorReviews, setErrorReviews] = useState(null)
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await fetchProviders()
+        setProvidersList(data)
+        setLoadingProviders(false)
+      } catch (error) {
+        setErrorProviders(error)
+      }
+    }
+
+    fetchData()
+  }, [])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await fetchReviews()
+        setReviews(data)
+        setLoadingReviews(false)
+      } catch (error) {
+        setErrorReviews(error)
+      }
+    }
+
+    fetchData()
+  }, [])
 
   const [currentPage, setCurrentPage] = useState(1)
   const itemsPerPage = 3

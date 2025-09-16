@@ -57,7 +57,7 @@ const SearchBarContent = ({ isNavbar }) => {
           className='min-h-[50px] flex w-full p-[16px] border-b border-teal-500 lg:p-[0_8px] lg:border-none'
         >
           <Form.Item
-            name={config.value}
+            name={config.name}
             style={{
               margin: 0,
               padding: 0,
@@ -66,15 +66,16 @@ const SearchBarContent = ({ isNavbar }) => {
             }}
           >
             <SearchInput
+              key={searchValues[config.name] || ''}
               placeholder={cap(t(config.placeholder))}
               name={config.name}
               options={config.options}
-              searchValue={searchValues[config.value]}
+              searchValue={searchValues[config.name]}
               onChange={(value) => {
-                form.setFieldsValue({ [config.value]: value })
+                form.setFieldsValue({ [config.name]: value })
                 setSearchValues((prevValues) => ({
                   ...prevValues,
-                  [config.value]: value || undefined,
+                  [config.name]: value || undefined,
                 }))
               }}
               isNavbar={isNavbar}
