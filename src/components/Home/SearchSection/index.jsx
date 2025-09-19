@@ -13,7 +13,7 @@ const SearchSectionContent = () => {
 
   return (
     <>
-      <div className='my-16'>
+      <div className='max-w-screen-lg mx-auto my-16'>
         <div className='flex flex-wrap items-center'>
           <Title
             style={{
