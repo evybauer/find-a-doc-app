@@ -74,12 +74,6 @@ const Navbar = () => {
               />
             </Link>
           </div>
-
-          {isProvidersRoute && (
-            <div className='hidden lg:block ml-28' style={{ width: '540px' }}>
-              <SearchBar isNavbar={true} />
-            </div>
-          )}
         </div>
         <div className='flex md:hidden md:justify-end items-center'>
           <TranslationButton />

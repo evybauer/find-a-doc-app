@@ -23,7 +23,7 @@ const ThemeProvider = ({ children }) => {
       colorSuccess: theme.colors['success600'],
       colorBorderSecondary: theme.type === 'dark' ? '#232326' : '#f0f0f0',
       colorBgContainer: theme.type === 'dark' ? '#FDFDFD1F' : 'white',
-      colorBgLayout: theme.type === 'dark' ? '#000000FF' : 'white',
+      colorBgLayout: theme.type === 'dark' ? '#000000FF' : '#f8f8f8',
       colorLink: theme.colors['primary600'],
       colorTextPlaceholder: theme.type === 'dark' ? 'white' : 'black',
     },

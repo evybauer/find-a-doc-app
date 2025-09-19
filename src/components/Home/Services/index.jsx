@@ -4,14 +4,18 @@ import { ErrorBoundary } from 'react-error-boundary'
 import { resetApplication } from '../../../common/utils'
 import { ErrorCard } from '../../ui/Error/ErrorCard'
 import { useTranslation } from 'react-i18next'
+import { ThemeContext } from '../../../lib/themes'
+import { useContext } from 'react'
 
 const { Title } = Typography
 
 const ServicesContent = () => {
   const { t } = useTranslation('global')
+  const { theme } = useContext(ThemeContext)
+  const isDark = theme.type === 'dark'
 
   return (
-    <Card className='p-4 border-none'>
+    <Card className={`p-4 border-none ${isDark ? 'bg-[#141a23]' : 'bg-[#f8f8f8]'}`}>
       <div className='flex justify-center text-center my-20'>
         <Title
           level={1}

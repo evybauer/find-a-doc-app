@@ -49,7 +49,7 @@ const SearchBarContent = ({ isNavbar }) => {
     <Form
       form={form}
       onFinish={onFinish}
-      className='flex items-center border border-teal-500 rounded lg:pl-2 lg:flex-row flex-col align-stretch'
+      className='flex items-start border border-teal-500 rounded lg:flex-row flex-col align-stretch max-w-screen-lg mx-auto'
     >
       {searchConfigs.map((config, index) => (
         <div
@@ -86,11 +86,9 @@ const SearchBarContent = ({ isNavbar }) => {
           )}
         </div>
       ))}
-      {location.pathname === '/' && (
-        <Button type='primary' htmlType='submit' className='search-bar-button'>
-          {cap(t('action.find_doctors'))}
-        </Button>
-      )}
+      <Button type='primary' htmlType='submit' className='search-bar-button'>
+        {cap(t('action.find_doctors'))}
+      </Button>
     </Form>
   )
 }

@@ -174,7 +174,12 @@ const ScheduleFilters = ({ filteredOptions, setFilteredOptions }) => {
           ))}
         </Modal>
       </div>
-      <div className='hidden lg:flex flex-wrap justify-start justify-between items-center w-full'>
+
+    <div className='hidden lg:block items-start justify-start pt-8 pb-12'>
+       <SearchBar />
+    </div>
+
+      <div className='hidden lg:flex flex-wrap justify-start items-end'>
         <div className='flex space-x-4'>
           {Object.entries(filters).map(([filterName, filterOptions], index) => (
             <SelectComponent
@@ -187,16 +192,16 @@ const ScheduleFilters = ({ filteredOptions, setFilteredOptions }) => {
               value={filteredOptions[filterName] || undefined}
             />
           ))}
-        </div>
-        <div className='flex'>
           <Button
             type='primary'
             onClick={handleClearFilters}
-            className='min-h-[50px]'
+            className='min-h-[50px] my-3'
           >
             {cap(t('action.clear_filters'))}
           </Button>
         </div>
+
+
       </div>
     </>
   )

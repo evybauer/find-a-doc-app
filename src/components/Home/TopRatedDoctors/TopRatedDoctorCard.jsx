@@ -27,14 +27,14 @@ const TopRatedDoctorCard = ({ review, provider }) => {
   }
 
   return (
-    <Card className='relative max-w-2xl mt-24 md:mt-16 min-w-0 break-words border-none w-full mb-6 shadow-lg rounded-xl'>
+    <Card className='relative max-w-2xl mt-24 md:mt-16 min-w-0 break-words w-full mb-6 rounded-xl border-0 overflow-visible shadow-2xl ring-1 ring-black ring-opacity-5'>
       <div className='flex flex-wrap justify-start ml-16'>
         <div className='w-full flex justify-start'>
           <div className='relative'>
             <img
               src={provider.photo}
               alt={`${provider.name} ${t('label.photo')}`}
-              className='shadow-xl rounded-full align-start border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-[150px]'
+              className='rounded-full align-start border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-[150px] shadow-xl ring-1 ring-black ring-opacity-10'
             />
           </div>
         </div>
